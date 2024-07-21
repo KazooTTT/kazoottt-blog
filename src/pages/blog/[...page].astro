@@ -8,21 +8,23 @@ import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import { getAllPosts, getUniqueTags, sortMDByDate } from '@/utils'
+import { getAllPosts, getUniqueCategories, getUniqueTags, sortMDByDate } from '@/utils'
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts()
 	const allPostsByDate = sortMDByDate(allPosts)
 	const uniqueTags = getUniqueTags(allPosts)
-	return paginate(allPostsByDate, { pageSize: 10, props: { uniqueTags } })
+	const uniqueCategories = getUniqueCategories(allPosts)
+	return paginate(allPostsByDate, { pageSize: 10, props: { uniqueTags, uniqueCategories } })
 }) satisfies GetStaticPaths
 
 interface Props {
 	page: Page<CollectionEntry<'post'>>
 	uniqueTags: string[]
+	uniqueCategories: string[]
 }
 
-const { page, uniqueTags } = Astro.props
+const { page, uniqueTags, uniqueCategories } = Astro.props
 
 const meta = {
 	description: 'Posts',
@@ -77,41 +79,89 @@ const paginationProps = {
 						</ul>
 						<Pagination {...paginationProps} />
 					</section>
-					{!!uniqueTags.length && (
-						<aside>
-							<h2 class='mb-4 flex items-center text-lg font-semibold'>
-								<svg
-									aria-hidden='true'
-									class='h-6 w-6'
-									fill='none'
-									stroke='currentColor'
-									stroke-linecap='round'
-									stroke-linejoin='round'
-									stroke-width='1.5'
-									viewBox='0 0 24 24'
-									xmlns='http://www.w3.org/2000/svg'
-								>
-									<path d='M0 0h24v24H0z' fill='none' stroke='none' />
-									<path d='M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z' />
-									<path d='M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116' />
-									<path d='M6 9h-.01' />
-								</svg>
-								Tags
-							</h2>
-							<ul class='text-bgColor flex flex-wrap gap-2'>
-								{uniqueTags.map((tag) => (
-									<li>
-										<Button title={tag} href={`/tags/${tag}/`} style='pill' />
-									</li>
-								))}
-							</ul>
-							<span class='mt-4 block sm:text-end'>
-								<a aria-label='View all blog categories' class='' href='/tags/' data-astro-prefetch>
-									View all →
-								</a>
-							</span>
-						</aside>
-					)}
+					<div>
+						{!!uniqueCategories.length && (
+							<aside>
+								<h2 class='mb-4 flex items-center text-lg font-semibold'>
+									<svg
+										aria-hidden='true'
+										class='h-6 w-6'
+										fill='none'
+										stroke='currentColor'
+										stroke-linecap='round'
+										stroke-linejoin='round'
+										stroke-width='1.5'
+										viewBox='0 0 24 24'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<path d='M0 0h24v24H0z' fill='none' stroke='none' />
+										<path d='M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z' />
+										<path d='M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116' />
+										<path d='M6 9h-.01' />
+									</svg>
+									Categories
+								</h2>
+								<ul class='text-bgColor flex flex-wrap gap-2'>
+									{uniqueCategories.slice(0, 6).map((category) => (
+										<li>
+											<Button title={category} href={`/categories/${category}/`} style='pill' />
+										</li>
+									))}
+								</ul>
+								<span class='mt-4 block sm:text-end'>
+									<a
+										aria-label='View all blog categories'
+										class=''
+										href='/categories/'
+										data-astro-prefetch
+									>
+										View all →
+									</a>
+								</span>
+							</aside>
+						)}
+
+						{!!uniqueTags.length && (
+							<aside>
+								<h2 class='mb-4 flex items-center text-lg font-semibold'>
+									<svg
+										aria-hidden='true'
+										class='h-6 w-6'
+										fill='none'
+										stroke='currentColor'
+										stroke-linecap='round'
+										stroke-linejoin='round'
+										stroke-width='1.5'
+										viewBox='0 0 24 24'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<path d='M0 0h24v24H0z' fill='none' stroke='none' />
+										<path d='M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z' />
+										<path d='M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116' />
+										<path d='M6 9h-.01' />
+									</svg>
+									Tags
+								</h2>
+								<ul class='text-bgColor flex flex-wrap gap-2'>
+									{uniqueTags.slice(0, 6).map((tag) => (
+										<li>
+											<Button title={tag} href={`/tags/${tag}/`} style='pill' />
+										</li>
+									))}
+								</ul>
+								<span class='mt-4 block sm:text-end'>
+									<a
+										aria-label='View all blog categories'
+										class=''
+										href='/tags/'
+										data-astro-prefetch
+									>
+										View all →
+									</a>
+								</span>
+							</aside>
+						)}
+					</div>
 				</div>
 			)
 		}
