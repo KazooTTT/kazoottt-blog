@@ -22,7 +22,7 @@ const articleDate = date?.toISOString()
 const { headings } = await post.render()
 ---
 
-<PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
+<PageLayout meta={{ articleDate, description: description ?? '', ogImage: socialImage, title }}>
 	<div class='w-full'>
 		<Button title='Back' href='/blog' style='button'>
 			<svg
@@ -41,7 +41,7 @@ const { headings } = await post.render()
 		</Button>
 		<div class='mt-8 gap-x-10 lg:flex lg:items-start'>
 			{!!headings.length && <TOC headings={headings} />}
-			<article class='flex-grow break-words' data-pagefind-body>
+			<article class='flex-1 flex-grow break-words' data-pagefind-body>
 				<div id='blog-hero'><BlogHero content={post} /></div>
 				<div
 					class='prose prose-base prose-zinc mt-12 text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none'

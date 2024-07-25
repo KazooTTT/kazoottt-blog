@@ -2,6 +2,9 @@
 import type { CollectionEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 import FormattedDate from '../FormattedDate.astro'
+import Card from '../Card.astro'
+import { Icon } from 'astro-icon/components'
+import Label from '../Label.astro'
 
 interface Props {
 	content: CollectionEntry<'post'>
@@ -32,11 +35,23 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 	)
 }
 {data.draft ? <span class='text-red-500'>(Draft)</span> : null}
+
 <div class='flex flex-wrap items-center gap-x-3 gap-y-2'>
 	<p class='text-xs'>
 		<FormattedDate date={data.date} dateTimeOptions={dateTimeOptions} /> /{' '}
 		{remarkPluginFrontmatter.minutesRead}
 	</p>
+	<Label
+		title={data.category ?? '未分类'}
+		as='a'
+		href={`/categories/${data.category ?? '未分类'}/`}
+	>
+		<Icon name='category' slot='icon' />
+	</Label>
+
+	<Label title={data.finished ? '已完成' : '未完成'} as='a'>
+		<Icon name='progress' slot='icon' />
+	</Label>
 </div>
 <h1 class='mt-2 text-3xl font-medium sm:mb-1'>
 	{data.title}
@@ -76,6 +91,14 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 				</div>
 			))}
 		</div>
+	)
+}
+
+{
+	(data.description + '').trim().length > 0 && (
+		<Card heading='摘要（由ai生成）' altText='摘要' class='my-4 w-full'>
+			<div class='ml-4 text-muted-foreground'>{data.description}</div>
+		</Card>
 	)
 }
 
