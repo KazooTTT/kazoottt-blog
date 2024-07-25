@@ -31,11 +31,11 @@ interface Props {
 }
 
 const { page } = Astro.props
-const { Category } = Astro.params
+const { category } = Astro.params
 
 const meta = {
-	description: `View all posts of Category - ${Category}`,
-	title: `Category: ${Category}`
+	description: `View all posts of Category - ${category}`,
+	title: `Category: ${category}`
 }
 
 const paginationProps = {
@@ -73,7 +73,7 @@ const paginationProps = {
 		</Button>
 		<h1 class='mb-6 mt-5 flex items-end gap-x-2 text-2xl font-bold'>
 			Category:
-			<span class='text-xl'>#{Category}</span>
+			<span class='text-xl'>#{category}</span>
 		</h1>
 		<section aria-label='Blog post list'>
 			<ul class='flex flex-col gap-y-3 text-start'>
