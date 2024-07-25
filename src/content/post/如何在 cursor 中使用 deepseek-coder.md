@@ -1,6 +1,6 @@
 ---
 title: 如何在 Cursor 中使用 DeepSeek-Coder
-publishDate: 2024-07-25
+date: 2024-07-25
 author: KazooTTT
 type: Post
 status: Draft

@@ -10,8 +10,8 @@ export async function getAllPosts() {
 
 export function sortMDByDate(posts: Array<CollectionEntry<'post'>>) {
 	return posts.sort((a, b) => {
-		const aDate = new Date(a.data.updatedDate ?? a.data.publishDate).valueOf()
-		const bDate = new Date(b.data.updatedDate ?? b.data.publishDate).valueOf()
+		const aDate = new Date(a.data.date).valueOf()
+		const bDate = new Date(b.data.date).valueOf()
 		return bDate - aDate
 	})
 }
@@ -59,4 +59,11 @@ export function getUniqueCategoriesWithCount(
 			new Map<string, number>()
 		)
 	].sort((a, b) => b[1] - a[1])
+}
+
+export function getIdToSlugMap(posts: Array<CollectionEntry<'post'>>) {
+	return posts.reduce((acc, post) => {
+		acc[(post.id.split(".md")[0])] = post.slug
+		return acc
+	}, {} as Record<string, string>)
 }
