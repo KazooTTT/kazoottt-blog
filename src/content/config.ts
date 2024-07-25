@@ -11,8 +11,8 @@ const post = defineCollection({
 	type: 'content',
 	schema: ({ image }) =>
 		z.object({
-			title: z.string().max(60),
-			description: z.string(),
+			title: z.string(),
+			description: z.string().optional().nullable(),
 			date: z
 				.string()
 				.or(z.date())
@@ -26,7 +26,8 @@ const post = defineCollection({
 			draft: z.boolean().default(false),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
-			category: z.string().optional(),
+			category: z.string().optional().nullable(),
+			finished: z.boolean().default(false),
 		})
 })
 
