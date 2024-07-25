@@ -1,5 +1,4 @@
 ---
-layout: post
 title: html | 浏览器滚动恢复属性History.scrollRestoration
 date: 2022-11-27T00:00:00.000Z
 author: KazooTTT

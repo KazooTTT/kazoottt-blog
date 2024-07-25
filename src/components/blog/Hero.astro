@@ -95,7 +95,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 }
 
 {
-	(data.description + '').trim().length > 0 && (
+	data.description && data.description.trim().length > 0 && (
 		<Card heading='摘要（由ai生成）' altText='摘要' class='my-4 w-full'>
 			<div class='ml-4 text-muted-foreground'>{data.description}</div>
 		</Card>
