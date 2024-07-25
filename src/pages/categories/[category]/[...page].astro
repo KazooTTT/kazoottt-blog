@@ -8,18 +8,20 @@ import Pagination from '@/components/Paginator.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import Button from '@/components/Button.astro'
-import { getAllPosts, getUniqueTags, sortMDByDate } from '@/utils'
+import { getAllPosts, getUniqueCategories, sortMDByDate } from '@/utils'
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 	const allPosts = await getAllPosts()
 	const allPostsByDate = sortMDByDate(allPosts)
-	const uniqueTags = getUniqueTags(allPostsByDate)
+	const uniqueCategories = getUniqueCategories(allPostsByDate)
 
-	return uniqueTags.flatMap((tag) => {
-		const filterPosts = allPostsByDate.filter((post) => post.data.tags.includes(tag))
+	return uniqueCategories.flatMap((category) => {
+		const filterPosts = allPostsByDate.filter((post) =>
+			category === '未分类' ? !post.data.category : post.data.category === category
+		)
 		return paginate(filterPosts, {
 			pageSize: 10,
-			params: { tag }
+			params: { category }
 		})
 	})
 }
@@ -29,23 +31,23 @@ interface Props {
 }
 
 const { page } = Astro.props
-const { tag } = Astro.params
+const { Category } = Astro.params
 
 const meta = {
-	description: `View all posts with the tag - ${tag}`,
-	title: `Tag: ${tag}`
+	description: `View all posts of Category - ${Category}`,
+	title: `Category: ${Category}`
 }
 
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
-			text: `← Previous Tags`,
+			text: `← Previous Category`,
 			url: page.url.prev
 		}
 	}),
 	...(page.url.next && {
 		nextUrl: {
-			text: `Next Tags →`,
+			text: `Next Category →`,
 			url: page.url.next
 		}
 	})
@@ -70,8 +72,8 @@ const paginationProps = {
 			</svg>
 		</Button>
 		<h1 class='mb-6 mt-5 flex items-end gap-x-2 text-2xl font-bold'>
-			Tags:
-			<span class='text-xl'>#{tag}</span>
+			Category:
+			<span class='text-xl'>#{Category}</span>
 		</h1>
 		<section aria-label='Blog post list'>
 			<ul class='flex flex-col gap-y-3 text-start'>

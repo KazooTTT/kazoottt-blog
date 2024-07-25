@@ -36,15 +36,15 @@ const meta = {
 		{
 			allCategories.length > 0 && (
 				<ul class='flex flex-col gap-y-3'>
-					{allCategories.map(([tag, val]) => (
+					{allCategories.map(([category, val]) => (
 						<li class='flex items-center gap-x-2 '>
 							<a
 								class='inline-block underline underline-offset-4 hover:text-foreground/75'
 								data-astro-prefetch
-								href={`/tags/${tag}/`}
-								title={`View posts with the tag: ${tag}`}
+								href={`/categories/${category}/`}
+								title={`View posts of the Category: ${category}`}
 							>
-								&#35;{tag}
+								&#35;{category}
 							</a>
 							<span class='inline-block'>
 								- {val} post{val > 1 && 's'}
