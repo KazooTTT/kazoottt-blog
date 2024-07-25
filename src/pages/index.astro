@@ -50,9 +50,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		</section>
 
 		<Section title='About'>
-			<p class='text-muted-foreground'>
-				前端开发，技术栈主要为React全家桶, 不过也接触过Vue，偶尔使用 python 或者 nodejs 写后端。
-			</p>
+			<div class='text-muted-foreground'>
+				<p>前端开发，技术栈主要为React全家桶, 不过也接触过Vue。</p>
+				<p>偶尔使用 python 或者 nodejs 写后端。</p>
+			</div>
 		</Section>
 		{
 			allPostsByDate.length > 0 && (
