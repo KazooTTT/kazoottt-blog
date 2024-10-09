@@ -15,7 +15,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 	const allPostsByDate = sortMDByDate(allPosts)
 	const uniqueTags = getUniqueTags(allPosts)
 	const uniqueCategories = getUniqueCategories(allPosts)
-	return paginate(allPostsByDate, { pageSize: 10, props: { uniqueTags, uniqueCategories } })
+	return paginate(allPostsByDate, { pageSize: 20, props: { uniqueTags, uniqueCategories } })
 }) satisfies GetStaticPaths
 
 interface Props {
@@ -74,7 +74,7 @@ const paginationProps = {
 					<section aria-label='Blog posts list'>
 						<ul class='flex flex-col gap-y-4 text-start'>
 							{page.data.map((p) => (
-								<PostPreview post={p}  />
+								<PostPreview post={p} />
 							))}
 						</ul>
 						<Pagination {...paginationProps} />

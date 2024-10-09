@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 			category === '未分类' ? !post.data.category : post.data.category === category
 		)
 		return paginate(filterPosts, {
-			pageSize: 10,
+			pageSize: 20,
 			params: { category }
 		})
 	})
