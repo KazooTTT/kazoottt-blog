@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { Image } from 'astro:assets'
 import FormattedDate from '../FormattedDate.astro'
 import Card from '../Card.astro'
 import { Icon } from 'astro-icon/components'
@@ -24,12 +23,11 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 {
 	data.coverImage && (
 		<div class='aspect-h-9 aspect-w-16 mb-6'>
-			<Image
-				alt={data.coverImage.alt}
+			<img
+				src={data.coverImage}
 				class='rounded-2xl object-cover'
 				fetchpriority='high'
 				loading='eager'
-				src={data.coverImage.src}
 			/>
 		</div>
 	)

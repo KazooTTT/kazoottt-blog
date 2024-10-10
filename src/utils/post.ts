@@ -40,9 +40,8 @@ export function getUniqueTagsWithCount(
 
 /** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
 export function getAllCategories(posts: Array<CollectionEntry<'post'>>): string[] {
-	return posts.map(post => post.data.category ?? "未分类")
+	return posts.map((post) => post.data.category ?? '未分类')
 }
-
 
 /** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
 export function getUniqueCategories(posts: Array<CollectionEntry<'post'>>) {
@@ -62,8 +61,11 @@ export function getUniqueCategoriesWithCount(
 }
 
 export function getIdToSlugMap(posts: Array<CollectionEntry<'post'>>) {
-	return posts.reduce((acc, post) => {
-		acc[(post.id.split(".md")[0])] = post.slug
-		return acc
-	}, {} as Record<string, string>)
+	return posts.reduce(
+		(acc, post) => {
+			acc[post.id.split('.md')[0]] = post.slug
+			return acc
+		},
+		{} as Record<string, string>
+	)
 }

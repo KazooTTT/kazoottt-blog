@@ -9,7 +9,7 @@ function removeDupsAndLowerCase(array: string[]) {
 
 const post = defineCollection({
 	type: 'content',
-	schema: ({ image }) =>
+	schema: () =>
 		z.object({
 			title: z.string(),
 			description: z.string().optional().nullable(),
@@ -17,17 +17,12 @@ const post = defineCollection({
 				.string()
 				.or(z.date())
 				.transform((val) => new Date(val)),
-			coverImage: z
-				.object({
-					src: image(),
-					alt: z.string()
-				})
-				.optional(),
+			coverImage: z.string().optional(),
 			draft: z.boolean().default(false),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
 			category: z.string().optional().nullable(),
-			finished: z.boolean().default(false),
+			finished: z.boolean().default(false)
 		})
 })
 
