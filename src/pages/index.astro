@@ -6,7 +6,6 @@ import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
-
 import { Image } from 'astro:assets'
 import kazootttAvatar from '../assets/kazoottt-avatar.jpeg'
 
@@ -36,6 +35,12 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 			<div class='flex flex-col items-center gap-y-4'>
 				<h1 class='text-3xl font-bold'>KazooTTT</h1>
+				<a href='https://wakatime.com/@d3dc2570-e4bf-4469-b0c2-127b495e8b91'
+					><img
+						src='https://wakatime.com/badge/user/d3dc2570-e4bf-4469-b0c2-127b495e8b91.svg'
+						alt='Total time coded since Nov 4 2017'
+					/></a
+				>
 				<div class='flex flex-wrap justify-center gap-x-4 gap-y-3'>
 					<Label title='github' as='a' href='https://github.com/KazooTTT' target='_blank'>
 						<Icon name='github' slot='icon' />
