@@ -22,7 +22,6 @@ create_time: '2023/10/20 13:49:09'
 update_time: '2023/10/20 13:55:39'
 publish_time: '2023/10/20 13:50:45'
 finished: true
-rinId: 61
 category: 软件
 ---
 
