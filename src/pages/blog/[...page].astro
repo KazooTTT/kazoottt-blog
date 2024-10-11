@@ -15,7 +15,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 	const allPostsByDate = sortMDByDate(allPosts)
 	const uniqueTags = getUniqueTags(allPosts)
 	const uniqueCategories = getUniqueCategories(allPosts)
-	return paginate(allPostsByDate, { pageSize: 20, props: { uniqueTags, uniqueCategories } })
+	return paginate(allPostsByDate, { pageSize: 50, props: { uniqueTags, uniqueCategories } })
 }) satisfies GetStaticPaths
 
 interface Props {
