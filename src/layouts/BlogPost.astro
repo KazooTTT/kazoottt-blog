@@ -4,7 +4,6 @@ import type { CollectionEntry } from 'astro:content'
 import BlogHero from '@/components/blog/Hero.astro'
 import TOC from '@/components/blog/TOC.astro'
 import Button from '@/components/Button.astro'
-
 import PageLayout from './BaseLayout.astro'
 
 interface Props {
@@ -44,7 +43,9 @@ const { headings } = await post.render()
 			<article class='flex-1 flex-grow break-words' data-pagefind-body>
 				<div id='blog-hero'><BlogHero content={post} /></div>
 				<div
+					id='blog-gallery'
 					class='prose prose-base prose-zinc mt-12 text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none'
+					style='max-width: 65rem'
 				>
 					<slot />
 				</div>
@@ -88,4 +89,15 @@ const { headings } = await post.render()
 
 	const observer = new IntersectionObserver(callback)
 	observer.observe(targetHeader)
+
+	import PhotoSwipeLightbox from 'photoswipe/lightbox'
+	import 'photoswipe/style.css'
+
+	const lightbox = new PhotoSwipeLightbox({
+		gallery: '#blog-gallery',
+		children: 'a',
+		pswpModule: () => import('photoswipe')
+	})
+
+	lightbox.init()
 </script>
