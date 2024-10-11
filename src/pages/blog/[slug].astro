@@ -5,6 +5,7 @@ import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 
 import PostLayout from '@/layouts/BlogPost.astro'
 import { getAllPosts } from '@/utils'
+import GiscusComment from '@/components/GiscusComment'
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getAllPosts()
@@ -22,4 +23,5 @@ const { Content } = await entry.render()
 
 <PostLayout post={entry}>
 	<Content />
+	<GiscusComment client:only='react' />
 </PostLayout>

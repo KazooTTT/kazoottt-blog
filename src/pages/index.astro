@@ -12,6 +12,7 @@ import kazootttAvatar from '../assets/kazoottt-avatar.jpeg'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 import { Icon } from 'astro-icon/components'
+import GiscusComment from '@/components/GiscusComment'
 
 const frontend = ['react(熟悉)', 'vue2(了解)', 'next.js', 'tailwindcss']
 const backend = ['nodejs(熟悉)', 'python(了解)', 'elysiajs', 'nextjs', 'cloudflare d1', 'prisma']
@@ -130,4 +131,5 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			</div>
 		</Section>
 	</div>
+	<GiscusComment client:only='react' />
 </PageLayout>

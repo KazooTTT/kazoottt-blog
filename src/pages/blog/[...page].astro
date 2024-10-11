@@ -9,6 +9,7 @@ import Pagination from '@/components/Paginator.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getAllPosts, getUniqueCategories, getUniqueTags, sortMDByDate } from '@/utils'
+import GiscusComment from '@/components/GiscusComment'
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts()
@@ -166,4 +167,5 @@ const paginationProps = {
 			)
 		}
 	</div>
+	<GiscusComment client:only='react' />
 </PageLayout>

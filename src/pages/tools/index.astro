@@ -2,6 +2,7 @@
 import PageLayout from '@/layouts/BaseLayout.astro'
 import ToolSection from '@/components/ToolSection.astro'
 import Button from '@/components/Button.astro'
+import GiscusComment from '@/components/GiscusComment'
 
 const DESIGN = [
 	{
@@ -112,4 +113,5 @@ const Divices = [
 			<ToolSection title='Devices' tools={Divices} />
 		</div>
 	</div>
+	<GiscusComment client:only='react' />
 </PageLayout>
