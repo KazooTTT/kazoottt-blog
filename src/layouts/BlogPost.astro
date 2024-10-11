@@ -89,15 +89,4 @@ const { headings } = await post.render()
 
 	const observer = new IntersectionObserver(callback)
 	observer.observe(targetHeader)
-
-	import PhotoSwipeLightbox from 'photoswipe/lightbox'
-	import 'photoswipe/style.css'
-
-	const lightbox = new PhotoSwipeLightbox({
-		gallery: '#blog-gallery',
-		children: 'a',
-		pswpModule: () => import('photoswipe')
-	})
-
-	lightbox.init()
 </script>
