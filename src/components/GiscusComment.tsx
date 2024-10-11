@@ -11,7 +11,7 @@ const GiscusComment = () => {
 	}, [])
 
 	return (
-		<div id={id} className='mt-3 w-full'>
+		<div id={id} className='mt-8 w-full'>
 			{mounted ? (
 				<Giscus
 					id={id}
