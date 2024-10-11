@@ -12,7 +12,6 @@ description: >-
   Discover an auto slugify webapp designed to convert text into URL-friendly
   slugs. Check out the live demo at https://slugify.kazoottt.top/. This tool is
   based on the auto-slugify library available on GitHub.
-rinId: 65
 category: 项目
 ---
 

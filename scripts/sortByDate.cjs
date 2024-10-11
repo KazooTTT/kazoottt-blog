@@ -17,15 +17,19 @@ function processDirectory(dir) {
 		}
 	})
 
-	// Sort files by date
+	// 按日期排序文件
 	fileInfos.sort((a, b) => a.date - b.date)
 
-	// Rename files
+	// 重命名文件
 	fileInfos.forEach((file, index) => {
-		const newName = `${index.toString().padStart(2, '0')} ${file.name}`
+		// 如果文件名已经是数字数字空格开头，则移除这个前缀
+		const oldFileName = file.name
+		const cleanFileName = oldFileName.replace(/^\d{2}\s/, '')
+
+		const newName = `${index.toString().padStart(2, '0')} ${cleanFileName}`
 		const newPath = path.join(dir, newName)
 		fs.renameSync(file.path, newPath)
-		console.log(`Renamed ${file.name} to ${newName}`)
+		console.log(`重命名 ${file.name} 为 ${newName}`)
 	})
 }
 

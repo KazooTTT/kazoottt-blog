@@ -75,8 +75,8 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 				<path d='M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116' />
 				<path d='M6 9h-.01' />
 			</svg>
-			{data.tags.map((tag, i) => (
-				<div>
+			<div class='space-x-1'>
+				{data.tags.map((tag, i) => (
 					<a
 						aria-label={`View more blogs with the tag ${tag}`}
 						class="inline-block before:content-['#'] hover:underline hover:underline-offset-4"
@@ -85,9 +85,8 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 					>
 						{tag}
 					</a>
-					{i < data.tags.length - 1 && ', '}
-				</div>
-			))}
+				))}
+			</div>
 		</div>
 	)
 }
