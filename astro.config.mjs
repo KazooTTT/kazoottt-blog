@@ -9,43 +9,44 @@ import expressiveCode from 'astro-expressive-code'
 import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
 
-import vercel from '@astrojs/vercel/serverless'
-
 import react from '@astrojs/react'
+
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://blog.kazoottt.top',
-	integrations: [
-		expressiveCode(expressiveCodeOptions),
-		tailwind({
-			applyBaseStyles: false
-		}),
-		sitemap(),
-		mdx(),
-		icon(),
-		react()
+  site: 'https://blog.kazoottt.top',
+
+  integrations: [
+      expressiveCode(expressiveCodeOptions),
+      tailwind({
+          applyBaseStyles: false
+      }),
+      sitemap(),
+      mdx(),
+      icon(),
+      react()
 	],
-	markdown: {
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
-		rehypePlugins: [
-			[
-				rehypeExternalLinks,
-				{
-					target: '_blank',
-					rel: ['nofollow, noopener, noreferrer']
-				}
-			]
-		],
-		remarkRehype: {
-			footnoteLabelProperties: {
-				className: ['']
-			}
-		}
+
+  markdown: {
+      remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+      rehypePlugins: [
+          [
+              rehypeExternalLinks,
+              {
+                  target: '_blank',
+                  rel: ['nofollow, noopener, noreferrer']
+              }
+          ]
+      ],
+      remarkRehype: {
+          footnoteLabelProperties: {
+              className: ['']
+          }
+      }
 	},
-	prefetch: true,
-	output: 'server',
-	adapter: vercel({
-		webAnalytics: { enabled: true }
-	})
+
+  prefetch: true,
+  output: 'server',
+  adapter: cloudflare(),
 })
