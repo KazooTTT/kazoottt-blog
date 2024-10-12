@@ -23,7 +23,7 @@ link-notionnext: https://kazoottt.notion.site/01-Perplexity-ae2fba46af304bd5b6d0
 
 ## 产品1 Perplexity搜索引擎
 
-![[attachment/软件/01 Perplexity系列产品/IMG-20240904094448497.png]]
+![IMG-20240904094448497](https://pictures.kazoottt.top/2024/10/20241012-IMG-20240904094448497.png)
 
 https://www.perplexity.ai/
 
@@ -45,7 +45,7 @@ https://www.perplexity.ai/
 
 [Devv AI](https://devv.ai/) (编程向)
 
-![[attachment/软件/01 Perplexity系列产品/IMG-20240904094534311.png]]
+![IMG-20240904094534311](https://pictures.kazoottt.top/2024/10/20241012-IMG-20240904094534311.png)
 
 ## 产品2 Perplexity Playground
 
