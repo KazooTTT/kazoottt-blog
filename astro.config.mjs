@@ -11,36 +11,42 @@ import icon from 'astro-icon'
 
 import react from '@astrojs/react'
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://blog.kazoottt.top',
-	integrations: [
-		expressiveCode(expressiveCodeOptions),
-		tailwind({
-			applyBaseStyles: false
-		}),
-		sitemap(),
-		mdx(),
-		icon(),
-		react()
+  site: 'https://blog.kazoottt.top',
+
+  integrations: [
+      expressiveCode(expressiveCodeOptions),
+      tailwind({
+          applyBaseStyles: false
+      }),
+      sitemap(),
+      mdx(),
+      icon(),
+      react()
 	],
-	markdown: {
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
-		rehypePlugins: [
-			[
-				rehypeExternalLinks,
-				{
-					target: '_blank',
-					rel: ['nofollow, noopener, noreferrer']
-				}
-			]
-		],
-		remarkRehype: {
-			footnoteLabelProperties: {
-				className: ['']
-			}
-		}
+
+  markdown: {
+      remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+      rehypePlugins: [
+          [
+              rehypeExternalLinks,
+              {
+                  target: '_blank',
+                  rel: ['nofollow, noopener, noreferrer']
+              }
+          ]
+      ],
+      remarkRehype: {
+          footnoteLabelProperties: {
+              className: ['']
+          }
+      }
 	},
-	prefetch: true,
-	output: 'server',
+
+  prefetch: true,
+  output: 'server',
+  adapter: cloudflare(),
 })
