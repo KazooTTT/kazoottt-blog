@@ -16,6 +16,15 @@ import react from '@astrojs/react'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://blog.kazoottt.top',
+	redirects: {
+		'/articles': '/posts',
+		'/articles/[...slug]': '/blogs/[...slug]',
+		'/category': '/categories',
+		'/category/[...slug]': '/categories/[...slug]',
+		'/tag': '/tags',
+		'/tag/[...slug]': '/tags/[...slug]',
+		'/about': '/'
+	},
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		tailwind({
