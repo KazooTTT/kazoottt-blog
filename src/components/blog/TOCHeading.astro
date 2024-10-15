@@ -35,9 +35,11 @@ const {
 			link.addEventListener('click', (event) => {
 				event.preventDefault()
 				const slug = link.getAttribute('data-slug')
-				const element = document.getElementById(slug)
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' })
+				if (slug) {
+					const element = document.getElementById(slug)
+					if (element) {
+						element.scrollIntoView({ behavior: 'smooth' })
+					}
 				}
 			})
 		})
