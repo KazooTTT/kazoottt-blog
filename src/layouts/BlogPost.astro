@@ -52,7 +52,7 @@ const { headings } = await post.render()
 		</div>
 		<button
 			aria-label='Back to Top'
-			class='z-90 fixed bottom-8 end-4 flex h-8 w-8 translate-y-28 items-center justify-center rounded-full border-2 border-transparent bg-primary-foreground text-3xl opacity-0 transition-all duration-300 hover:border-border/75 data-[show=true]:translate-y-0 data-[show=true]:opacity-100 sm:end-8 sm:h-12 sm:w-12'
+			class='z-90 fixed bottom-8 end-4 flex h-8 w-8 translate-y-28 items-center justify-center rounded-full border-2 border-border/50 bg-primary-foreground text-3xl opacity-0 transition-all duration-300 hover:border-border/75 data-[show=true]:translate-y-0 data-[show=true]:opacity-100 sm:end-8 sm:h-12 sm:w-12'
 			data-show='false'
 			id='to-top-btn'
 			><svg
@@ -68,6 +68,37 @@ const { headings } = await post.render()
 				<path d='M4.5 15.75l7.5-7.5 7.5 7.5' stroke-linecap='round' stroke-linejoin='round'></path>
 			</svg>
 		</button>
+	</div>
+
+	<!-- Image Preview Modal -->
+	<div
+		id='image-modal'
+		class='pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 opacity-0 backdrop-blur-md transition-opacity duration-300 ease-in-out'
+	>
+		<div class='relative flex h-full w-full items-center justify-center p-4'>
+			<img
+				id='modal-image'
+				class='h-auto max-h-full w-auto max-w-full object-contain transition-transform duration-300 ease-in-out'
+			/>
+			<button
+				id='close-modal'
+				class='absolute right-4 top-4 text-white transition-colors duration-300 hover:text-gray-300'
+			>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					class='h-6 w-6'
+					fill='none'
+					viewBox='0 0 24 24'
+					stroke='currentColor'
+				>
+					<path
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						stroke-width='2'
+						d='M6 18L18 6M6 6l12 12'></path>
+				</svg>
+			</button>
+		</div>
 	</div>
 </PageLayout>
 
@@ -88,4 +119,102 @@ const { headings } = await post.render()
 
 	const observer = new IntersectionObserver(callback)
 	observer.observe(targetHeader)
+
+	// Image preview functionality
+	const imageModal = document.getElementById('image-modal')
+	const modalImage = document.getElementById('modal-image') as HTMLImageElement
+
+	function openModal() {
+		if (imageModal) {
+			imageModal.classList.remove('opacity-0', 'pointer-events-none')
+			modalImage.style.transform = 'scale(1)'
+			isZoomed = false
+			document.body.style.overflow = 'hidden' // 禁用滚动
+		}
+	}
+
+	function closeModal() {
+		if (imageModal) {
+			imageModal.classList.add('opacity-0', 'pointer-events-none')
+			modalImage.src = ''
+			modalImage.alt = ''
+			modalImage.style.transform = 'scale(1)'
+			isZoomed = false
+			document.body.style.overflow = '' // 恢复滚动
+		}
+	}
+
+	document.addEventListener('click', (e) => {
+		const target = e.target as HTMLElement
+		if (target.tagName === 'IMG' && target.closest('.prose')) {
+			const img = target as HTMLImageElement
+			modalImage.src = img.src
+			modalImage.alt = img.alt
+			openModal()
+		}
+	})
+
+	if (imageModal) {
+		imageModal.addEventListener('click', (e) => {
+			if (e.target === imageModal) {
+				closeModal()
+			}
+		})
+	}
+
+	if (imageModal) {
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && !imageModal.classList.contains('opacity-0')) {
+				closeModal()
+			}
+		})
+	}
+
+	const closeButton = document.getElementById('close-modal')
+
+	if (closeButton) {
+		closeButton.addEventListener('click', closeModal)
+	}
+
+	// 添加图片缩放功能
+	let isZoomed = false
+
+	modalImage.addEventListener('click', () => {
+		if (isZoomed) {
+			modalImage.style.transform = 'scale(1)'
+			modalImage.classList.remove('zoomed')
+		} else {
+			modalImage.style.transform = 'scale(1.5)'
+			modalImage.classList.add('zoomed')
+		}
+		isZoomed = !isZoomed
+	})
 </script>
+
+<style>
+	#image-modal {
+		transition: opacity 300ms ease-in-out;
+	}
+
+	#modal-image {
+		transition: transform 300ms ease-in-out;
+		cursor: zoom-in;
+	}
+
+	#modal-image.zoomed {
+		cursor: zoom-out;
+	}
+
+	#close-modal {
+		opacity: 0.7;
+		transition: opacity 300ms ease-in-out;
+	}
+
+	#close-modal:hover {
+		opacity: 1;
+	}
+
+	body.modal-open {
+		overflow: hidden;
+	}
+</style>
