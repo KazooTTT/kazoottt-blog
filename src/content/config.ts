@@ -19,7 +19,7 @@ const post = defineCollection({
 				.transform((val) => new Date(val)),
 			coverImage: z.string().optional(),
 			draft: z.boolean().default(false),
-			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			tags: z.array(z.string()).optional().default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
 			category: z.string().optional().nullable(),
 			finished: z.boolean().default(false)
