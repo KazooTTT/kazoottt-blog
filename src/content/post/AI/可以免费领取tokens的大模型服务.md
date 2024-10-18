@@ -11,11 +11,12 @@ tags:
   - deepseek
 finished: true
 published: true
-category: 软件
+category: AI
 slug: free-tokens-large-model-service
 description:
 NotionID-notionnext: 30a20483-ea28-4daf-b8be-155f0e690bc7
 link-notionnext: https://kazoottt.notion.site/tokens-30a20483ea284dafb8be155f0e690bc7
+rinId: 43
 ---
 
 # 可以免费领取tokens的大模型服务
