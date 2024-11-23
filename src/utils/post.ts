@@ -8,6 +8,10 @@ export async function getAllPosts() {
 	})
 }
 
+export async function getAllSortedPosts() {
+	return sortMDByDate(await getAllPosts())
+}
+
 export function sortMDByDate(posts: Array<CollectionEntry<'post'>>) {
 	return posts.sort((a, b) => {
 		const aDate = new Date(a.data.date).valueOf()

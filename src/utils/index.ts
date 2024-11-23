@@ -1,6 +1,7 @@
 export { cn } from './tailwind'
 export {
 	getAllPosts,
+	getAllSortedPosts,
 	sortMDByDate,
 	getUniqueTags,
 	getUniqueTagsWithCount,
