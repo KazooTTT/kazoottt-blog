@@ -5,6 +5,7 @@ import PageViews from '../PageViews'
 const pathname = new URL(Astro.request.url).pathname
 const isBlogPost = pathname.startsWith('/blog/') && pathname !== '/blog'
 const slug = pathname === '/' ? 'home' : pathname.replace(/^\/|\/$/g, '')
+console.log('Slug:', slug)
 ---
 
 <footer class='mx-auto mt-24 w-full'>
