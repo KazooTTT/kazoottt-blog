@@ -3,9 +3,9 @@ import kazootttAvatar from '../../assets/kazoottt-avatar.jpeg'
 import { Image } from 'astro:assets'
 ---
 
-<header class='fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-sm'>
+<header class='fixed left-0 right-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-800'>
 	<nav
-		class='mx-auto flex w-full items-center justify-between px-4 py-3 sm:flex sm:items-center'
+		class='mx-auto flex w-full items-center justify-between px-4 py-3 sm:flex sm:w-3/5 sm:items-center'
 		aria-label='global'
 	>
 		<a class='flex items-center' href='/'>
@@ -192,28 +192,49 @@ import { Image } from 'astro:assets'
 	function getCurrentTheme() {
 		return localStorage.getItem('theme')
 	}
-	const toggleDarkModeButton = document.getElementById('toggleDarkMode')
-	const mobileMenuButton = document.getElementById('mobileMenuButton')
-	const mobileMenu = document.getElementById('mobileMenu')
 
-	toggleDarkModeButton?.addEventListener('click', () => {
-		const toggleDarkModeEvent = new CustomEvent('theme-change', {
-			detail: { theme: getCurrentTheme() === 'light' ? 'dark' : 'light' }
+	function setupDarkModeToggle() {
+		const toggleDarkModeButton = document.getElementById('toggleDarkMode')
+		if (!toggleDarkModeButton) return
+
+		toggleDarkModeButton.addEventListener('click', () => {
+			const currentTheme = getCurrentTheme()
+			const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+			localStorage.setItem('theme', newTheme)
+			document.documentElement.classList.toggle('dark')
+
+			// Dispatch theme change event
+			window.dispatchEvent(new CustomEvent('theme-change', { detail: { theme: newTheme } }))
 		})
-		document.dispatchEvent(toggleDarkModeEvent)
-	})
+	}
 
-	mobileMenuButton?.addEventListener('click', () => {
-		mobileMenu?.classList.toggle('hidden')
-	})
+	function setupMobileMenu() {
+		const mobileMenuButton = document.getElementById('mobileMenuButton')
+		const mobileMenu = document.getElementById('mobileMenu')
+		if (!mobileMenuButton || !mobileMenu) return
 
-	// Close mobile menu when clicking outside
-	document.addEventListener('click', (event) => {
-		if (
-			!mobileMenuButton?.contains(event.target as Node) &&
-			!mobileMenu?.contains(event.target as Node)
-		) {
-			mobileMenu?.classList.add('hidden')
-		}
+		mobileMenuButton.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden')
+		})
+
+		// Close mobile menu when clicking outside
+		document.addEventListener('click', (event) => {
+			if (
+				!mobileMenuButton.contains(event.target as Node) &&
+				!mobileMenu.contains(event.target as Node)
+			) {
+				mobileMenu.classList.add('hidden')
+			}
+		})
+	}
+
+	// Setup initial functionality
+	setupDarkModeToggle()
+	setupMobileMenu()
+
+	// Re-setup functionality after view transitions
+	document.addEventListener('astro:after-swap', () => {
+		setupDarkModeToggle()
+		setupMobileMenu()
 	})
 </script>

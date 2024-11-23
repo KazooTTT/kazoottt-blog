@@ -9,9 +9,32 @@ const GiscusComment = () => {
 	const [theme, setTheme] = React.useState('preferred_color_scheme')
 
 	React.useEffect(() => {
+		// Initial theme setup
 		const savedTheme = localStorage.getItem('theme')
 		if (savedTheme) {
 			setTheme(savedTheme)
+		}
+
+		// Listen for theme changes
+		const handleThemeChange = (e: CustomEvent<{ theme: string }>) => {
+			setTheme(e.detail.theme)
+		}
+
+		document.addEventListener('theme-change', handleThemeChange as EventListener)
+
+		// Listen for astro:after-swap events (view transitions)
+		const handleAfterSwap = () => {
+			const currentTheme = localStorage.getItem('theme')
+			if (currentTheme) {
+				setTheme(currentTheme)
+			}
+		}
+
+		document.addEventListener('astro:after-swap', handleAfterSwap)
+
+		return () => {
+			document.removeEventListener('theme-change', handleThemeChange as EventListener)
+			document.removeEventListener('astro:after-swap', handleAfterSwap)
 		}
 	}, [])
 
