@@ -30,13 +30,34 @@ export default defineConfig({
 		}
 	}),
 	redirects: {
-		'/articles': '/posts',
-		'/articles/[...slug]': '/blogs/[...slug]',
-		'/category': '/categories',
-		'/category/[...slug]': '/categories/[...slug]',
-		'/tag': '/tags',
-		'/tag/[...slug]': '/tags/[...slug]',
-		'/about': '/'
+		'/articles': {
+			status: 301,
+			destination: '/posts'
+		},
+		'/articles/*': {
+			status: 301,
+			destination: '/blogs/*'
+		},
+		'/category': {
+			status: 301,
+			destination: '/categories'
+		},
+		'/category/*': {
+			status: 301,
+			destination: '/categories/*'
+		},
+		'/tag': {
+			status: 301,
+			destination: '/tags'
+		},
+		'/tag/*': {
+			status: 301,
+			destination: '/tags/*'
+		},
+		'/about': {
+			status: 301,
+			destination: '/'
+		}
 	},
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
