@@ -20,7 +20,8 @@ export const siteConfig: SiteConfig = {
 			month: 'short',
 			year: 'numeric'
 		}
-	}
+	},
+	site: 'https://blog.kazoottt.top',
 }
 
 export const menuLinks: Array<{ title: string; path: string }> = [
