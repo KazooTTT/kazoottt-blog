@@ -10,31 +10,10 @@ interface Props {
 		description: string
 		href?: string
 		iconPath?: string
-		iconBgColour?: string
-		customIcon?: string
+		iconBgColour: string
 	}[]
 }
-
 const { class: className, title, tools, ...props } = Astro.props
-
-const DefaultIcon = `<div class="flex items-center justify-center h-10 w-10 rounded-lg bg-muted">
-	<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24">
-		<path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2m0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8" />
-	</svg>
-</div>`
-
-const IconComponent = (iconPath: string) => {
-  // If it's a local SVG icon (doesn't start with a namespace like 'ph:')
-  if (!iconPath.includes(':')) {
-    return `<div class="z-20 h-10 w-10 rounded-lg bg-muted p-2">
-      <img src="/src/icons/${iconPath}.svg" class="h-full w-full" alt="" />
-    </div>`
-  }
-  // For icon component icons (like Phosphor icons)
-  return `<div class="z-20 h-10 w-10 rounded-lg bg-muted p-2">
-    <Icon name="${iconPath}" class="h-full w-full" />
-  </div>`
-}
 ---
 
 <div
@@ -48,49 +27,21 @@ const IconComponent = (iconPath: string) => {
 	<div class='grid grid-cols-1 gap-x-2 gap-y-3 sm:grid-cols-2 sm:gap-y-4'>
 		{
 			tools.map((tool) => (
-				<div class={cn(
-					'group relative hover:bg-transparent',
-					tool.href ? 'cursor-pointer' : 'cursor-default'
-				)}>
-					{tool.href ? (
-						<a
-							href={tool.href}
-							target='_blank'
-							rel="noopener noreferrer"
-							class="block"
-						>
-							<div class='relative flex flex-row items-center gap-x-4 px-2 py-0.5 transition-all'>
-								<div class='absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50' />
-								{tool.customIcon ? (
-									<div class="z-20 h-10 w-10 rounded-lg bg-muted p-2" set:html={tool.customIcon} />
-								) : tool.iconPath ? (
-									<div class="z-20" set:html={IconComponent(tool.iconPath)} />
-								) : (
-									<div class="z-20" set:html={DefaultIcon} />
-								)}
-								<div class='z-20 flex flex-col'>
-									<h3 class='font-medium'>{tool.name}</h3>
-									<p class='text-muted-foreground'>{tool.description}</p>
-								</div>
-							</div>
-						</a>
-					) : (
-						<div class='relative flex flex-row items-center gap-x-4 px-2 py-0.5 transition-all'>
-							<div class='absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50' />
-							{tool.customIcon ? (
-								<div class="z-20 h-10 w-10 rounded-lg bg-muted p-2" set:html={tool.customIcon} />
-							) : tool.iconPath ? (
-								<div class="z-20" set:html={IconComponent(tool.iconPath)} />
-							) : (
-								<div class="z-20" set:html={DefaultIcon} />
-							)}
-							<div class='z-20 flex flex-col'>
-								<h3 class='font-medium'>{tool.name}</h3>
-								<p class='text-muted-foreground'>{tool.description}</p>
-							</div>
+				<a
+					class='group relative hover:bg-transparent '
+					href={tool.href}
+					id={tool.name}
+					target='_blank'
+				>
+					<div class='relative flex flex-row items-center gap-x-4 px-2 py-0.5 transition-all'>
+						<div class='absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50' />
+						<Icon name={tool.iconPath ?? 'tool'} class='z-20 h-10 w-10 rounded-lg bg-muted p-2' />
+						<div class='z-20 flex flex-col'>
+							<h3 class='font-medium'>{tool.name}</h3>
+							<p class='text-muted-foreground'>{tool.description}</p>
 						</div>
-					)}
-				</div>
+					</div>
+				</a>
 			))
 		}
 	</div>
