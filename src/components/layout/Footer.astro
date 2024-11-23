@@ -25,7 +25,7 @@ console.log('Slug:', slug)
 					{
 						!isBlogPost && (
 							<div class='text-center'>
-								<PageViews slug={slug} />
+								<PageViews client:load slug={slug} />
 							</div>
 						)
 					}
