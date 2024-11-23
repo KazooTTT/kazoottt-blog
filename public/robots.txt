@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 
+
+HOST: https://blog.kazoottt.top
 # Sitemaps
 Sitemap: https://blog.kazoottt.top/sitemap-index.xml
 
