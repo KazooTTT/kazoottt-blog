@@ -45,7 +45,7 @@ const mdProjects = allPosts
 	.map(post => ({
 		title: post.data.title,
 		description: post.data.description || '',
-		url: post.data.projectUrl || `/posts/${post.slug}`,
+		url: post.data.projectUrl ? post.data.projectUrl : `/posts/${post.slug}`,
 		imagePath: post.data.coverImage,
 		altText: post.data.title,
 		isExternal: !!post.data.projectUrl
