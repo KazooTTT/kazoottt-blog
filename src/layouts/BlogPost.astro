@@ -5,6 +5,7 @@ import BlogHero from '@/components/blog/Hero.astro'
 import TOC from '@/components/blog/TOC.astro'
 import Button from '@/components/Button.astro'
 import PageLayout from './BaseLayout.astro'
+import PageViews from '@/components/PageViews'
 
 interface Props {
 	post: CollectionEntry<'post'>
@@ -41,7 +42,12 @@ const { headings } = await post.render()
 		<div class='mt-8 gap-x-10 lg:flex lg:items-start'>
 			{!!headings.length && <TOC headings={headings} />}
 			<article class='flex-1 flex-grow break-words' data-pagefind-body>
-				<div id='blog-hero'><BlogHero content={post} /></div>
+				<div id='blog-hero'>
+					<BlogHero content={post} />
+					<div class="mt-2">
+						<PageViews client:load slug={slug} />
+					</div>
+				</div>
 				<div
 					id='blog-gallery'
 					class='prose prose-base prose-zinc mt-12 text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none'
