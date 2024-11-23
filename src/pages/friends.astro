@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const friends = [
+	{
+		name: '大咩整装待发',
+		url: 'https://www.mihuashi.com/profiles/283847?role=painter'
+	},
+	{
+		name: "Yuang's Blog",
+		url: 'https://yuuuuang.com/'
+	},
+	{
+		name: 'huaiying',
+		url: 'https://blog.csdn.net/huaiyingdetective'
+	},
+	{
+		name: 'Sorry404 Wang',
+		url: 'http://40404.site/'
+	},
+	{
+		name: 'lijinghua',
+		url: 'www.lijinghua.club'
+	},
+	{
+		name: '思无道',
+		url: 'https://siwudao.github.io/'
+	},
+	{
+		name: 'Kai',
+		url: 'https://kaiyi.cool/'
+	}
+]
+---
+
+<BaseLayout
+	meta={{
+		title: `Friends`,
+		description: 'my friends '
+	}}
+>
+	<div class='container mx-auto px-4 py-8'>
+		<h1 class='mb-8 text-3xl font-bold'>Friends</h1>
+		<div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+			{
+				friends.map((friend) => (
+					<a
+						href={friend.url.startsWith('http') ? friend.url : `https://${friend.url}`}
+						target='_blank'
+						rel='noopener noreferrer'
+						class='block rounded-lg bg-white p-6 shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800'
+					>
+						<h2 class='mb-2 text-xl font-semibold'>{friend.name}</h2>
+						<p class='truncate text-sm text-gray-600 dark:text-gray-400'>{friend.url}</p>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.container {
+		max-width: 1200px;
+	}
+</style>

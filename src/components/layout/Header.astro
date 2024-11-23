@@ -3,9 +3,9 @@ import kazootttAvatar from '../../assets/kazoottt-avatar.jpeg'
 import { Image } from 'astro:assets'
 ---
 
-<header class='mb-8 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start'>
+<header class='fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-sm'>
 	<nav
-		class='relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center'
+		class='mx-auto flex w-full items-center justify-between px-4 py-3 sm:flex sm:items-center'
 		aria-label='global'
 	>
 		<a class='flex items-center' href='/'>
@@ -18,7 +18,25 @@ import { Image } from 'astro:assets'
 			<div class='hidden flex-none text-xl font-semibold sm:block' aria-label='Brand'>KazooTTT</div>
 		</a>
 
-		<div class='flex flex-row items-center justify-center gap-x-5 sm:gap-x-7'>
+		<!-- Mobile menu button -->
+		<button
+			id='mobileMenuButton'
+			class='rounded-md p-2 hover:bg-border sm:hidden'
+			aria-label='Toggle mobile menu'
+		>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='24'
+				height='24'
+				viewBox='0 0 24 24'
+				class='h-6 w-6'
+			>
+				<path fill='currentColor' d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'></path>
+			</svg>
+		</button>
+
+		<!-- Desktop Navigation -->
+		<div class='hidden flex-row items-center justify-center gap-x-7 sm:flex'>
 			<a
 				href='/blog'
 				class={`
@@ -55,6 +73,34 @@ import { Image } from 'astro:assets'
 				aria-label='Nav Menu Item'
 				>Tools
 			</a>
+			<div class='relative'>
+				<button
+					class='peer flex items-center text-[1.05rem] font-medium hover:text-foreground/75'
+					aria-label='More Menu'
+				>
+					More
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='20'
+						height='20'
+						viewBox='0 0 24 24'
+						class='ml-1 transform transition-transform duration-200 peer-hover:rotate-180'
+					>
+						<path fill='currentColor' d='m12 15l-5-5h10z'></path>
+					</svg>
+				</button>
+				<div
+					class='invisible absolute right-0 mt-2 w-48 rounded-md bg-white py-2 opacity-0 shadow-lg transition-all duration-200 hover:visible hover:opacity-100 peer-hover:visible peer-hover:opacity-100 dark:bg-gray-800'
+				>
+					<a
+						href='/friends'
+						class='block px-6 py-3 text-[1.05rem] font-medium transition-colors hover:bg-gray-100 hover:text-foreground/75 dark:hover:bg-gray-700'
+						aria-label='Friends Page'
+					>
+						Friends
+					</a>
+				</div>
+			</div>
 
 			<button
 				id='toggleDarkMode'
@@ -85,6 +131,60 @@ import { Image } from 'astro:assets'
 				>
 			</button>
 		</div>
+
+		<!-- Mobile Navigation -->
+		<div
+			id='mobileMenu'
+			class='fixed inset-x-0 top-[72px] hidden rounded-b-lg bg-white shadow-lg dark:bg-gray-800 sm:hidden z-50 max-h-[calc(100vh-72px)] overflow-y-auto'
+		>
+			<div class='space-y-2 px-4 py-2'>
+				<a
+					href='/blog'
+					class={`
+						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
+						${Astro.url.pathname.startsWith('/blog') ? 'text-green-400' : ''}
+					`}
+				>
+					Blog
+				</a>
+				<a
+					href='/categories'
+					class={`
+						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
+						${Astro.url.pathname.startsWith('/categories') ? 'text-green-400' : ''}
+					`}
+				>
+					Cats.
+				</a>
+				<a
+					href='/tags'
+					class={`
+						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
+						${Astro.url.pathname.startsWith('/tags') ? 'text-green-400' : ''}
+					`}
+				>
+					Tags
+				</a>
+				<a
+					href='/tools'
+					class={`
+						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
+						${Astro.url.pathname.startsWith('/tools') ? 'text-green-400' : ''}
+					`}
+				>
+					Tools
+				</a>
+				<a
+					href='/friends'
+					class={`
+						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
+						${Astro.url.pathname.startsWith('/friends') ? 'text-green-400' : ''}
+					`}
+				>
+					Friends
+				</a>
+			</div>
+		</div>
 	</nav>
 </header>
 
@@ -93,11 +193,27 @@ import { Image } from 'astro:assets'
 		return localStorage.getItem('theme')
 	}
 	const toggleDarkModeButton = document.getElementById('toggleDarkMode')
+	const mobileMenuButton = document.getElementById('mobileMenuButton')
+	const mobileMenu = document.getElementById('mobileMenu')
 
 	toggleDarkModeButton?.addEventListener('click', () => {
 		const toggleDarkModeEvent = new CustomEvent('theme-change', {
 			detail: { theme: getCurrentTheme() === 'light' ? 'dark' : 'light' }
 		})
 		document.dispatchEvent(toggleDarkModeEvent)
+	})
+
+	mobileMenuButton?.addEventListener('click', () => {
+		mobileMenu?.classList.toggle('hidden')
+	})
+
+	// Close mobile menu when clicking outside
+	document.addEventListener('click', (event) => {
+		if (
+			!mobileMenuButton?.contains(event.target as Node) &&
+			!mobileMenu?.contains(event.target as Node)
+		) {
+			mobileMenu?.classList.add('hidden')
+		}
 	})
 </script>
