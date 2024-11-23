@@ -7,11 +7,11 @@ export const GET = async () => {
 
 	return rss({
 		title: siteConfig.title,
-		description: siteConfig.description,
+		description: siteConfig.description + '\nfeedId:76245438397618182+userId:62156866798228480',
 		site: import.meta.env.SITE,
 		items: posts.map((post) => ({
 			title: post.data.title ?? '',
-			description: `${post.data.description ?? ''}\nfeedId:76245438397618182+userId:62156866798228480`,
+			description: `${post.data.description ?? ''}`,
 			pubDate: post.data.date,
 			link: `/blog/${post.slug}`
 		}))
