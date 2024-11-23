@@ -2,9 +2,11 @@ const https = require('https')
 const { XMLParser } = require('fast-xml-parser')
 const axios = require('axios')
 const { google } = require('googleapis')
+const fs = require('fs')
 
 // Daily push quota, can be modified based on actual needs
 const QUOTA = 100
+const BAIDU_LIMIT = 20
 
 async function parseSitemap(site) {
 	try {
@@ -80,6 +82,10 @@ async function pushToBing(site, urls, apiKey) {
 }
 
 async function pushToBaidu(site, urls, token) {
+	// Write into the txt
+	urls.forEach((url) => {
+		fs.appendFileSync('urls.txt', url + '\n')
+	})
 	const apiUrl = `http://data.zz.baidu.com/urls?site=${site}&token=${token}`
 
 	try {
@@ -135,7 +141,7 @@ async function pushToGoogle(urls, credentials) {
 async function main() {
 	// Get command line arguments
 	const args = process.argv.slice(2)
-	const url = process.env.URL || args[0]
+	const url = 'https://blog.kazoottt.top'
 	const baiduToken = process.env.BAIDU_TOKEN
 	const bingApiKey = process.env.BING_API_KEY
 	const googleCredentials = process.env.GOOGLE_CREDENTIALS
@@ -160,8 +166,8 @@ async function main() {
 
 	// Push to Bing
 	if (bingApiKey) {
-		console.log('Pushing to Bing, please wait...')
-		await pushToBing(url, selectedUrls, bingApiKey)
+		console.log('Pushing to Baidu, please wait...')
+		await pushToBaidu(url, selectedUrls.slice(0, BAIDU_LIMIT), baiduToken)
 	}
 
 	// Push to Baidu
