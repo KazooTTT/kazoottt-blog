@@ -12,9 +12,10 @@ tags:
 finished: true
 published: true
 slug: possible-causes-and-solutions-for-focusee-switching-system-audio-to-speaker-playback-forcibly-zh
-description:
+description: 
 NotionID-notionnext: 8ac966eb-66b4-4f39-b2fa-3fd4e4911a41
 link-notionnext: https://kazoottt.notion.site/focusee-8ac966eb66b44f39b2fa3fd4e4911a41
+rinId: 41
 category: 软件
 ---
 
@@ -41,7 +42,7 @@ category: 软件
 具体的操作是：
 
 1. 点击来源下方的添加按钮，选择macOS音频采集
-   ![SCR-20240525-qcob-2.png](https://pictures.kazoottt.top/2024/05/20240525-862b985a72997075bf72d8dd84efa46c.png)
+![SCR-20240525-qcob-2.png](https://pictures.kazoottt.top/2024/05/20240525-862b985a72997075bf72d8dd84efa46c.png)
 
 2. 根据你的需求选择是采集桌面音频还是应用音频。
-   ![image.png](https://pictures.kazoottt.top/2024/05/20240525-b1ea5d3a03406f26588601ed66067a05.png)
+![image.png](https://pictures.kazoottt.top/2024/05/20240525-b1ea5d3a03406f26588601ed66067a05.png)

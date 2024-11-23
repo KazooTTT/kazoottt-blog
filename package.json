@@ -9,7 +9,7 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,svelte,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,svelte,astro}\"",
-		"sort": "node scripts/updateCategoryBatchly.cjs && node scripts/sortByDate.cjs"
+		"sort": "node scripts/updateCategoryBatchly.cjs"
 	},
 	"husky": {
 		"hooks": {

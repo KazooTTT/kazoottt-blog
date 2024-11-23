@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 
 const contentDir = path.join(__dirname, '../src/content/post')
+const USE_FULL_PATH = process.env.USE_FULL_PATH === 'true'
 
 function processDirectory(dir) {
 	fs.readdirSync(dir).forEach((item) => {
@@ -22,9 +23,14 @@ function getCategoryFromPath(filePath) {
 	const relativePath = path.relative(contentDir, filePath)
 	const pathParts = relativePath.split(path.sep)
 
-	// The category is the first directory after "post"
 	if (pathParts.length > 1) {
-		return pathParts[0]
+		if (USE_FULL_PATH) {
+			// Join all directory parts except the filename
+			return pathParts.slice(0, -1).join('-')
+		} else {
+			// Just use the first directory after "post"
+			return pathParts[0]
+		}
 	}
 
 	return null

@@ -13,13 +13,13 @@ const post = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.string().optional().nullable(),
-			date: z
-				.string()
-				.or(z.date())
-				.transform((val) => new Date(val)),
+			date: z.union([
+				z.string(),
+				z.date()
+			]).transform((val) => new Date(val)),
 			coverImage: z.string().optional(),
 			draft: z.boolean().default(false),
-			tags: z.array(z.string()).optional().default([]).transform(removeDupsAndLowerCase),
+			tags: z.union([z.array(z.string()), z.null()]).default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
 			category: z.string().optional().nullable(),
 			finished: z.boolean().default(false)
