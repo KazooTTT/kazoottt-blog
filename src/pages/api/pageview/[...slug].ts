@@ -1,7 +1,10 @@
 import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async ({ params, locals, request }) => {
-  const slug = params.slug;
+  // Handle multiple path segments and decode the URL-encoded slug
+  const slugSegments = params.slug?.split('/') || [];
+  const slug = decodeURIComponent(slugSegments.join('/'));
+  
   if (!slug) {
     return new Response(JSON.stringify({ error: 'Slug is required' }), {
       status: 400,
@@ -69,7 +72,10 @@ export const GET: APIRoute = async ({ params, locals, request }) => {
 };
 
 export const POST: APIRoute = async ({ params, locals, request }) => {
-  const slug = params.slug;
+  // Handle multiple path segments and decode the URL-encoded slug
+  const slugSegments = params.slug?.split('/') || [];
+  const slug = decodeURIComponent(slugSegments.join('/'));
+  
   if (!slug) {
     return new Response(JSON.stringify({ error: 'Slug is required' }), {
       status: 400,
