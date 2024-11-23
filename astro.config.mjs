@@ -34,25 +34,13 @@ export default defineConfig({
 			status: 301,
 			destination: '/posts'
 		},
-		'/articles/*': {
-			status: 301,
-			destination: '/blogs/*'
-		},
 		'/category': {
 			status: 301,
 			destination: '/categories'
 		},
-		'/category/*': {
-			status: 301,
-			destination: '/categories/*'
-		},
 		'/tag': {
 			status: 301,
 			destination: '/tags'
-		},
-		'/tag/*': {
-			status: 301,
-			destination: '/tags/*'
 		},
 		'/about': {
 			status: 301,
