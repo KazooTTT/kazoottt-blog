@@ -22,7 +22,9 @@ const post = defineCollection({
 			tags: z.union([z.array(z.string()), z.null()]).default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
 			category: z.string().optional().nullable(),
-			finished: z.boolean().default(false)
+			finished: z.boolean().default(false),
+			pinned: z.boolean().default(false),
+			projectUrl: z.string().optional()
 		})
 })
 
