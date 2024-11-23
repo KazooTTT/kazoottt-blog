@@ -23,5 +23,5 @@ const { Content } = await entry.render()
 
 <PostLayout post={entry}>
 	<Content />
-	<GiscusComment client:only='react' />
+	<GiscusComment client:only='react' client:load />
 </PostLayout>
