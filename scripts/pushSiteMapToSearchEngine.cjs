@@ -8,7 +8,7 @@ const QUOTA = 100
 
 async function parseSitemap(site) {
 	try {
-		const sitemapUrl = `${site}/sitemap.xml`
+		const sitemapUrl = `${site}/sitemap-index.xml`
 		const response = await axios.get(sitemapUrl, {
 			httpsAgent: new https.Agent({ rejectUnauthorized: false })
 		})
@@ -18,7 +18,28 @@ async function parseSitemap(site) {
 
 		// Handle different sitemap formats
 		let urls = []
-		if (result.urlset && result.urlset.url) {
+		if (result.sitemapindex && result.sitemapindex.sitemap) {
+			// Handle sitemap index format
+			const sitemaps = Array.isArray(result.sitemapindex.sitemap)
+				? result.sitemapindex.sitemap
+				: [result.sitemapindex.sitemap]
+
+			// Get URLs from each sitemap
+			for (const sitemap of sitemaps) {
+				const sitemapResponse = await axios.get(sitemap.loc, {
+					httpsAgent: new https.Agent({ rejectUnauthorized: false })
+				})
+				const sitemapResult = parser.parse(sitemapResponse.data)
+
+				if (sitemapResult.urlset && sitemapResult.urlset.url) {
+					const sitemapUrls = Array.isArray(sitemapResult.urlset.url)
+						? sitemapResult.urlset.url.map((u) => u.loc)
+						: [sitemapResult.urlset.url.loc]
+					urls.push(...sitemapUrls)
+				}
+			}
+		} else if (result.urlset && result.urlset.url) {
+			// Handle direct urlset format
 			urls = Array.isArray(result.urlset.url)
 				? result.urlset.url.map((u) => u.loc)
 				: [result.urlset.url.loc]

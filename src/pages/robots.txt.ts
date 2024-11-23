@@ -8,7 +8,7 @@ Allow: /
 HOST: ${siteConfig.site}
 
 # Sitemaps
-Sitemap: ${siteConfig.site}/sitemap.xml
+Sitemap: ${siteConfig.site}/sitemap-index.xml
 
 # Disallow system and error pages
 Disallow: /api/
