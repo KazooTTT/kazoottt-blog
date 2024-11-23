@@ -1,13 +1,12 @@
 name = "kazoottt-blog"
 compatibility_date = "2024-01-01"
 
-[[d1_databases]]
-binding = "DB"
-database_name = "blog-pageviews"
-database_id = "ab9e5f7d-e254-4e7d-bd85-5d944a622682"
-
 [build]
 command = "pnpm build"
 
 [build.upload]
 format = "directory"
+
+[site]
+bucket = "./dist"
+pages_build_output_dir = "dist"

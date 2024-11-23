@@ -9,7 +9,7 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"deploy": "wrangler pages deploy ./dist",
-		"deploy:db": "node -e \"require('dotenv').config()\" && wrangler d1 execute blog-pageviews --file=./migrations/0000_create_pageviews.sql --remote",
+		"deploy:db": "node scripts/deploy-db.cjs",
 		"lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,svelte,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,svelte,astro}\"",
 		"sort": "node scripts/updateCategoryBatchly.cjs"
 	},

@@ -107,17 +107,27 @@ export const POST: APIRoute = async ({ params, locals, request }) => {
   }
 
   try {
-    // Insert or update view count
-    await db
-      .prepare(
-        `INSERT INTO pageviews (slug, views) 
-         VALUES (?, 1) 
-         ON CONFLICT(slug) 
-         DO UPDATE SET views = views + 1, 
-                       updated_at = CURRENT_TIMESTAMP`
-      )
-      .bind(slug)
-      .run();
+    // Get request information
+    const ip_address = request.headers.get('cf-connecting-ip') || request.headers.get('x-forwarded-for') || 'unknown';
+    const user_agent = request.headers.get('user-agent') || 'unknown';
+    const referrer = request.headers.get('referer') || 'unknown';
+
+    // Start a transaction to ensure both operations succeed or fail together
+    const stmt1 = db.prepare(
+      `INSERT INTO pageviews (slug, views) 
+       VALUES (?, 1) 
+       ON CONFLICT(slug) 
+       DO UPDATE SET views = views + 1, 
+                     updated_at = CURRENT_TIMESTAMP`
+    ).bind(slug);
+
+    const stmt2 = db.prepare(
+      `INSERT INTO pageview_logs (slug, ip_address, user_agent, referrer) 
+       VALUES (?, ?, ?, ?)`
+    ).bind(slug, ip_address, user_agent, referrer);
+
+    // Execute both statements in a transaction
+    await db.batch([stmt1, stmt2]);
 
     // Get updated view count
     const { results } = await db
