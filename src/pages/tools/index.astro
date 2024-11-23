@@ -1,130 +1,418 @@
 ---
 import PageLayout from '@/layouts/BaseLayout.astro'
-import ToolSection from '@/components/ToolSection.astro'
+import CategorySection from '@/components/CategorySection.astro'
 import Button from '@/components/Button.astro'
 import GiscusComment from '@/components/GiscusComment'
 
-const DESIGN = [
-	{
-		name: 'Figma',
-		description: 'Design Tool',
-		href: 'https://www.figma.com/',
-		iconPath: 'figma',
-		iconBgColour: '#000001'
-	},
-	{
-		name: 'Canva',
-		description: 'Design Tool',
-		href: 'https://www.canva.com/',
-		iconPath: 'canva',
-		iconBgColour: '#000001'
-	},
-	{
-		name: '剪映',
-		description: '视频剪辑',
-		href: 'https://www.capcut.cn/',
-		iconPath: 'tiktok',
-		iconBgColour: '#000001'
-	}
-]
+const SOFTWARE_TOOLS = {
+  development: {
+    title: 'Development',
+    sections: {
+      ide: {
+        title: 'IDE & Editors',
+        tools: [
+          {
+            name: 'WindSurf',
+            description: 'AI-Powered IDE',
+            href: 'https://cursor.sh/',
+          },
+          {
+            name: 'Cursor',
+            description: 'AI-Powered Code Editor',
+            href: 'https://cursor.sh/',
+            iconPath: 'cursor'
+          },
+          {
+            name: 'VS Code',
+            description: 'Code Editor',
+            href: 'https://code.visualstudio.com/',
+            iconPath: 'vscode'
+          },
+          {
+            name: 'JetBrains Suite',
+            description: 'Professional IDEs',
+            href: 'https://www.jetbrains.com/'
+          }
+        ]
+      }
+    }
+  },
+  design: {
+    title: 'Design & Creative',
+    sections: {
+      design: {
+        title: 'Design Software',
+        tools: [
+          {
+            name: 'Figma',
+            description: 'Design Tool',
+            href: 'https://www.figma.com/',
+            iconPath: 'figma'
+          },
+          {
+            name: 'Canva',
+            description: 'Design Tool',
+            href: 'https://www.canva.com/',
+            iconPath: 'canva'
+          }
+        ]
+      },
+      recording: {
+        title: 'Screen Recording & Screenshots',
+        tools: [
+          {
+            name: 'CleanShot X',
+            description: 'Screenshot & Recording',
+            href: 'https://cleanshot.com/'
+          },
+          {
+            name: 'OBS Studio',
+            description: 'Streaming & Recording',
+            href: 'https://obsproject.com/'
+          },
+          {
+            name: 'Picsew',
+            description: 'Screenshot Tool',
+            href: 'https://apps.apple.com/app/picsew-screenshot-stitching/id1208145167'
+          },
+          {
+            name: 'Shotr',
+            description: 'Screenshot Tool',
+            href: 'https://shotr.app/'
+          },
+          {
+            name: 'QuickRecorder',
+            description: 'Screen Recording',
+            href: '#'
+          }
+        ]
+      }
+    }
+  },
+  productivity: {
+    title: 'Productivity',
+    sections: {
+      browser: {
+        title: 'Browsers',
+        tools: [
+          {
+            name: 'Arc Browser',
+            description: 'Modern Browser',
+            href: 'https://arc.net/',
+            iconPath: 'arc'
+          },
+          {
+            name: 'Google Chrome',
+            description: 'Web Browser',
+            href: 'https://www.google.com/chrome/'
+          },
+          {
+            name: 'Microsoft Edge',
+            description: 'Web Browser',
+            href: 'https://www.microsoft.com/edge'
+          }
+        ]
+      },
+      notes: {
+        title: 'Note Taking',
+        tools: [
+          {
+            name: 'Obsidian',
+            description: 'Note Taking',
+            href: 'https://obsidian.md/',
+            iconPath: 'obsidian'
+          },
+          {
+            name: 'Notion',
+            description: 'Note Taking',
+            href: 'https://notion.so/',
+            iconPath: 'notion'
+          },
+          {
+            name: 'Flomo',
+            description: 'Quick Notes',
+            href: 'https://flomoapp.com/'
+          }
+        ]
+      },
+      tools: {
+        title: 'Productivity Tools',
+        tools: [
+          {
+            name: '1Password',
+            description: 'Password Manager',
+            href: 'https://1password.com/'
+          },
+          {
+            name: 'Raindrop.io',
+            description: 'Bookmark Manager',
+            href: 'https://raindrop.io/'
+          },
+          {
+            name: 'n8n',
+            description: 'Workflow Automation',
+            href: 'https://n8n.io/'
+          },
+          {
+            name: 'Follow',
+            description: 'RSS Reader',
+            href: '#'
+          },
+          {
+            name: '滴答清单',
+            description: 'Task Management',
+            href: 'https://dida365.com/'
+          }
+        ]
+      }
+    }
+  },
+  ai: {
+    title: 'AI Tools',
+    sections: {
+      assistants: {
+        title: 'AI Assistants',
+        tools: [
+          {
+            name: 'ChatGPT',
+            description: 'AI Assistant',
+            href: 'https://chat.openai.com/',
+            iconPath: 'chatgpt'
+          },
+          {
+            name: 'Claude',
+            description: 'AI Assistant',
+            href: 'https://claude.ai/'
+          },
+          {
+            name: 'Poe',
+            description: 'AI Platform',
+            href: 'https://poe.com/'
+          },
+          {
+            name: 'Google Notebook LLM',
+            description: 'AI Assistant',
+            href: 'https://notebooklm.google.com/'
+          }
+        ]
+      }
+    }
+  },
+  media: {
+    title: 'Media & Entertainment',
+    sections: {
+      music: {
+        title: 'Music',
+        tools: [
+          {
+            name: 'Apple Music',
+            description: 'Music Streaming',
+            href: 'https://music.apple.com/'
+          },
+          {
+            name: '网易云音乐',
+            description: 'Music Platform',
+            href: 'https://music.163.com/'
+          }
+        ]
+      },
+      reading: {
+        title: 'Reading & Writing',
+        tools: [
+          {
+            name: '微信读书',
+            description: 'Reading Platform',
+            href: 'https://weread.qq.com/'
+          },
+          {
+            name: 'Personal Blog',
+            description: 'Built with Astro',
+            href: '/'
+          },
+          {
+            name: 'Hashnode',
+            description: 'Blog Platform',
+            href: 'https://hashnode.com/'
+          }
+        ]
+      }
+    }
+  },
+  health: {
+    title: 'Health & Fitness',
+    sections: {
+      tracking: {
+        title: 'Health Tracking',
+        tools: [
+          {
+            name: 'AutoSleep',
+            description: 'Sleep Tracking',
+            href: 'https://autosleep.app/'
+          },
+          {
+            name: 'Grow',
+            description: 'Health Tracking',
+            href: '#'
+          },
+          {
+            name: 'Keep',
+            description: 'Fitness App',
+            href: 'https://www.gotokeep.com/'
+          }
+        ]
+      }
+    }
+  }
+}
 
-const PRODUCTIVITY = [
-	{
-		name: 'Arc',
-		description: 'Browser',
-		href: 'https://arc.net/',
-		iconPath: 'arc',
-		iconBgColour: '#414350'
-	},
-	{
-		name: 'Obsidian',
-		description: 'local-first markdown editor',
-		href: 'https://obsidian.md/',
-		iconPath: 'obsidian',
-		iconBgColour: '#7A3EE8'
-	}
-]
-
-const DEVELOPMENT = [
-	{
-		name: 'Cursor',
-		description: 'IDE',
-		href: 'https://www.cursor.com/',
-		iconPath: 'cursor',
-		iconBgColour: '#2C2C32'
-	},
-	{
-		name: 'VS Code',
-		description: 'IDE',
-		href: 'https://code.visualstudio.com/',
-		iconPath: 'vscode',
-		iconBgColour: '#2C2C32'
-	},
-	{
-		name: 'ChatGPT',
-		description: 'AI',
-		href: 'https://chat.openai.com/',
-		iconPath: 'chatgpt',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Claude',
-		description: 'AI',
-		href: 'https://claude.ai/',
-		iconBgColour: '#06A67F'
-	}
-]
-
-const Divices = [
-	{
-		name: 'mac mini m2 pro 32G 512G',
-		description: '主力机',
-		iconPath: 'apple',
-		iconBgColour: '#000001'
-	},
-	{
-		name: 'macbook air m1 16G 256G',
-		description: '移动办公机',
-		iconPath: 'apple',
-		iconBgColour: '#000001'
-	},
-	{
-		name: '机械师整机 i5 32G 512G',
-		description: 'windows 台式机',
-		iconPath: 'windows',
-		iconBgColour: '#000001'
-	}
-]
+const DEVICES = {
+  computing: {
+    title: 'Computing Devices',
+    sections: {
+      devices: {
+        title: 'Devices',
+        tools: [
+          {
+            name: 'Mac Mini M2 Pro',
+            description: '主力机 (32GB, 512GB)',
+            iconPath: 'apple'
+          },
+          {
+            name: 'MacBook Air M1',
+            description: '移动办公 (16GB, 256GB)',
+            iconPath: 'apple'
+          },
+          {
+            name: '机械师整机',
+            description: '台式机 (i5, 32GB, 512GB)',
+            iconPath: 'windows'
+          }
+        ]
+      }
+    }
+  },
+  mobile: {
+    title: 'Mobile Devices',
+    sections: {
+      phone: {
+        title: 'Phone',
+        tools: [
+          {
+            name: 'iPhone 13',
+            description: '手机 (256GB)',
+            iconPath: 'apple'
+          }
+        ]
+      },
+      tablet: {
+        title: 'Tablet',
+        tools: [
+          {
+            name: 'iPad Mini 5',
+            description: '平板',
+            iconPath: 'apple'
+          }
+        ]
+      }
+    }
+  },
+  wearables: {
+    title: 'Smart Wearables',
+    sections: {
+      watch: {
+        title: 'Smart Watch',
+        tools: [
+          {
+            name: 'Apple Watch S9',
+            description: '智能手表',
+            iconPath: 'apple'
+          }
+        ]
+      },
+      audio: {
+        title: 'Audio Devices',
+        tools: [
+          {
+            name: 'AirPods Pro 2',
+            description: '无线耳机',
+            iconPath: 'apple'
+          }
+        ]
+      }
+    }
+  },
+  imaging: {
+    title: 'Imaging Equipment',
+    sections: {
+      cameras: {
+        title: 'Camera System',
+        tools: [
+          {
+            name: '松下 GX9',
+            description: '相机',
+            iconPath: 'round-photo'
+          },
+          {
+            name: 'Panasonic 14-140mm',
+            description: '变焦镜头',
+            iconPath: 'tool'
+          },
+          {
+            name: 'Panasonic 25mm',
+            description: '定焦镜头',
+            iconPath: 'tool'
+          },
+          {
+            name: 'Panasonic 100-300mm',
+            description: '长焦镜头',
+            iconPath: 'tool'
+          },
+          {
+            name: 'DJI Action 5 Pro',
+            description: '运动相机',
+            iconPath: 'round-photo'
+          }
+        ]
+      }
+    }
+  }
+}
 ---
 
-<PageLayout meta={{ title: 'Home' }}>
-	<div class='w-full'>
-		<Button title='Back' href='/' style='button'>
-			<svg
-				xmlns='http://www.w3.org/2000/svg'
-				width='14'
-				height='14'
-				viewBox='0 0 24 24'
-				slot='icon-before'
-			>
-				<path
-					fill='currentColor'
-					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
-				>
-				</path>
-			</svg>
-		</Button>
+<PageLayout meta={{ title: 'Tools & Devices' }}>
+  <div class='w-full'>
+    <Button title='Back' href='/' style='button'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='14'
+        height='14'
+        viewBox='0 0 24 24'
+        slot='icon-before'
+      >
+        <path
+          fill='currentColor'
+          d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
+        >
+        </path>
+      </svg>
+    </Button>
 
-		<div class='mt-5 flex w-full flex-col gap-y-10'>
-			<div>
-				<h1 class='mb-1 text-2xl font-bold'>Tools</h1>
-				<p>Tools and software I use daily</p>
-			</div>
-			<ToolSection title='Development' tools={DEVELOPMENT} />
-			<ToolSection title='Productivity' tools={PRODUCTIVITY} />
-			<ToolSection title='Design' tools={DESIGN} />
-			<ToolSection title='Devices' tools={Divices} />
-		</div>
-	</div>
-	<GiscusComment client:only='react' />
+    <div class='mt-5 flex w-full flex-col gap-y-10'>
+      <div>
+        <h1 class='mb-1 text-2xl font-bold'>Tools & Devices</h1>
+        <p>Tools, software, and devices I use daily</p>
+      </div>
+
+      <CategorySection 
+        title="Software Tools" 
+        categories={Object.values(SOFTWARE_TOOLS)} 
+      />
+
+      <CategorySection 
+        title="Hardware Devices" 
+        categories={Object.values(DEVICES)} 
+      />
+    </div>
+  </div>
+  <GiscusComment client:only='react' />
 </PageLayout>
