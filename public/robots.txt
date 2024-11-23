@@ -15,3 +15,6 @@ Allow: /posts/
 Allow: /categories/
 Allow: /tags/
 Allow: /blog/
+Allow: /friends/
+Allow: /blog/
+Allow: /tools/
