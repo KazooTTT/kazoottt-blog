@@ -32,7 +32,12 @@ export default defineConfig({
 		}),
 		sitemap(),
 		mdx(),
-		icon(),
+		icon({
+			include: {
+				// Include all icons from the icons directory
+				local: './src/icons/*.svg'
+			}
+		}),
 		react()
 	],
 	markdown: {
