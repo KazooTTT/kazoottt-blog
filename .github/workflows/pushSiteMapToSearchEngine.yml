@@ -1,0 +1,36 @@
+name: Push Sitemap URLs to Search Engines
+
+on:
+  push:
+  schedule:
+    - cron: '0 23 * * *' # Runs at 23:00 UTC (7:00 AM Beijing Time)
+  workflow_dispatch:
+    inputs:
+      unconditional-invoking:
+        description: 'Push URLs unconditionally'
+        type: boolean
+        required: true
+        default: true
+
+jobs:
+  push-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install axios fast-xml-parser googleapis
+
+      - name: Push Sitemap URLs to Search Engines
+        env:
+          URL: ${{ secrets.URL }}
+          BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: node pushSiteMapToSearchEngine.js
