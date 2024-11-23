@@ -33,4 +33,4 @@ jobs:
           BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
           BING_API_KEY: ${{ secrets.BING_API_KEY }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-        run: node pushSiteMapToSearchEngine.cjs
+        run: node scripts/pushSiteMapToSearchEngine.cjs
