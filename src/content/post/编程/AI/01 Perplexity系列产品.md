@@ -12,7 +12,7 @@ tags:
   - 播客
 finished: true
 published: true
-category: 编程
+category: 编程-AI
 slug: perplexity-productions-intro
 description: 概述Perplexity系列产品，包括搜索引擎、Playground和播客，重点介绍其功能和区别。
 NotionID-notionnext: ae2fba46-af30-4bd5-b6d0-fe751c162800

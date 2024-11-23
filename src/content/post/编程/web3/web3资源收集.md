@@ -9,7 +9,7 @@ description: >-
 rinId: 13
 finished: true
 date: 2024-02-07
-category: 编程
+category: 编程-web3
 ---
 
 # web3资源收集

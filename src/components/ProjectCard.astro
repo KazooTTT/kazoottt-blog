@@ -13,29 +13,37 @@ const {
 	altText,
 	target
 } = Astro.props
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
-if (!images[imagePath])
-	throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`)
+
+let imageComponent = null
+if (imagePath) {
+	const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
+	if (images[imagePath]) {
+		imageComponent = images[imagePath]
+	}
+}
 ---
 
 <Tag
 	class={cn(
 		className,
-		'flex flex-col gap-y-3 rounded-2xl border border-border bg-primary-foreground ',
+		'flex flex-col rounded-2xl border border-border bg-primary-foreground h-[240px]',
+		'justify-center items-center',
 		href && 'transition-all hover:border-foreground/25 hover:shadow-sm'
 	)}
 	href={href}
 	target={target}
 >
-	<Image
-		src={images[imagePath]()}
-		alt={altText}
-		class='h-48 w-full rounded-2xl rounded-bl-none rounded-br-none object-cover'
-		loading='eager'
-	/>
-	<div class='flex flex-col gap-y-0.5 px-5 py-4'>
+	{imageComponent && (
+		<Image
+			src={imageComponent()}
+			alt={altText}
+			class='h-32 w-full rounded-2xl rounded-bl-none rounded-br-none object-cover'
+			loading='eager'
+		/>
+	)}
+	<div class='flex flex-col gap-y-2 flex-1 px-5 py-4 text-center justify-center w-full'>
 		<h1 class='text-lg font-medium'>{heading}</h1>
-		<h2 class='text-muted-foreground'>{subheading}</h2>
+		<h2 class='text-muted-foreground line-clamp-2 text-sm'>{subheading}</h2>
 	</div>
 
 	<slot />

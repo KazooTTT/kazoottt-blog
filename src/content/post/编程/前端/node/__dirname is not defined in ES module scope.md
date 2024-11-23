@@ -11,7 +11,7 @@ tags:
   - module
 finished: true
 published: true
-category: 编程
+category: 编程-前端-node
 slug: dirname-is-not-defined-in-es-module-scope
 NotionID-notionnext: 543bfc66-a416-4704-92be-9a93fed191a8
 link-notionnext: >-

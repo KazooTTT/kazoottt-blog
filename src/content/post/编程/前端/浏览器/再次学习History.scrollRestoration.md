@@ -12,7 +12,7 @@ tags:
   - 浏览器
 finished: true
 published: true
-category: 编程
+category: 编程-前端-浏览器
 slug: understanding-history-scrollrestoration
 description: >-
   本文重新探讨了浏览器History对象的scrollRestoration属性，该属性用于控制历史页面切换时滚动条是否恢复到之前的位置。scrollRestoration属性有两个可选值：auto和manual。当设置为auto时，滚动条会自动恢复到切换前的位置；若设置为manual，则滚动条保持在页面顶部。文章还讨论了该属性的局限性，包括可能导致的页面跳动和在不同浏览器中实现一致滚动恢复的困难。最后，文章建议在页面出现不美观跳跃或需要手动控制滚动条位置时，应将scrollRestoration设置为manual。

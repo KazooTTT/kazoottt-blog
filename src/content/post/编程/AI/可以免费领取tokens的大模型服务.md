@@ -11,7 +11,7 @@ tags:
   - deepseek
 finished: true
 published: true
-category: 编程
+category: 编程-AI
 slug: free-tokens-large-model-service
 description:
 NotionID-notionnext: 30a20483-ea28-4daf-b8be-155f0e690bc7

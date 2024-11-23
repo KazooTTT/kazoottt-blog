@@ -10,7 +10,7 @@ tags:
   - API
 finished: true
 published: true
-category: 编程
+category: 编程-AI
 slug: using-deepseek-coder-in-cursor
 description: 本文介绍了如何在 Cursor 中添加和使用 DeepSeek-Coder 模型，以及配置相关的 OpenAI API Key 和 Base URL。
 NotionID-notionnext: f759bbe6-aa4b-4317-9695-44927430146b

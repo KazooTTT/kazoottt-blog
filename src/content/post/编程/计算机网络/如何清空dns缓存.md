@@ -13,7 +13,7 @@ slug: how-to-clear-the-dns-cache
 description: >-
   本文介绍了如何在Mac和windows系统中清空DNS缓存和查看自己的IP地址。
 rinId: 76
-category: 编程
+category: 编程-计算机网络
 ---
 
 # 如何清空dns缓存

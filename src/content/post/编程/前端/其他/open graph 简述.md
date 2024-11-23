@@ -14,7 +14,7 @@ description: >-
 NotionID-notionnext: 76ed52a0-ad58-401c-8a5d-c5719f67b673
 link-notionnext: 'https://kazoottt.notion.site/open-graph-76ed52a0ad58401c8a5dc5719f67b673'
 rinId: 16
-category: 编程
+category: 编程-前端-其他
 ---
 
 # Open Graph 简述

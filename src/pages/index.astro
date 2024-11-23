@@ -19,8 +19,41 @@ const others = ['大模型提示词调优']
 const languages = ['英文']
 
 const MAX_POSTS = 10
+const MAX_PROJECTS = 6
 const allPosts = await getAllPosts()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+
+// Direct projects
+const directProjects = [
+	{
+		title: '油猴脚本合集',
+		description: '收录了我开发的一些油猴脚本',
+		url: 'https://greasyfork.org/zh-CN/users/904256-kazoottt-wang',
+		imagePath: '/src/assets/greasyFork.png',
+		altText: 'greasyFork'
+	},
+]
+
+// Get projects from markdown
+const mdProjects = allPosts
+	.filter(post => post.data.category === '项目-已结项')
+	.sort((a, b) => {
+		if (a.data.pinned && !b.data.pinned) return -1
+		if (!a.data.pinned && b.data.pinned) return 1
+		return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+	})
+	.map(post => ({
+		title: post.data.title,
+		description: post.data.description || '',
+		url: post.data.projectUrl || `/posts/${post.slug}`,
+		imagePath: post.data.coverImage,
+		altText: post.data.title,
+		isExternal: !!post.data.projectUrl
+	}))
+
+// Combine both types of projects
+const projects = [...directProjects, ...mdProjects].slice(0, MAX_PROJECTS)
+
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -145,16 +178,26 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		</Section>
 
 		<Section title='Projects' subtitle='(open source)'>
-			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
-				<ProjectCard
-					href='https://greasyfork.org/zh-CN/users/904256-kazoottt-wang'
-					heading='油猴脚本合集'
-					subheading='收录了我开发的一些油猴脚本'
-					imagePath='/src/assets/greasyFork.png'
-					altText='greasyFork'
-					class='w-full sm:w-1/2'
-					target='_blank'
-				/>
+			<div class='grid grid-cols-1 sm:grid-cols-2 gap-3'>
+				{projects.map((project) => (
+					<ProjectCard
+						href={project.url}
+						heading={project.title}
+						subheading={project.description}
+						imagePath={project.imagePath}
+						altText={project.altText}
+						target={project.isExternal ? '_blank' : undefined}
+					/>
+				))}
+			</div>
+			<div class="flex justify-end mt-4">
+				<a 
+					href={`/categories/${encodeURIComponent('项目-已结项')}`}
+					class="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-x-1"
+				>
+					查看更多项目
+					<Icon name="link" class="w-4 h-4" />
+				</a>
 			</div>
 		</Section>
 	</div>

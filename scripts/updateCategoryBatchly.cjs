@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 
 const contentDir = path.join(__dirname, '../src/content/post')
-const USE_FULL_PATH = process.env.USE_FULL_PATH === 'true'
+const USE_FULL_PATH = true
 
 function processDirectory(dir) {
 	fs.readdirSync(dir).forEach((item) => {

@@ -12,7 +12,7 @@ slug: >-
   alpine-slim-stretch-bookworm-bullseye-buster-jessie-which-docker-image-should-i-choose
 description: >-
   本文讨论了在选择Docker镜像时，如何根据不同的需求和环境选择合适的镜像，如Alpine、Slim、Bookworm、Bullseye、Stretch、Jessie等。文章详细解释了这些镜像的特点，包括它们的基础操作系统、大小、安全性和适用场景。同时，作者提供了一些实用的建议，帮助读者根据项目需求和环境限制，选择最合适的Docker镜像。此外，文章还强调了在生产环境中遵循安全最佳实践的重要性，并提供了比较不同Docker镜像大小的方法。
-category: 阅读笔记
+category: 阅读笔记-阅读和翻译
 ---
 
 # **【译】Alpine、Slim、Bookworm、Bullseye、Stretch、Jessie - 我应该选择哪个 Docker Image？**

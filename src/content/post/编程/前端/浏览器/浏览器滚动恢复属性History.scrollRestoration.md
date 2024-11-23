@@ -17,7 +17,7 @@ link-notionnext: >-
   https://kazoottt.notion.site/History-scrollRestoration-7dc1306483254aa3bf455450c89e0223
 rinId: 21
 finished: true
-category: 编程
+category: 编程-前端-浏览器
 ---
 
 ## 后续 2024-05-23

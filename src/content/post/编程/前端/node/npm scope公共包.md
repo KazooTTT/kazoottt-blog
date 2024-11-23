@@ -11,7 +11,7 @@ description: >-
   在package.json文件中添加"publishConfig"字段，设置"access"为"public"，或者在发布时使用命令`npm publish
   --access=public`，以确保包的访问权限为公开。
 rinId: 72
-category: 编程
+category: 编程-前端-node
 ---
 
 # Npm Scope公共包

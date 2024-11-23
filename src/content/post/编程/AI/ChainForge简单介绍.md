@@ -10,7 +10,7 @@ tags:
   - 工具
 finished: true
 published: true
-category: 编程
+category: 编程-AI
 slug: chainforge-intro
 description: >-
   ChainForge is a visual programming environment designed for prompt

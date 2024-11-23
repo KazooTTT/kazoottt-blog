@@ -8,7 +8,7 @@ finished: true
 published: true
 description: null
 slug: cursorgit-commit-msg
-category: 编程
+category: 编程-git
 ---
 
 原文参考：

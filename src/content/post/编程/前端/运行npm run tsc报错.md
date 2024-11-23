@@ -8,7 +8,7 @@ finished: true
 published: true
 description: null
 slug: npm-run-tsc
-category: 编程
+category: 编程-前端
 ---
 
 ## 错误现象

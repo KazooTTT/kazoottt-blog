@@ -14,7 +14,7 @@ description: >-
   closed”。错误发生在getFansNum函数中，具体是由于TLS连接的另一端关闭导致的。解决此问题的方法是关闭MitM（中间人攻击）工具，这通常用于拦截和修改网络通信，可能会导致不正常的连接关闭。
 rinId: 15
 finished: true
-category: 编程
+category: 编程-前端
 ---
 
 # Fetch 报错

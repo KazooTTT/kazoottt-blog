@@ -7,7 +7,7 @@ status: Published
 tags: null
 finished: true
 published: true
-category: 编程
+category: 编程-vtk.js
 slug: in-vtkjs-stl-and-json-are-converted-to-each-other
 description: ''
 noteId_x: 15
