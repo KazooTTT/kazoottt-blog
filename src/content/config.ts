@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content'
 
-function removeDupsAndLowerCase(array: string[]) {
-	if (!array.length) return array
+function removeDupsAndLowerCase(array: string[] | null) {
+	if (!array?.length) return []
 	const lowercaseItems = array.map((str) => str.toLowerCase())
 	const distinctItems = new Set(lowercaseItems)
 	return Array.from(distinctItems)
