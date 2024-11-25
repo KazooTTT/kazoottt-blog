@@ -10,16 +10,45 @@ const {
 } = Astro.props
 ---
 
-<li class={`${depth > 2 ? 'ms-2' : ''}`}>
-	<a
-		aria-label={`Scroll to section: ${text}`}
-		class={`block line-clamp-2 ${depth <= 2 ? 'mt-2' : 'mt-1 text-sm'} text-foreground/75 transition-all hover:text-foreground toc-link`}
-		href={`#${slug}`}
-		data-slug={slug}>{text}</a
-	>
+<li>
+	<div class='flex items-center gap-1'>
+		{
+			subheadings.length > 0 && (
+				<button
+					class='collapse-button flex h-4 w-4 items-center justify-center rounded-sm hover:bg-accent/50'
+					aria-label='Toggle section'
+					data-slug={slug}
+				>
+					<svg
+						class='h-3 w-3 transform transition-transform duration-200'
+						xmlns='http://www.w3.org/2000/svg'
+						viewBox='0 0 24 24'
+						fill='none'
+						stroke='currentColor'
+						stroke-width='2'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+					>
+						<polyline points='6 9 12 15 18 9' />
+					</svg>
+				</button>
+			)
+		}
+		<a
+			aria-label={`Scroll to section: ${text}`}
+			class={`line-clamp-2 hover:text-foreground toc-link flex-1
+				${depth === 1 ? 'text-base font-semibold' : depth === 2 ? 'text-base' : 'text-sm'} 
+				text-foreground/75 transition-all`}
+			href={`#${slug}`}
+			data-slug={slug}>{text}</a
+		>
+	</div>
 	{
 		!!subheadings.length && (
-			<ul>
+			<ul
+				class='toc-list ms-6 overflow-hidden transition-all duration-300 ease-in-out'
+				style='max-height: none;'
+			>
 				{subheadings.map((subheading) => (
 					<Astro.self heading={subheading} />
 				))}
@@ -30,6 +59,32 @@ const {
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
+		// Collapse/Expand functionality
+		const buttons = document.querySelectorAll('.collapse-button')
+
+		buttons.forEach((button) => {
+			button.addEventListener('click', (e) => {
+				e.preventDefault()
+				const btn = e.currentTarget as HTMLElement
+				const li = btn.closest('li')
+				const ul = li?.querySelector('.toc-list') as HTMLElement
+				const svg = btn.querySelector('svg')
+
+				if (ul && svg) {
+					if (ul.style.maxHeight === '0px') {
+						// Expand
+						ul.style.maxHeight = ul.scrollHeight + 'px'
+						svg.style.transform = ''
+					} else {
+						// Collapse
+						ul.style.maxHeight = '0px'
+						svg.style.transform = 'rotate(-180deg)'
+					}
+				}
+			})
+		})
+
+		// Smooth scrolling with offset
 		const tocLinks = document.querySelectorAll('.toc-link')
 		tocLinks.forEach((link) => {
 			link.addEventListener('click', (event) => {
@@ -38,10 +93,60 @@ const {
 				if (slug) {
 					const element = document.getElementById(slug)
 					if (element) {
-						element.scrollIntoView({ behavior: 'smooth' })
+						const offset = 80 // Adjust this value based on header height
+						const elementPosition = element.getBoundingClientRect().top
+						const offsetPosition = elementPosition + window.pageYOffset - offset
+
+						window.scrollTo({
+							top: offsetPosition,
+							behavior: 'smooth'
+						})
 					}
 				}
 			})
 		})
+
+		// Active menu highlighting
+		const observerOptions = {
+			rootMargin: '-80px 0px -40% 0px',
+			threshold: 1.0
+		}
+
+		const headings = Array.from(
+			document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]')
+		)
+		const headingElements = new Map()
+
+		headings.forEach((heading) => {
+			const id = heading.getAttribute('id')!
+			const tocLink = document.querySelector(`.toc-link[data-slug="${id}"]`)
+			if (tocLink) {
+				headingElements.set(heading, tocLink)
+			}
+		})
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				const tocLink = headingElements.get(entry.target)
+				if (tocLink) {
+					if (entry.isIntersecting) {
+						// Remove active class from all links
+						document.querySelectorAll('.toc-link').forEach((link) => {
+							link.classList.remove('active', 'text-foreground')
+						})
+						// Add active class to current link
+						tocLink.classList.add('active', 'text-foreground')
+					}
+				}
+			})
+		}, observerOptions)
+
+		headings.forEach((heading) => observer.observe(heading))
 	})
 </script>
+
+<style>
+	.toc-link.active {
+		font-weight: 600;
+	}
+</style>
