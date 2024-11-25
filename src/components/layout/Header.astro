@@ -71,6 +71,13 @@ import { Image } from 'astro:assets'
 					>
 						Tags
 					</a>
+					<a
+						href='/diary'
+						class={`block px-6 py-3 text-[1.05rem] font-medium transition-colors hover:bg-gray-100  ${Astro.url.pathname.startsWith('/diary') ? 'text-green-400' : ''} dark:hover:bg-gray-700`}
+						aria-label='Diary Page'
+					>
+						Diary
+					</a>
 				</div>
 			</div>
 			<a

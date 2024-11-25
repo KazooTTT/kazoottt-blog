@@ -6,10 +6,11 @@ import FormattedDate from '../FormattedDate.astro'
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<'post'>
+	prefix?: string
 	withDesc?: boolean
 }
 
-const { as: Tag = 'div', post, withDesc = false } = Astro.props
+const { as: Tag = 'div', post, prefix = '/blog/', withDesc = false } = Astro.props
 const postDate = post.data.date
 ---
 
@@ -20,7 +21,7 @@ const postDate = post.data.date
 		{post.data.draft && <span class='text-red-500'>(Draft) </span>}
 		<a
 			data-astro-prefetch
-			href={`/blog/${post.slug}/`}
+			href={`${prefix}${post.slug}/`}
 			class='transition-all hover:text-muted-foreground'
 		>
 			{post.data.title}

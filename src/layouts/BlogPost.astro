@@ -8,9 +8,11 @@ import PageLayout from './BaseLayout.astro'
 
 interface Props {
 	post: CollectionEntry<'post'>
+	simple?: boolean
+	backHref: string
 }
 
-const { post } = Astro.props
+const { post, simple = false, backHref = '/blog' } = Astro.props
 const {
 	data: { description, ogImage, title, date },
 	slug
@@ -23,7 +25,7 @@ const { headings } = await post.render()
 
 <PageLayout meta={{ articleDate, description: description ?? '', ogImage: socialImage, title }}>
 	<div class='w-full'>
-		<Button title='Back' href='/blog' style='button'>
+		<Button title='Back' href={backHref} style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -42,7 +44,7 @@ const { headings } = await post.render()
 			{!!headings.length && <TOC headings={headings} />}
 			<article class='flex-1 flex-grow break-words' data-pagefind-body>
 				<div id='blog-hero'>
-					<BlogHero content={post} />
+					<BlogHero content={post} simple={simple} />
 				</div>
 				<div
 					id='blog-gallery'

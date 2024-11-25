@@ -7,7 +7,9 @@ export {
 	getUniqueTagsWithCount,
 	getAllCategories,
 	getUniqueCategories,
-	getUniqueCategoriesWithCount
+	getUniqueCategoriesWithCount,
+	getallDiaries,
+	getallDiariesSorted
 } from './post'
 export { getFormattedDate } from './date'
 export { generateToc } from './generateToc'

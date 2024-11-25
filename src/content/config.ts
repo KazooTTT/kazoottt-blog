@@ -11,7 +11,7 @@ const post = defineCollection({
 	type: 'content',
 	schema: () =>
 		z.object({
-			title: z.string(),
+			title: z.string().optional(),
 			description: z.string().optional().nullable(),
 			date: z.union([
 				z.string(),

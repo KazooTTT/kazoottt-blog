@@ -4,12 +4,22 @@ import { getCollection } from 'astro:content'
 /** Note: this function filters out draft posts based on the environment */
 export async function getAllPosts() {
 	return await getCollection('post', ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true
+		return !data.draft && !data.category?.startsWith('日记-20')
 	})
 }
 
 export async function getAllSortedPosts() {
 	return sortMDByDate(await getAllPosts())
+}
+
+export const getallDiaries = async () => {
+	return await getCollection('post', ({ data }) => {
+		return !data.draft && data.category?.startsWith('日记-20')
+	})
+}
+
+export const getallDiariesSorted = async () => {
+	return sortMDByDate(await getallDiaries())
 }
 
 export function sortMDByDate(posts: Array<CollectionEntry<'post'>>) {
