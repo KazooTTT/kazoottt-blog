@@ -5,7 +5,7 @@ import { Image } from 'astro:assets'
 
 <header class='fixed left-0 right-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-800'>
 	<nav
-		class='mx-auto flex w-full items-center justify-between px-4 py-3 sm:flex sm:w-3/5 sm:items-center'
+		class='mx-auto flex w-full items-center justify-between px-4 py-3 sm:flex sm:w-3/5 sm:items-center lg:w-4/5'
 		aria-label='global'
 	>
 		<a class='flex items-center' href='/'>
@@ -37,47 +37,50 @@ import { Image } from 'astro:assets'
 
 		<!-- Desktop Navigation -->
 		<div class='hidden flex-row items-center justify-center gap-x-7 sm:flex'>
-			<a
-				href='/blog'
-				class={`
-					flex-none text-[1.05rem] font-medium hover:text-foreground/75
-					${Astro.url.pathname.startsWith('/blog') ? 'text-green-400' : ''}
-				`}
-				aria-label='Nav Menu Item'
-				>Blog
-			</a>
-			<a
-				href='/categories'
-				class={`
-					flex-none text-[1.05rem] font-medium hover:text-foreground/75
-					${Astro.url.pathname.startsWith('/categories') ? 'text-green-400' : ''}
-				`}
-				aria-label='Nav Menu Item'
-				>Cats.
-			</a>
-			<a
-				href='/tags'
-				class={`
-					flex-none text-[1.05rem] font-medium hover:text-foreground/75
-					${Astro.url.pathname.startsWith('/tags') ? 'text-green-400' : ''}
-				`}
-				aria-label='Nav Menu Item'
-				>Tags
-			</a>
+			<div class='relative'>
+				<a
+					href='/blog'
+					class={`peer flex items-center text-[1.05rem] font-medium  ${Astro.url.pathname.startsWith('/blog') ? 'text-green-400' : ''}`}
+					aria-label='Blog Menu'
+				>
+					Blog
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='20'
+						height='20'
+						viewBox='0 0 24 24'
+						class='ml-1 transform transition-transform duration-200 peer-hover:rotate-180'
+					>
+						<path fill='currentColor' d='m12 15l-5-5h10z'></path>
+					</svg>
+				</a>
+				<div
+					class='invisible absolute left-0 mt-2 w-48 rounded-md bg-white py-2 opacity-0 shadow-lg transition-all duration-200 hover:visible hover:opacity-100 peer-hover:visible peer-hover:opacity-100 dark:bg-gray-800'
+				>
+					<a
+						href='/categories'
+						class={`block px-6 py-3 text-[1.05rem] font-medium transition-colors hover:bg-gray-100  ${Astro.url.pathname.startsWith('/categories') ? 'text-green-400' : ''} dark:hover:bg-gray-700`}
+						aria-label='Categories Page'
+					>
+						Categories
+					</a>
+					<a
+						href='/tags'
+						class={`block px-6 py-3 text-[1.05rem] font-medium transition-colors hover:bg-gray-100  ${Astro.url.pathname.startsWith('/tags') ? 'text-green-400' : ''} dark:hover:bg-gray-700`}
+						aria-label='Tags Page'
+					>
+						Tags
+					</a>
+				</div>
+			</div>
 			<a
 				href='/tools'
-				class={`
-					flex-none text-[1.05rem] font-medium hover:text-foreground/75
-					${Astro.url.pathname.startsWith('/tools') ? 'text-green-400' : ''}
-				`}
+				class={`flex-none text-[1.05rem] font-medium  ${Astro.url.pathname.startsWith('/tools') ? 'text-green-400' : ''}`}
 				aria-label='Nav Menu Item'
 				>Tools
 			</a>
 			<div class='relative'>
-				<button
-					class='peer flex items-center text-[1.05rem] font-medium hover:text-foreground/75'
-					aria-label='More Menu'
-				>
+				<button class='peer flex items-center text-[1.05rem] font-medium' aria-label='More Menu'>
 					More
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -94,7 +97,7 @@ import { Image } from 'astro:assets'
 				>
 					<a
 						href='/friends'
-						class='block px-6 py-3 text-[1.05rem] font-medium transition-colors hover:bg-gray-100 hover:text-foreground/75 dark:hover:bg-gray-700'
+						class={`block px-6 py-3 text-[1.05rem] font-medium transition-colors hover:bg-gray-100  ${Astro.url.pathname.startsWith('/friends') ? 'text-green-400' : ''} dark:hover:bg-gray-700`}
 						aria-label='Friends Page'
 					>
 						Friends
@@ -135,51 +138,36 @@ import { Image } from 'astro:assets'
 		<!-- Mobile Navigation -->
 		<div
 			id='mobileMenu'
-			class='fixed inset-x-0 top-[72px] hidden rounded-b-lg bg-white shadow-lg dark:bg-gray-800 sm:hidden z-50 max-h-[calc(100vh-72px)] overflow-y-auto'
+			class='fixed inset-x-0 top-[72px] z-50 hidden max-h-[calc(100vh-72px)] overflow-y-auto rounded-b-lg bg-white shadow-lg dark:bg-gray-800 sm:hidden'
 		>
 			<div class='space-y-2 px-4 py-2'>
 				<a
 					href='/blog'
-					class={`
-						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
-						${Astro.url.pathname.startsWith('/blog') ? 'text-green-400' : ''}
-					`}
+					class={`block py-2 text-[1.05rem] font-medium  ${Astro.url.pathname.startsWith('/blog') ? 'text-green-400' : ''}`}
 				>
 					Blog
 				</a>
 				<a
 					href='/categories'
-					class={`
-						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
-						${Astro.url.pathname.startsWith('/categories') ? 'text-green-400' : ''}
-					`}
+					class={`block py-2 text-[1.05rem] font-medium  ${Astro.url.pathname.startsWith('/categories') ? 'text-green-400' : ''}`}
 				>
 					Cats.
 				</a>
 				<a
 					href='/tags'
-					class={`
-						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
-						${Astro.url.pathname.startsWith('/tags') ? 'text-green-400' : ''}
-					`}
+					class={`block py-2 text-[1.05rem] font-medium  ${Astro.url.pathname.startsWith('/tags') ? 'text-green-400' : ''}`}
 				>
 					Tags
 				</a>
 				<a
 					href='/tools'
-					class={`
-						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
-						${Astro.url.pathname.startsWith('/tools') ? 'text-green-400' : ''}
-					`}
+					class={`block py-2 text-[1.05rem] font-medium  ${Astro.url.pathname.startsWith('/tools') ? 'text-green-400' : ''}`}
 				>
 					Tools
 				</a>
 				<a
 					href='/friends'
-					class={`
-						block py-2 text-[1.05rem] font-medium hover:text-foreground/75
-						${Astro.url.pathname.startsWith('/friends') ? 'text-green-400' : ''}
-					`}
+					class={`block py-2 text-[1.05rem] font-medium  ${Astro.url.pathname.startsWith('/friends') ? 'text-green-400' : ''}`}
 				>
 					Friends
 				</a>
