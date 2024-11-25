@@ -5,7 +5,6 @@ import BlogHero from '@/components/blog/Hero.astro'
 import TOC from '@/components/blog/TOC.astro'
 import Button from '@/components/Button.astro'
 import PageLayout from './BaseLayout.astro'
-import PageViews from '@/components/PageViews'
 
 interface Props {
 	post: CollectionEntry<'post'>
@@ -44,9 +43,6 @@ const { headings } = await post.render()
 			<article class='flex-1 flex-grow break-words' data-pagefind-body>
 				<div id='blog-hero'>
 					<BlogHero content={post} />
-					<div class="mt-2">
-						<PageViews client:load slug={slug} />
-					</div>
 				</div>
 				<div
 					id='blog-gallery'

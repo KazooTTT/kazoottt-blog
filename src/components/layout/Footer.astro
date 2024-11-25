@@ -3,9 +3,7 @@ import { Icon } from 'astro-icon/components'
 import PageViews from '../PageViews'
 
 const pathname = new URL(Astro.request.url).pathname
-const isBlogPost = pathname.startsWith('/blog/') && pathname !== '/blog'
 const slug = pathname === '/' ? 'home' : pathname.replace(/^\/|\/$/g, '')
-console.log('Slug:', slug)
 ---
 
 <footer class='mx-auto mt-24 w-full'>
@@ -17,18 +15,12 @@ console.log('Slug:', slug)
 				<p class=''>2024 kazoottt. All rights reserved.</p>
 			</div>
 
-		
-
 			<div class='flex items-center justify-between'>
 				<!-- Social Brands -->
 				<div class='flex items-center gap-x-4'>
-					{
-						!isBlogPost && (
-							<div class='text-center'>
-								<PageViews client:load slug={slug} />
-							</div>
-						)
-					}
+					<div class='text-center'>
+						<PageViews client:load slug={slug} />
+					</div>
 					<!-- Linkedin -->
 					<a
 						class='inline-block text-muted-foreground transition-all hover:text-muted-foreground/75'
