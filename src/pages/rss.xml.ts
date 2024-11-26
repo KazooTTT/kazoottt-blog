@@ -27,6 +27,10 @@ export async function GET(context: APIContext) {
 		title: siteConfig.title,
 		description: siteConfig.description,
 		site: context.site!,
+		customData: `<follow_challenge>
+    <feedId>75113012474671104</feedId>
+    <userId>62156866798228480</userId>
+</follow_challenge>`,
 		items: sortedPosts.map((post) => {
 			const prefix = post.frontmatter.category?.startsWith('日记-20') ? '/dairy/' : '/blog/'
 			return {
