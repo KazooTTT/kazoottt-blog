@@ -11,15 +11,15 @@ const post = defineCollection({
 	type: 'content',
 	schema: () =>
 		z.object({
-			title: z.string().optional(),
+			title: z.string(),
 			description: z.string().optional().nullable(),
-			date: z.union([
-				z.string(),
-				z.date()
-			]).transform((val) => new Date(val)),
+			date: z.union([z.string(), z.date()]).transform((val) => new Date(val)),
 			coverImage: z.string().optional(),
 			draft: z.boolean().default(false),
-			tags: z.union([z.array(z.string()), z.null()]).default([]).transform(removeDupsAndLowerCase),
+			tags: z
+				.union([z.array(z.string()), z.null()])
+				.default([])
+				.transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
 			category: z.string().optional().nullable(),
 			finished: z.boolean().default(false),
