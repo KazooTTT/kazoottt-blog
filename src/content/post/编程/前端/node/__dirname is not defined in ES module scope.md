@@ -1,6 +1,6 @@
 ---
 title: __dirname is not defined in ES module scope
-date: 2024-05-29T00:00:00.000Z
+date: 2024-05-29
 author: KazooTTT
 type: Post
 status: Published

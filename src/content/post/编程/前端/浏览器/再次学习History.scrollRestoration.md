@@ -1,6 +1,6 @@
 ---
 title: 再次学习History.scrollRestoration
-date: 2024-05-23T00:00:00.000Z
+date: 2024-05-23
 author: KazooTTT
 type: Post
 status: Published

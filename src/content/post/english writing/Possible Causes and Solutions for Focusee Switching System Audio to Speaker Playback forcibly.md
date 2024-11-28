@@ -2,7 +2,7 @@
 title: >-
   Possible Causes and Solutions for Focusee Switching System Audio to Speaker
   Playback forcibly
-date: 2024-05-25T00:00:00.000Z
+date: 2024-05-25
 author: KazooTTT
 type: Post
 status: Draft

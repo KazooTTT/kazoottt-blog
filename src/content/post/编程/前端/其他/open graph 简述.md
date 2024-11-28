@@ -1,6 +1,6 @@
 ---
 title: open graph简述
-date: 2024-04-09T00:00:00.000Z
+date: 2024-04-09
 author: KazooTTT
 tags: []
 finished: true

@@ -1,6 +1,6 @@
 ---
 title: focusee录制系统声音被强制切换为扬声器播放的可能原因和解决方法
-date: 2024-05-25T00:00:00.000Z
+date: 2024-05-25
 author: KazooTTT
 type: Post
 status: Published

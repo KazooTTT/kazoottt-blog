@@ -1,6 +1,6 @@
 ---
 title: 在vtk.js中stl和json的互相转化
-date: 2024-11-22T00:00:00.000Z
+date: 2024-11-22
 author: KazooTTT
 type: Post
 status: Published

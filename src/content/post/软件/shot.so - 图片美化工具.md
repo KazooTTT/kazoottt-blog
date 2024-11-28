@@ -1,6 +1,6 @@
 ---
 title: shot.so
-date: 2023-09-17T00:00:00.000Z
+date: 2023-09-17
 author: KazooTTT
 tags:
   - 软件推荐

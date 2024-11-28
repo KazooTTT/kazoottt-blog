@@ -1,13 +1,12 @@
 ---
-title: Can Brain Science Help Us Break Bad Habits?
 slug: can-brain-science-help-us-break-bad-habits
 published: true
 tags:
   - 摘抄
-description: >-
-  研究表明，通过调整环境来隐藏诱惑，可以有效提高自控力。一项实验发现，当孩子们看不到面前的棉花糖时，他们能坚持的时间比看到棉花糖时更长。这表明自控力并非仅是个人内在品质，而是受环境影响的。因此，通过微调环境，我们或许能模仿那些看起来更有自制力的人。
+description: 研究表明，通过调整环境来隐藏诱惑，可以有效提高自控力。一项实验发现，当孩子们看不到面前的棉花糖时，他们能坚持的时间比看到棉花糖时更长。这表明自控力并非仅是个人内在品质，而是受环境影响的。因此，通过微调环境，我们或许能模仿那些看起来更有自制力的人。
 category: 阅读笔记-阅读和翻译
 date: 2024-01-07
+title: Can Brain Science Help Us Break Bad Habits
 ---
 
 # Can Brain Science Help Us Break Bad Habits?

@@ -1,6 +1,6 @@
 ---
 title: fetch 报错排查 SocketError other side closed
-date: 2024-02-03T00:00:00.000Z
+date: 2024-02-03
 author: KazooTTT
 tags:
   - 网络

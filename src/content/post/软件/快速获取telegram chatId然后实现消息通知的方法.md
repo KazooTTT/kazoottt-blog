@@ -1,6 +1,6 @@
 ---
 title: 快速获取telegram chatId然后实现消息通知的方法
-date: 2023-09-14T00:00:00.000Z
+date: 2023-09-14
 author: KazooTTT
 tags:
   - telegram

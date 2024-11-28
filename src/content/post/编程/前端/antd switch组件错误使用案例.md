@@ -1,6 +1,6 @@
 ---
 title: antd switch组件错误使用案例
-date: 2024-10-12T00:00:00.000Z
+date: 2024-10-12
 author: KazooTTT
 tags:
   - bug

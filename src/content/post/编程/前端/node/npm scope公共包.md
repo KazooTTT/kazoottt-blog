@@ -1,6 +1,6 @@
 ---
 title: npm scope公共包
-date: 2024-02-18T00:00:00.000Z
+date: 2024-02-18
 author: KazooTTT
 tags:
   - npm

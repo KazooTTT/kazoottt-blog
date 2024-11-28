@@ -1,6 +1,6 @@
 ---
 title: 对于a标签的download属性
-date: 2024-10-15T00:00:00.000Z
+date: 2024-10-15
 author: KazooTTT
 type: Post
 status: Published
@@ -24,7 +24,7 @@ description: download属性是如何定义的以及注意事项。 不能设置�
 
 如何定义没有值？
 
-`<a download> ` 或者 `<a download="">`
+`<a download>` 或者 `<a download="">`
 
 ---
 

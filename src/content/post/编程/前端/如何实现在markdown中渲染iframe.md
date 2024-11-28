@@ -1,6 +1,6 @@
 ---
 title: 如何实现在markdown中渲染iframe
-date: 2024-04-01T00:00:00.000Z
+date: 2024-04-01
 author: KazooTTT
 tags: []
 finished: true

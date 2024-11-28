@@ -1,6 +1,6 @@
 ---
 title: 使用cursor生成git commit msg
-date: 2024-11-12T00:00:00.000Z
+date: 2024-11-12
 author: KazooTTT
 tags:
   - 笔记
@@ -38,7 +38,7 @@ category: 编程-git
 
 ---
 
-我是这样，在暂存前使用 command 
+我是这样，在暂存前使用 command
 
 [x.com](https://x.com/FaiChou_zh/status/1855775123271459192)
 

@@ -1,6 +1,6 @@
 ---
 title: npm发包失败的原因
-date: 2024-02-18T00:00:00.000Z
+date: 2024-02-18
 author: KazooTTT
 tags:
   - npm
@@ -17,7 +17,7 @@ category: 编程-前端-node
 
 # Npm发包失败的原因
 
-## 可能的原因：
+## 可能的原因
 
 1. 当前的账号没有发包权限。（比如没有某个包或者某个scope的权限）
 2. 当前的包名不符合规范。（需要URL-safe characters）

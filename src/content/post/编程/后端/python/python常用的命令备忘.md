@@ -1,6 +1,6 @@
 ---
 title: python常用的命令备忘
-date: 2024-03-27T00:00:00.000Z
+date: 2024-03-27
 author: KazooTTT
 tags: []
 finished: false

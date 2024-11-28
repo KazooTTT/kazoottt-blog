@@ -8,7 +8,7 @@ description: >-
   v2的详细解析，为学习和研究Web3提供了丰富的资料。
 rinId: 13
 finished: true
-date: 2024-02-07T00:00:00.000Z
+date: 2024-02-07
 category: 编程-web3
 tags:
   - 比特币

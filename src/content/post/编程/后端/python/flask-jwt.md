@@ -1,14 +1,22 @@
 ---
 slug: flask-jwt
 published: true
-description: 本文对比了几个Flask可用的JWT库，包括flask-jwt-extended、Flask-JWT和jwt，根据PyPI下载量和Star量，选择使用最广泛的flask-jwt-extended。文章介绍了在父页面通过iframe嵌入子页面时，如何在子页面中验证和使用JWT token，包括页面级别和接口级别的token验证。同时，提供了安装flask-jwt-extended的命令，并建议参考官方文档进行详细配置。
+description: >-
+  本文对比了几个Flask可用的JWT库，包括flask-jwt-extended、Flask-JWT和jwt，根据PyPI下载量和Star量，选择使用最广泛的flask-jwt-extended。文章介绍了在父页面通过iframe嵌入子页面时，如何在子页面中验证和使用JWT
+  token，包括页面级别和接口级别的token验证。同时，提供了安装flask-jwt-extended的命令，并建议参考官方文档进行详细配置。
 category: 编程-后端-python
 title: flask-jwt
 date: 2024-09-10
 author: KazooTTT
 type: Post
 status: Published
-tags: 
+tags:
+  - flask-jwt
+  - flaskjwt扩展
+  - token验证
+  - iframe嵌入
+  - 接口鉴权
+  - 装饰器
 finished: false
 ---
 

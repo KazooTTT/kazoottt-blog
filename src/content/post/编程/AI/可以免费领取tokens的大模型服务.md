@@ -1,6 +1,6 @@
 ---
 title: 可以免费领取tokens的大模型服务
-date: 2024-06-20T00:00:00.000Z
+date: 2024-06-20
 author: KazooTTT
 type: Post
 status: Published

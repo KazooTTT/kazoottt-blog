@@ -1,6 +1,6 @@
 ---
 title: 如何清空dns缓存
-date: 2024-02-26T00:00:00.000Z
+date: 2024-02-26
 author: KazooTTT
 tags:
   - dns
@@ -32,7 +32,7 @@ mac如何获取自己的ip
 ifconfig
 ```
 
-## windows 
+## windows
 
 ``` shell
 ipconfig /flushdns

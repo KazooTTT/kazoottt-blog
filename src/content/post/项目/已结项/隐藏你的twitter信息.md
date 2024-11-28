@@ -1,6 +1,6 @@
 ---
 title: 油猴脚本-隐藏你的twitter信息
-date: 2023-03-16T00:00:00.000Z
+date: 2023-03-16
 author: KazooTTT
 tags:
   - 油猴脚本

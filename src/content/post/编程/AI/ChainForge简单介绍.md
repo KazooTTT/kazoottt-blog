@@ -1,6 +1,6 @@
 ---
 title: ChainForge简单介绍
-date: 2024-05-22T00:00:00.000Z
+date: 2024-05-22
 author: KazooTTT
 type: Post
 status: Published
@@ -64,7 +64,7 @@ github地址：
 ## TODO
 
 1. 内部环境运行
-2. 内网环境proxy [Add Custom Providers - ChainForge Documentation](https://chainforge.ai/docs/custom_providers/ 提供了自定义llm
+2. 内网环境proxy [Add Custom Providers - ChainForge Documentation](<https://chainforge.ai/docs/custom_providers/> 提供了自定义llm
 
 ## 参考
 

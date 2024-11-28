@@ -1,6 +1,6 @@
 ---
 title: 实现一个auto slugify
-date: 2024-02-20T00:00:00.000Z
+date: 2024-02-20
 author: KazooTTT
 tags:
   - slug

@@ -1,6 +1,6 @@
 ---
 title: 禁止antd modal按下esc关闭弹窗
-date: 2024-10-15T00:00:00.000Z
+date: 2024-10-15
 author: KazooTTT
 type: Post
 status: Published
