@@ -32,7 +32,7 @@ export async function GET(context: APIContext) {
     <userId>62156866798228480</userId>
 </follow_challenge>`,
 		items: sortedPosts.map((post) => {
-			const prefix = post.frontmatter.category?.startsWith('日记-20') ? '/dairy/' : '/blog/'
+			const prefix = post.frontmatter.category?.startsWith('日记-20') ? '/diary/' : '/blog/'
 			return {
 				title: post.frontmatter.title?.replace(/[\x00-\x1F\x7F-\x9F]/g, '') ?? '',
 				pubDate: new Date(post.frontmatter.date),
