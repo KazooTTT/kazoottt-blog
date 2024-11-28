@@ -8,8 +8,12 @@ description: >-
   v2的详细解析，为学习和研究Web3提供了丰富的资料。
 rinId: 13
 finished: true
-date: 2024-02-07
+date: 2024-02-07T00:00:00.000Z
 category: 编程-web3
+tags:
+  - 比特币
+  - 以太坊
+  - 区块链
 ---
 
 # web3资源收集

@@ -1,6 +1,6 @@
 ---
 title: 对于a标签的download属性
-date: 2024-10-15
+date: 2024-10-15T00:00:00.000Z
 author: KazooTTT
 type: Post
 status: Published
@@ -11,7 +11,7 @@ finished: true
 published: true
 category: 编程-前端
 slug: the-download-attribute-for-the-a-tag
-description:
+description: download属性是如何定义的以及注意事项。 不能设置为null，可以直接设置成空串或者null。
 ---
 
 ## 对于a标签的download属性

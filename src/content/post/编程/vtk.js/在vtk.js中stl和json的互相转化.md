@@ -4,12 +4,20 @@ date: 2024-11-22T00:00:00.000Z
 author: KazooTTT
 type: Post
 status: Published
-tags: null
+tags:
+  - stl
+  - json
+  - vtkjs
+  - 3D模型
+  - 数据转换
 finished: true
 published: true
 category: 编程-vtk.js
 slug: in-vtkjs-stl-and-json-are-converted-to-each-other
-description: ''
+description: >-
+  STL模型可以通过 JavaScript 的 `vtk.js` 库以 JSON 格式进行读写。将 STL 模型读入 JSON 格式的方法是使用
+  `vtkPolyData.toJSON()` 方法，反之，则需要使用 `vtkSTLWriter.newInstance()` 和
+  `writer.getOutputData()` 来生成 STL 模型的文件内容。
 noteId_x: 15
 create_time: '2024/11/22 13:35:36'
 update_time: '2024/11/22 14:40:08'

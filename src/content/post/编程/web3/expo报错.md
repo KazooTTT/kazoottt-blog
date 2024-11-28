@@ -8,8 +8,10 @@ description: >-
   "^0.80.1"。解决此问题的方法是删除node_modules目录，移除该依赖，然后重新安装依赖。
 rinId: 10
 finished: true
-date: 2024-02-07
+date: 2024-02-07T00:00:00.000Z
 category: 编程-web3
+tags:
+  - expo 错误，angular cli，webpack，npm， metro-core
 ---
 
 # Expo 报错

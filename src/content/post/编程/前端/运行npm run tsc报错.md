@@ -6,7 +6,31 @@ tags:
   - bug
 finished: true
 published: true
-description: null
+description: >-
+  npm run lint:js 和 npm run prettier 成功后， however，出现了一个错误，即Missing script
+  "tsc"。这是因为 package.json 中的脚本中没有定义该命令。解决这个问题可以通过在package.json中添加如下内容来实现：
+
+
+  ```
+
+  "scripts": {
+      "tsc": "tsc"
+    },
+  ```
+
+
+  或
+
+
+  ```
+
+  "scripts": {
+      "tsc": "tsc --noEmit"
+    },
+  ```
+
+
+  这两个脚本将为我们提供一个正确的命令，用于执行 TypeScript 编译。
 slug: npm-run-tsc
 category: 编程-前端
 ---

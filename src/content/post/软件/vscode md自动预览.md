@@ -11,9 +11,11 @@ finished: true
 published: true
 category: 软件
 slug: vscode-md
-description: 
+description: >-
+  vscode md自动预览是使用Markdown All In One插件实现的，通过设置Auto Show Preview To
+  Side为true可以快速看到 markdown 文件的预览效果，但这种方式不是很推荐。
 NotionID-notionnext: 12b55568-fd75-81ce-82a3-fdb4a13d1658
-link-notionnext: https://kazoottt.notion.site/vscode-md-12b55568fd7581ce82a3fdb4a13d1658
+link-notionnext: 'https://kazoottt.notion.site/vscode-md-12b55568fd7581ce82a3fdb4a13d1658'
 ---
 
 # vscode md自动预览
