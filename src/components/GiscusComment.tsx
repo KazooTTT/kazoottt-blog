@@ -53,7 +53,7 @@ const GiscusComment = () => {
 				inputPosition='bottom'
 				theme={theme}
 				lang='zh-CN'
-				loading='lazy'
+				loading='eager'
 			/>
 		</div>
 	)
