@@ -8,26 +8,16 @@ import Pagination from '@/components/Paginator.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import Button from '@/components/Button.astro'
-import { getAllPosts, sortMDByDate } from '@/utils'
-import { getCategoriesGroupByName } from 'src/utils/post'
+import { getAllPosts, getUniqueCategories, sortMDByDate } from '@/utils'
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 	const allPosts = await getAllPosts()
 	const allPostsByDate = sortMDByDate(allPosts)
-	const categoriesHierarchy = getCategoriesGroupByName(allPostsByDate)
+	const uniqueCategories = getUniqueCategories(allPostsByDate)
 
-	// Flatten the hierarchy to get all possible category paths
-	const allCategories = categoriesHierarchy.flatMap((category) => {
-		const result = [category.fullCategory]
-		Object.values(category.children).forEach((child) => {
-			result.push(child.fullCategory)
-		})
-		return result
-	})
-
-	return allCategories.flatMap((category) => {
+	return uniqueCategories.flatMap((category) => {
 		const filterPosts = allPostsByDate.filter((post) =>
-			category === '未分类' ? !post.data?.category : post.data.category?.startsWith(category)
+			category === '未分类' ? !post.data.category : post.data.category === category
 		)
 		return paginate(filterPosts, {
 			pageSize: 50,

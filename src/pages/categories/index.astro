@@ -1,22 +1,15 @@
 ---
 import Button from '@/components/Button.astro'
-import type { CategoryHierarchy } from 'src/types'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getAllPosts, getUniqueCategoriesWithCount } from '@/utils'
-import { getCategoriesGroupByName } from 'src/utils/post'
-import CategoriesView from 'src/components/CategoriesView'
 
 const allPosts = await getAllPosts()
 const allCategories = getUniqueCategoriesWithCount(allPosts)
-const allCategoriesHierarchy = getCategoriesGroupByName(allPosts) as CategoryHierarchy[]
 
 const meta = {
 	description: "A list of all the topics I've written about in my posts",
-	title: 'All Categories'
+	title: 'All Categories'	
 }
-
-// Default to tree view
-const defaultViewMode = 'tree'
 ---
 
 <PageLayout meta={meta}>
@@ -36,11 +29,30 @@ const defaultViewMode = 'tree'
 				</path>
 			</svg>
 		</Button>
-		<CategoriesView
-			client:load
-			allCategories={allCategories}
-			allCategoriesHierarchy={allCategoriesHierarchy}
-			defaultViewMode={defaultViewMode}
-		/>
+
+		<h1 class='mb-6 mt-5 text-2xl font-bold'>Categories</h1>
+		{allCategories.length === 0 && <p>No posts yet.</p>}
+
+		{
+			allCategories.length > 0 && (
+				<ul class='flex flex-col gap-y-3'>
+					{allCategories.map(([category, val]) => (
+						<li class='flex items-center gap-x-2 '>
+							<a
+								class='inline-block underline underline-offset-4 hover:text-foreground/75'
+								data-astro-prefetch
+								href={`/categories/${category}/`}
+								title={`View posts of the Category: ${category}`}
+							>
+								&#35;{category}
+							</a>
+							<span class='inline-block'>
+								- {val} post{val > 1 && 's'}
+							</span>
+						</li>
+					))}
+				</ul>
+			)
+		}
 	</div>
 </PageLayout>
