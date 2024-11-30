@@ -23,3 +23,11 @@ export type SiteMeta = {
 	ogImage?: string | undefined
 	articleDate?: string | undefined
 }
+
+
+export interface CategoryHierarchy {
+	category: string
+	fullCategory: string
+	children: Record<string, CategoryHierarchy>
+	count: number
+}

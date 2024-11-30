@@ -8,20 +8,25 @@ import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import { getAllPosts, getUniqueCategories, getUniqueTags, sortMDByDate } from '@/utils'
+import {
+	getAllPosts,
+	getUniqueCategoriesWithCount,
+	getUniqueTagsWithCount,
+	sortMDByDate
+} from '@/utils'
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts()
 	const allPostsByDate = sortMDByDate(allPosts)
-	const uniqueTags = getUniqueTags(allPosts)
-	const uniqueCategories = getUniqueCategories(allPosts)
+	const uniqueTags = getUniqueTagsWithCount(allPosts)
+	const uniqueCategories = getUniqueCategoriesWithCount(allPosts)
 	return paginate(allPostsByDate, { pageSize: 50, props: { uniqueTags, uniqueCategories } })
 }) satisfies GetStaticPaths
 
 interface Props {
 	page: Page<CollectionEntry<'post'>>
-	uniqueTags: string[]
-	uniqueCategories: string[]
+	uniqueTags: Array<[string, number]>
+	uniqueCategories: Array<[string, number]>
 }
 
 const { page, uniqueTags, uniqueCategories } = Astro.props
@@ -104,7 +109,11 @@ const paginationProps = {
 								<ul class='text-bgColor flex flex-wrap gap-2'>
 									{uniqueCategories.slice(0, 6).map((category) => (
 										<li>
-											<Button title={category} href={`/categories/${category}/`} style='pill' />
+											<Button
+												title={category[0]}
+												href={`/categories/${category[0]}/`}
+												style='pill'
+											/>
 										</li>
 									))}
 								</ul>
@@ -145,7 +154,7 @@ const paginationProps = {
 								<ul class='text-bgColor flex flex-wrap gap-2'>
 									{uniqueTags.slice(0, 6).map((tag) => (
 										<li>
-											<Button title={tag} href={`/tags/${tag}/`} style='pill' />
+											<Button title={tag[0]} href={`/tags/${tag[0]}/`} style='pill' />
 										</li>
 									))}
 								</ul>

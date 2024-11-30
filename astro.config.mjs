@@ -30,7 +30,7 @@ export default defineConfig({
 		}
 	}),
 	redirects: {
-		'/articles': {
+		'/article': {
 			status: 301,
 			destination: '/posts'
 		},

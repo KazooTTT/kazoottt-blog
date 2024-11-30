@@ -1,3 +1,4 @@
+import type { CategoryHierarchy } from '@/types'
 import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 
@@ -80,6 +81,83 @@ export function getUniqueCategoriesWithCount(
 			new Map<string, number>()
 		)
 	].sort((a, b) => b[1] - a[1])
+}
+
+export function getCategoriesGroupByName(posts: Array<CollectionEntry<'post'>>): CategoryHierarchy[] {
+	const categories = getUniqueCategoriesWithCount(posts)
+	const hierarchicalCategories: CategoryHierarchy[] = []
+
+	categories.forEach(([fullName, count]) => {
+		const parts = fullName.split('-')
+		let current = hierarchicalCategories
+
+		parts.forEach((part, index) => {
+			// If it's the last part, add count
+			if (index === parts.length - 1) {
+				// Check if category already exists
+				let categoryObj = current.find(cat => cat.category === parts[0])
+
+				if (!categoryObj) {
+					categoryObj = {
+						category: parts[0],
+						fullCategory: parts[0],
+						children: {},
+						count: 0
+					}
+					current.push(categoryObj)
+				}
+
+				// If it's a nested category
+				if (parts.length > 1) {
+					if (!categoryObj.children[part]) {
+						categoryObj.children[part] = {
+							category: part,
+							fullCategory: `${categoryObj.fullCategory}-${part}`,
+							children: {},
+							count
+						}
+					} else {
+						categoryObj.children[part].count = count
+					}
+				} else {
+					// Top-level category
+					categoryObj.count = count
+				}
+			} else {
+				// Ensure top-level category exists
+				let categoryObj = current.find(cat => cat.fullCategory === part)
+				if (!categoryObj) {
+					categoryObj = {
+						category: part,
+						fullCategory: part,
+						children: {},
+						count: 0
+					}
+					current.push(categoryObj)
+				}
+			}
+		})
+	})
+
+	// Calculate total count for each category by summing subcategories
+	hierarchicalCategories.forEach(category => {
+		if (Object.keys(category.children).length > 0) {
+			category.count = Object.values(category.children)
+				.reduce((sum, child) => sum + (child.count || 0), 0)
+		}
+	})
+
+	// Filter out categories with zero count and sort by count
+	return hierarchicalCategories
+		.filter(category => category.count > 0)
+		.map(category => ({
+			...category,
+			children: Object.fromEntries(
+				Object.entries(category.children)
+					.filter(([_, child]) => child.count > 0)
+			)
+		}))
+		.sort((a, b) => b.count - a.count)
 }
 
 export function getIdToSlugMap(posts: Array<CollectionEntry<'post'>>): Record<string, string> {
