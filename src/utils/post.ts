@@ -22,6 +22,14 @@ export const getAllDiariesSorted = async (): Promise<CollectionEntry<'post'>[]> 
 	return sortMDByDate(await getAllDiaries())
 }
 
+
+export const getSortedAllPostsAndDiaries = async (): Promise<CollectionEntry<'post'>[]> => {
+	const posts = await getCollection('post', ({ data }: { data: CollectionEntry<'post'> }) => {
+		return !data.draft
+	})
+	return sortMDByDate(posts)
+}
+
 export function sortMDByDate(posts: Array<CollectionEntry<'post'>>): CollectionEntry<'post'>[] {
 	return posts.sort((a, b) => {
 		const aDate = new Date(a.data.date).valueOf()

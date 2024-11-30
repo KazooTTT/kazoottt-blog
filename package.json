@@ -54,6 +54,7 @@
 	"devDependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.10",
+		"@types/markdown-it": "^14.1.2",
 		"@types/sanitize-html": "^2.13.0",
 		"@typescript-eslint/parser": "^7.1.1",
 		"dotenv": "^16.4.5",

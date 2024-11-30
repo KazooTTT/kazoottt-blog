@@ -6,6 +6,16 @@ const path = require('path')
 const contentDir = path.join(__dirname, '../src/content/post')
 const USE_FULL_PATH = true
 
+function toCamelCase(str) {
+	return str
+		.split(' ')
+		.map((word, index) => {
+			if (index === 0) return word.toLowerCase()
+			return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+		})
+		.join('')
+}
+
 function processDirectory(dir) {
 	fs.readdirSync(dir).forEach((item) => {
 		const itemPath = path.join(dir, item)
@@ -25,11 +35,13 @@ function getCategoryFromPath(filePath) {
 
 	if (pathParts.length > 1) {
 		if (USE_FULL_PATH) {
-			// Join all directory parts except the filename
-			return pathParts.slice(0, -1).join('-')
+			// Join all directory parts except the filename and convert to camelCase if contains spaces
+			const category = pathParts.slice(0, -1).join('-')
+			return category.includes(' ') ? toCamelCase(category) : category
 		} else {
-			// Just use the first directory after "post"
-			return pathParts[0]
+			// Just use the first directory after "post" and convert to camelCase if contains spaces
+			const category = pathParts[0]
+			return category.includes(' ') ? toCamelCase(category) : category
 		}
 	}
 

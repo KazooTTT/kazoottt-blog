@@ -18,7 +18,7 @@ description: >-
 NotionID-notionnext: 96e4d436-6fd9-4fec-865c-ac2d80b06be0
 link-notionnext: 'https://kazoottt.notion.site/open-graph-intro-96e4d4366fd94fec865cac2d80b06be0'
 rinId: 17
-category: english writing
+category: englishWriting
 ---
 
 ``

@@ -25,7 +25,7 @@ NotionID-notionnext: 80f19b4c-d207-45a0-bbbb-39641a9dc330
 link-notionnext: >-
   https://kazoottt.notion.site/Possible-Causes-and-Solutions-for-Focusee-Switching-System-Audio-to-Speaker-Playback-forcibly-80f19b4cd20745a0bbbb39641a9dc330
 rinId: 39
-category: english writing
+category: englishWriting
 ---
 
 # Possible Causes and Solutions for Focusee Switching System Audio to Speaker Playback Forcibly
