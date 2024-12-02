@@ -10,6 +10,7 @@ description: >-
   本文介绍了如何在当前环境下导出最小依赖以及配置Python包管理工具pip的镜像源。首先，通过安装`pipreqs`工具并使用命令`pipreqs ./
   --encoding=utf8`在项目根目录导出依赖。其次，讲解了如何在Windows系统中通过修改`pip.ini`文件或使用命令行配置pip的镜像源，包括设置镜像源地址、取消配置以及查看当前配置的方法。
 category: 编程-后端-python
+toAstro: false
 ---
 
 # Python常用的命令备忘

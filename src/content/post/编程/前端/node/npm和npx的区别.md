@@ -16,6 +16,7 @@ tags:
   - 包管理器
   - CLI
   - package manager
+toAstro: true
 ---
 
 # Npm和npx的区别

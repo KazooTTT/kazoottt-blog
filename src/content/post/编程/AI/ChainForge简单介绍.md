@@ -27,6 +27,7 @@ description: >-
 NotionID-notionnext: 40ec4f8d-2030-4ce1-b8c7-c1c9f56ef55b
 link-notionnext: 'https://kazoottt.notion.site/ChainForge-40ec4f8d20304ce1b8c7c1c9f56ef55b'
 rinId: 8
+toAstro: true
 ---
 
 # ChainForge简单介绍

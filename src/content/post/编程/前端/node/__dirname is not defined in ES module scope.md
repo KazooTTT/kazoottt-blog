@@ -55,6 +55,7 @@ description: >-
   ```
 
   这种方法推荐使用，避免了相对路径的问题。
+toAstro: true
 ---
 
 # __dirname Is not Defined in ES Module Scope

@@ -15,6 +15,7 @@ description: >-
 finished: true
 rinId: 125
 category: 项目-已结项
+toAstro: true
 ---
 
 # Hide-your-twitter-info

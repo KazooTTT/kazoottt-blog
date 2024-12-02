@@ -12,6 +12,7 @@ description: |-
   首先，开启终端输入git add暂存更改。
   然后，按下Command+K输入“git commit message”即可成功提交。
 slug: cursorgit-commit-msg
+toAstro: true
 category: 编程-git
 ---
 

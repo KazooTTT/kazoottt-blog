@@ -20,6 +20,7 @@ NotionID-notionnext: b5838d05-d223-4a6d-b92c-e284c5e5a2ce
 link-notionnext: >-
   https://kazoottt.notion.site/History-scrollRestoration-b5838d05d2234a6db92ce284c5e5a2ce
 rinId: 18
+toAstro: true
 ---
 
 # 再次学习History.scrollRestoration

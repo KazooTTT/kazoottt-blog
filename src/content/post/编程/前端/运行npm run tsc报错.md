@@ -32,6 +32,7 @@ description: >-
 
   这两个脚本将为我们提供一个正确的命令，用于执行 TypeScript 编译。
 slug: npm-run-tsc
+toAstro: false
 category: 编程-前端
 ---
 

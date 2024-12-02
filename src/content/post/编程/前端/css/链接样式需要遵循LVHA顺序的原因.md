@@ -9,9 +9,12 @@ tags:
   - 前端
 slug: reasons-why-link-styles-need-to-follow-the-lvha-order
 published: true
-description: 在CSS中，链接的伪类选择器（:link, :visited, :hover, :active）遵循LVHA顺序的原因是为了确保样式正确应用。由于这些伪类的优先级相同，后定义的样式会覆盖先前的样式。因此，为了防止样式冲突，应按照LVHA顺序定义这些伪类，即先定义:link，然后是:visited，接着是:hover，最后是:active。这样的顺序确保了链接在不同状态下的样式能够正确显示，例如在鼠标悬停或点击时。
-NotionID-notionnext: https://kazoottt.notion.site/d4aa37afdc8147d89869d67ebb5b4e7c
+description: >-
+  在CSS中，链接的伪类选择器（:link, :visited, :hover,
+  :active）遵循LVHA顺序的原因是为了确保样式正确应用。由于这些伪类的优先级相同，后定义的样式会覆盖先前的样式。因此，为了防止样式冲突，应按照LVHA顺序定义这些伪类，即先定义:link，然后是:visited，接着是:hover，最后是:active。这样的顺序确保了链接在不同状态下的样式能够正确显示，例如在鼠标悬停或点击时。
+NotionID-notionnext: 'https://kazoottt.notion.site/d4aa37afdc8147d89869d67ebb5b4e7c'
 category: 编程-前端-css
+toAstro: true
 ---
 
 # 链接样式需要遵循 LVHA 顺序的原因

@@ -9,6 +9,7 @@ published: true
 description: >-
   antd的switch组件错误使用案例：当使用到antd的[switch](https://ant-design.antgroup.com/components/switch-cn)组件时，需要注意其api的使用。典型情况是，将checked状态与mode关联起来，并在mode变化时触发回调，然而，这种写法会导致切换switch时不会触发回调，而是等待-checked状态改变时才触发。正确的方法是使用onClick事件而不是onChange，这样可以让切换switch时触发回调。
 slug: antd-switch-component-misuse-example
+toAstro: false
 category: 编程-前端
 ---
 

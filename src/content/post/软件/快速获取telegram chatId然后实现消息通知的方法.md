@@ -14,6 +14,7 @@ description: >-
   bot和apprise工具来实现消息通知功能。
 rinId: 20
 category: 软件
+toAstro: true
 ---
 
 # 快速获取telegram chatId然后实现消息通知的方法

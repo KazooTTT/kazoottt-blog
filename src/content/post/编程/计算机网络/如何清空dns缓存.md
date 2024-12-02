@@ -1,6 +1,6 @@
 ---
 title: 如何清空dns缓存
-date: 2024-02-26T00:00:00.000Z
+date: 2024-02-26
 author: KazooTTT
 tags:
   - dns
@@ -12,7 +12,7 @@ published: true
 slug: how-to-clear-the-dns-cache
 description: 本文介绍了如何在Mac和windows系统中清空DNS缓存和查看自己的IP地址。
 rinId: 76
-toAstro: true
+toAstro: false
 category: 编程-计算机网络
 ---
 

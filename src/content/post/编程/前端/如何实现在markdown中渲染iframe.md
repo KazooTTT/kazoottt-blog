@@ -12,6 +12,7 @@ NotionID-notionnext: a63f5e28-352a-48cc-8c89-f9dd5b5a18ac
 link-notionnext: 'https://kazoottt.notion.site/markdown-iframe-a63f5e28352a48cc8c89f9dd5b5a18ac'
 rinId: 19
 category: 编程-前端
+toAstro: true
 ---
 
 # 1 如何实现在markdown中渲染iframe

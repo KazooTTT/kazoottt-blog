@@ -15,6 +15,7 @@ NotionID-notionnext: 26f6fc5b-4286-45e2-8e83-e178f45c1ae0
 link-notionnext: 'https://kazoottt.notion.site/OPENAI-26f6fc5b428645e28e83e178f45c1ae0'
 rinId: 56
 category: 软件
+toAstro: true
 ---
 
 # 沉浸式翻译自定义OPENAI接口油猴脚本报错

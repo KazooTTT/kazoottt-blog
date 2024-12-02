@@ -12,6 +12,7 @@ published: true
 category: 编程-前端
 slug: the-download-attribute-for-the-a-tag
 description: download属性是如何定义的以及注意事项。 不能设置为null，可以直接设置成空串或者null。
+toAstro: true
 ---
 
 ## 对于a标签的download属性

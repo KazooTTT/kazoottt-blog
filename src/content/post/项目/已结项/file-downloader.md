@@ -17,6 +17,7 @@ description: >-
   包，该包的NPM地址和GitHub地址均已提供。项目遵循MIT许可证，作者为kazoottt。
 rinId: 63
 category: 项目-已结项
+toAstro: true
 ---
 
 # File Download

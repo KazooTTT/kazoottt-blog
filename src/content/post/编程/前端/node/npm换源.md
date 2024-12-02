@@ -11,6 +11,7 @@ description: >-
   本文介绍了如何查看、更换和取消Node.js包管理工具（npm, yarn,
   pnpm）的源地址，以及如何使用yrm工具快速切换不同的npm源。通过执行特定的命令，用户可以轻松地管理这些工具的源设置，从而优化包的下载速度和开发效率。
 category: 编程-前端-node
+toAstro: true
 ---
 
 # 查看源

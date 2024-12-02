@@ -1,6 +1,6 @@
 ---
 title: AMD
-date: 2023-09-27T00:00:00.000Z
+date: 2023-09-27
 author: KazooTTT
 tags:
   - node
@@ -13,7 +13,7 @@ description: >-
   loaded. This is particularly useful for web applications where scripts can be
   loaded in parallel, improving performance and efficiency.
 category: 编程-前端-node
-toAstro: true
+toAstro: false
 ---
 
 # AMD

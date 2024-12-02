@@ -24,6 +24,7 @@ publish_time: '2023/10/20 13:50:45'
 finished: true
 rinId: 61
 category: 软件
+toAstro: true
 ---
 
 # messAuto + iMessage 实现iPhone和mac信息同步和自动复制验证码

@@ -15,11 +15,16 @@ tags:
 finished: true
 published: true
 slug: tweet-to-image
-description: This post introduces three online tools that allow users to convert tweets into shareable images. The tools featured are TweetPik, PostWizz, and 10015 Tools. These services provide an easy way to create visually appealing screenshots of tweets for sharing on various platforms.
+description: >-
+  This post introduces three online tools that allow users to convert tweets
+  into shareable images. The tools featured are TweetPik, PostWizz, and 10015
+  Tools. These services provide an easy way to create visually appealing
+  screenshots of tweets for sharing on various platforms.
 NotionID-notionnext: 1203f3c5-7438-44af-a655-d509a4dff4ec
-link-notionnext: https://kazoottt.notion.site/tweet-to-image-1203f3c5743844afa655d509a4dff4ec
+link-notionnext: 'https://kazoottt.notion.site/tweet-to-image-1203f3c5743844afa655d509a4dff4ec'
 rinId: 50
 category: 软件
+toAstro: false
 ---
 
 # Tweet to Image 输入推特链接生成对应的图片

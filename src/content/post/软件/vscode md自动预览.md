@@ -1,6 +1,6 @@
 ---
 title: vscode md自动预览
-date: 2024-10-15T00:00:00.000Z
+date: 2024-10-15
 author: KazooTTT
 type: Post
 status: Published
@@ -16,7 +16,7 @@ description: >-
   Side为true可以快速看到 markdown 文件的预览效果，但这种方式不是很推荐。
 NotionID-notionnext: 12b55568-fd75-81ce-82a3-fdb4a13d1658
 link-notionnext: 'https://kazoottt.notion.site/vscode-md-12b55568fd7581ce82a3fdb4a13d1658'
-toAstro: true
+toAstro: false
 ---
 
 # vscode md自动预览

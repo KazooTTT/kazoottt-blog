@@ -12,6 +12,7 @@ date: 2024-02-07
 category: 编程-web3
 tags:
   - expo 错误，angular cli，webpack，npm， metro-core
+toAstro: false
 ---
 
 # Expo 报错

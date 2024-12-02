@@ -10,11 +10,15 @@ tags:
   - 前端
 finished: true
 published: true
-description: 在React中使用短路运算符（&&）时，0 会被错误地渲染为内容。通过避免使用 && 判断数字，特别是可能为 0 的值，可以确保正确的内容显示，例如显示 0号相机 而非仅仅显示 0。
+description: >-
+  在React中使用短路运算符（&&）时，0 会被错误地渲染为内容。通过避免使用 && 判断数字，特别是可能为 0 的值，可以确保正确的内容显示，例如显示
+  0号相机 而非仅仅显示 0。
 slug: do-not-misuse-short-circuiting-in-react
 category: 编程-前端
 NotionID-notionnext: 12b55568-fd75-815c-ba9c-ff587a86a262
-link-notionnext: https://kazoottt.notion.site/react-short-circuit-12b55568fd75815cba9cff587a86a262
+link-notionnext: >-
+  https://kazoottt.notion.site/react-short-circuit-12b55568fd75815cba9cff587a86a262
+toAstro: true
 ---
 
 ## 错误现象

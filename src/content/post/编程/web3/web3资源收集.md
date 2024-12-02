@@ -14,6 +14,7 @@ tags:
   - 比特币
   - 以太坊
   - 区块链
+toAstro: true
 ---
 
 # web3资源收集

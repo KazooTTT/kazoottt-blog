@@ -17,6 +17,7 @@ description: 可免费领取tokens的大模型服务于今后8月30日前有以�
 NotionID-notionnext: 30a20483-ea28-4daf-b8be-155f0e690bc7
 link-notionnext: 'https://kazoottt.notion.site/tokens-30a20483ea284dafb8be155f0e690bc7'
 rinId: 43
+toAstro: true
 ---
 
 # 可以免费领取tokens的大模型服务

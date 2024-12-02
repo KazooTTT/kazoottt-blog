@@ -22,6 +22,7 @@ noteId_x: 15
 create_time: '2024/11/22 13:35:36'
 update_time: '2024/11/22 14:40:08'
 publish_time: '2024/11/22 14:38:29'
+toAstro: true
 ---
 
 ## stl如何转为json
