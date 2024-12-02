@@ -1,6 +1,6 @@
 ---
 title: Telegram bot推荐 VidDlPBot
-date: 2024-06-26
+date: 2024-06-26T00:00:00.000Z
 author: KazooTTT
 type: Post
 status: Published
@@ -18,6 +18,7 @@ slug: telegram-bot-recommendation-viddlpbot
 description: 推荐一款Telegram bot——VidDlPBot，可以轻松下载Twitter、TikTok、YouTube、Instagram的视频，操作简便。
 rinId: 60
 category: 软件
+toAstro: true
 ---
 
 # Telegram Bot推荐 VidDlPBot

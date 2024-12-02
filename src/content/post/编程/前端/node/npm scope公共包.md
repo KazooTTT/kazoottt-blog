@@ -1,6 +1,6 @@
 ---
 title: npm scope公共包
-date: 2024-02-18
+date: 2024-02-18T00:00:00.000Z
 author: KazooTTT
 tags:
   - npm
@@ -12,6 +12,7 @@ description: >-
   --access=public`，以确保包的访问权限为公开。
 rinId: 72
 category: 编程-前端-node
+toAstro: true
 ---
 
 # Npm Scope公共包

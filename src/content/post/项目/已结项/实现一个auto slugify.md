@@ -1,6 +1,6 @@
 ---
 title: 实现一个auto slugify
-date: 2024-02-20
+date: 2024-02-20T00:00:00.000Z
 author: KazooTTT
 tags:
   - slug
@@ -14,6 +14,7 @@ description: >-
   based on the auto-slugify library available on GitHub.
 rinId: 65
 category: 项目-已结项
+toAstro: true
 ---
 
 # Auto Slugify Webapp

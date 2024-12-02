@@ -1,6 +1,6 @@
 ---
 title: obsidian技巧备忘
-date: 2023-10-16
+date: 2023-10-16T00:00:00.000Z
 author: KazooTTT
 tags:
   - 备忘
@@ -9,6 +9,7 @@ link: 'https://kazoottt.notion.site/obsidian-c6755f6ab1f04617b378e8bee26fd089'
 notionID: c6755f6a-b1f0-4617-b378-e8bee26fd089
 slug: obsidian-tips-memo
 description: Obsidian技巧备忘：粘贴代码时，使用cmd+v可能导致样式错乱，建议改用cmd+shift+v。同时，可以利用Obsidian链接外部代码文件。
+toAstro: true
 category: 软件
 ---
 
