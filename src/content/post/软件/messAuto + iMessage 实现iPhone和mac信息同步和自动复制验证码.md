@@ -27,7 +27,7 @@ category: 软件
 toAstro: true
 ---
 
-# messAuto + iMessage 实现iPhone和mac信息同步和自动复制验证码
+# messAuto + iMessage 实现 iPhone 和 mac 信息同步和自动复制验证码
 
 ![miulm](https://pictures.kazoottt.top/2024/01/20240119-4bb8c89272c9863bfb0aa6e2030850f5.webp)
 
@@ -36,17 +36,17 @@ toAstro: true
 如果你是 iPhone + mac 用户，则可以使用 messauto + imessage 的方式来同步和自动复制验证码的操作。
 
 一、iphone 和 mac 信息同步  
-在 iphone 的设置-信息-短信转发中，勾选你要转发信息的 mac 设备。
+在 iphone 的设置 - 信息 - 短信转发中，勾选你要转发信息的 mac 设备。
 
 ![budk7](https://pictures.kazoottt.top/2024/01/20240119-bfea1be1a394860ac21d1ec20a879065.webp)  
-然后在对应的 mac 的信息中设置-iCloud 信息设置中启用 iCloud 云端“信息”，需要注意的是你登录 iphone 和 mac 的 icloud 账号是需要相同的。设置完成，就已经实现了信息的同步，在 mac 的信息里可以看到 iphone 的短信。
+然后在对应的 mac 的信息中设置 -iCloud 信息设置中启用 iCloud 云端“信息”，需要注意的是你登录 iphone 和 mac 的 icloud 账号是需要相同的。设置完成，就已经实现了信息的同步，在 mac 的信息里可以看到 iphone 的短信。
 
 ![0p16x](https://pictures.kazoottt.top/2024/01/20240119-a64ff82a345fab5bf64da2c34f925158.webp)  
 ![pj0l1](https://pictures.kazoottt.top/2024/01/20240119-7e26031c5ed3b0ca8f1b26ab170e1207.webp)
 
 二、安装 messauto，并设置。
 
-然后我们需要安装[messauto](https://github.com/LeeeSe/MessAuto),地址是[https://github.com/LeeeSe/MessAuto](https://github.com/LeeeSe/MessAuto/releases/tag/v0.5.0)  
+然后我们需要安装 [messauto](https://github.com/LeeeSe/MessAuto),地址是 [https://github.com/LeeeSe/MessAuto](https://github.com/LeeeSe/MessAuto/releases/tag/v0.5.0)  
 ![djoq7](https://pictures.kazoottt.top/2024/01/20240119-721babc141ee23a2300868bbd701179c.webp)  
 版本：
 
