@@ -5,11 +5,33 @@ date: 2024-11-29
 author: KazooTTT
 type: Post
 status: Published
-tags: null
+tags:
+  - github action
+  - build docs
+  - OBSidian模板
 finished: true
 published: true
 category: 编程-前端
-description: null
+description: >-
+  这个 GitHub Action 通过 Node.js 脚本在每次推送到 content 目录和 build_docs.cjs
+  脚本时更新博客内容，并将其复制到另一个目标仓库。它支持多个环境，包括本地和服务器。该过程依赖于 Obsidian 模板和 Gray Matter 脚本。
+
+
+  此 Action 通过在每次推送中运行其特定步骤来保持 blog 内容的最新。这些步骤包括：
+
+
+  - 运行 npm install 和 npm run build:docs:server 批量安装并构建博客内容。
+
+  - 复制更新的 content 到目标仓库。
+
+  - 运行 npm install 和 npm run sort 批量安装和排序博客内容。
+
+
+  该 Action 通过使用 Gray Matter 脚本来处理 Markdown文件，并根据其 frontMatter
+  信息决定是否需要将其复制到目标仓库中。它还支持从特定目录忽略某些文件或文件夹。
+
+
+  该 Action 的主要功能是自动化 blog 内容的更新和复制，确保 content ALWAYS 是最新的。
 toAstro: true
 ---
 

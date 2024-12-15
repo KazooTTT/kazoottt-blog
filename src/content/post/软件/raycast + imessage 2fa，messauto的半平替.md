@@ -13,7 +13,10 @@ finished: true
 published: true
 category: 软件
 slug: raycast-imessage-2fa
-description: 
+description: >-
+  我做过一个messAuto的安利，使用raycast + iMessage
+  2fa插件来实现iPhone和mac信息同步和自动复制验证码。最近发现作者删库了，我现在找到了一种快速获取验证码的方法。使用方法是在获取到验证码之后访问iMessage
+  2fa插件，然后可以看到当前接收到的验证码，敲回车复制验证码到粘贴板。但这种方法缺点是没有messAuto方便，多了额外的步骤。
 toAstro: true
 ---
 
