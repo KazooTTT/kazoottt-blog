@@ -27,7 +27,7 @@ toAstro: true
 
 ![Pasted image 20240725133801](https://pictures.kazoottt.top/2024/07/20240725-Pasted%20image%2020240725133801.png)
 
-但是它也可以使用自己的 key和模型具体的操作如下。
+但是它也可以使用自己的 key 和模型具体的操作如下。
 
 ![Pasted image 20240725133037](https://pictures.kazoottt.top/2024/07/20240725-Pasted%20image%2020240725133037.png)
 

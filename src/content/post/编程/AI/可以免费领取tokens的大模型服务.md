@@ -20,17 +20,17 @@ rinId: 43
 toAstro: true
 ---
 
-# 可以免费领取tokens的大模型服务
+# 可以免费领取 tokens 的大模型服务
 
-本文更新时间：2024年6月20日
+本文更新时间：2024 年 6 月 20 日
 
 ## [豆包大模型](https://www.volcengine.com/)
 
 [豆包大模型-火山引擎](https://www.volcengine.com/product/doubao)
 
-"亲爱的客户，模型提供方将在5月15日至8月30日期间，为您提供一次独特的机会，即高达5亿tokens的免费权益。这是我们对您长期支持的感谢，也是对未来合作的期待。"
+" 亲爱的客户，模型提供方将在 5 月 15 日至 8 月 30 日期间，为您提供一次独特的机会，即高达 5 亿 tokens 的免费权益。这是我们对您长期支持的感谢，也是对未来合作的期待。"
 
-在8月30日之前可以领取5亿tokens
+在 8 月 30 日之前可以领取 5 亿 tokens
 
 ![CleanShot 2024-06-20 at 09.58.30 1](https://pictures.kazoottt.top/2024/06/20240620-b6a661ebf938593cab5426b2f50aebe6.png)
 
@@ -46,7 +46,7 @@ toAstro: true
 
 目前支持的模型有：
 
-deepseek, qwen等
+deepseek, qwen 等
 
 ![CleanShot 2024-06-20 at 09.24.17](https://pictures.kazoottt.top/2024/06/20240620-3f55351a8f7211270a2b35a2468a7be4.png)
 
@@ -54,18 +54,18 @@ deepseek, qwen等
 
 小红书输出：
 
-目前可以免费领tokens的平台
+目前可以免费领 tokens 的平台
 
 一、豆包大模型 p1
 
-在8月30日之前可以领取5亿tokens
+在 8 月 30 日之前可以领取 5 亿 tokens
 
 二、DeepSeek
 
-注册获500万tokens（限中国大陆地区）
+注册获 500 万 tokens（限中国大陆地区）
 
 三、SiliconCloud p3
 
-手机号注册，一个手机号可以领约1亿token。
+手机号注册，一个手机号可以领约 1 亿 token。
 
-目前支持的模型有：deepseek, qwen等
+目前支持的模型有：deepseek, qwen 等

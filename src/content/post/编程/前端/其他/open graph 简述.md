@@ -22,27 +22,27 @@ toAstro: true
 
 ## 场景
 
-在我们使用twitter的时候，会发现有的链接会显示预览卡片，有的不会。
+在我们使用 twitter 的时候，会发现有的链接会显示预览卡片，有的不会。
 
 ![Pasted image 20240409203435](https://pictures.kazoottt.top/2024/04/2024049-bc909874e20bb629c839253d3943d659.png)
 
 ![Pasted image 20240409204440](https://pictures.kazoottt.top/2024/04/2024049-4a9e81697a9703fe745e3052d4cbd1cd.png)
 
-这是因为有的网站设置了open graph，有的没有。
+这是因为有的网站设置了 open graph，有的没有。
 
 ![Pasted image 20240409103122](https://pictures.kazoottt.top/2024/04/2024049-087f0fbb7b7c5f497748c7fb9a12cdda.png)
 
-## 那么什么是open graph？
+## 那么什么是 open graph？
 
-open graph是一个由facebook在2010年发布的协议，用于在社交网络上分享链接时，显示预览卡片。
+open graph 是一个由 facebook 在 2010 年发布的协议，用于在社交网络上分享链接时，显示预览卡片。
 
 ![Pasted image 20240409204654](https://pictures.kazoottt.top/2024/04/2024049-3dd20b82e78f86d49d9b7994a75ecb5c.png)
 
-我觉得无论是它的名称还是意图，都能看出facebook以及其他支持这种协议的社交平台的开放性, 特别是在某些平台会屏蔽外链或者限流带有外链的衬托下。
+我觉得无论是它的名称还是意图，都能看出 facebook 以及其他支持这种协议的社交平台的开放性, 特别是在某些平台会屏蔽外链或者限流带有外链的衬托下。
 
 ![Pasted image 20240409205145](https://pictures.kazoottt.top/2024/04/2024049-df5e5b3488dffbd26760c4e44ee0914a.png)
 
-和open graph类似还有twitter自己的card，如果twitter card和open graph同时存在的话，会先显示在twitter card。如果twitter card没有定义，才会显示open graph。
+和 open graph 类似还有 twitter 自己的 card，如果 twitter card 和 open graph 同时存在的话，会先显示在 twitter card。如果 twitter card 没有定义，才会显示 open graph。
 
 ![Pasted image 20240409213244](https://pictures.kazoottt.top/2024/04/2024049-4621b20b74ec8f5aed0a133d5f38d28e.png)
 

@@ -16,11 +16,11 @@ description: 转换FLV格式的视频成HDDP，用于弹幕压制。使用FFmpeg
 toAstro: true
 ---
 
-## 720x1080批量转1920x1080（两边黑屏）
+## 720x1080 批量转 1920x1080（两边黑屏）
 
-手机直播的时候录播机录出来的分辨率是720x1080，使用ffmpeg转成横屏的1920x1080。这样xml转ass弹幕的时候，就不需要另外处理了，看起来很更舒服。
+手机直播的时候录播机录出来的分辨率是 720x1080，使用 ffmpeg 转成横屏的 1920x1080。这样 xml 转 ass 弹幕的时候，就不需要另外处理了，看起来很更舒服。
 
-macos的写法：
+macos 的写法：
 
 ```bash
 input_folder="" # 要转化的录播的文件夹路径
@@ -34,7 +34,7 @@ for f in "$input_folder"/*.flv; do
 done
 ```
 
-windows的写法：
+windows 的写法：
 
 ```powershell
 $input_folder = "Z:\\rec\\48743-hanser\\20240731-又来画画了！"  # 要转化的录播的文件夹路径
@@ -59,7 +59,7 @@ Get-ChildItem -Path $input_folder -Filter *.flv | ForEach-Object {
 
 ## 弹幕压制
 
-### windows版(使用cuda)
+### windows 版 (使用 cuda)
 
 ```bash
 @echo off
@@ -71,7 +71,7 @@ for %%a in ("%input_folder%\\*.flv") do (
 )
 ```
 
-### macOS版
+### macOS 版
 
 ```bash
 #!/bin/bash

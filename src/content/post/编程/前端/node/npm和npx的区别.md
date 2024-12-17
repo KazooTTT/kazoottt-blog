@@ -19,7 +19,7 @@ tags:
 toAstro: true
 ---
 
-# Npm和npx的区别
+# Npm 和 npx 的区别
 
 在日常的开发中，经常会使用这两个指令。
 
@@ -56,7 +56,7 @@ pnpm create next-app
 
 > npm（“Node 包管理器”）是 JavaScript 运行时 Node.js 的默认程序包管理器。
 > npm 由两个主要部分组成:
->
+> 
 > 1. 用于发布和下载程序包的 CLI（命令行界面）工具
 > 2. 托管 JavaScript 程序包的  [在线存储库](https://www.npmjs.com/)
 
@@ -78,9 +78,9 @@ npm 存储库 <=== 他人使用 CLI 进行将包发布到存储库中
 
 ### Npx 的定义
 
-在[什么是 npm —— 写给初学者的编程教程 (freecodecamp.org)](https://www.freecodecamp.org/chinese/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/) 中提到
+在 [什么是 npm —— 写给初学者的编程教程 (freecodecamp.org)](https://www.freecodecamp.org/chinese/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/) 中提到
 
-> 最新引入的  [npx](https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/)   使我们可以像在全局安装程序一样运行这些  `node_modules`   项目作用域命令，方法是在其前面加上  `npx ...`（即`npx prettier --write ** / *。ts`）。
+> 最新引入的  [npx](https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/)   使我们可以像在全局安装程序一样运行这些  `node_modules`   项目作用域命令，方法是在其前面加上  `npx ...`（即 `npx prettier --write ** / *。ts`）。
 
 ## 用法
 
@@ -89,4 +89,4 @@ npm 存储库 <=== 他人使用 CLI 进行将包发布到存储库中
 如果要运行项目中的某些二进制文件，以前只能使用 路径/bin 文件 来执行  
 但是使用 npx 就可以直接运行了
 
-> npx 的原理很简单，就是运行的时候，会到`node_modules/.bin`路径和环境变量`$PATH`里面，检查命令是否存在。由于 npx 会检查环境变量`$PATH`，所以系统命令也可以调用。
+> npx 的原理很简单，就是运行的时候，会到 `node_modules/.bin` 路径和环境变量 `$PATH` 里面，检查命令是否存在。由于 npx 会检查环境变量 `$PATH`，所以系统命令也可以调用。

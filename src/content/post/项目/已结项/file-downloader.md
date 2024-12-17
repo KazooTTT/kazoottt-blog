@@ -22,7 +22,7 @@ toAstro: true
 
 # File Download
 
-封装了对于url和blob类型文件的下载方法。
+封装了对于 url 和 blob 类型文件的下载方法。
 
 ## downloadFileFromURL
 
@@ -30,7 +30,7 @@ toAstro: true
 function downloadFileFromURL(url: string, filename?: string)
 ```
 
-url是网络请求的链接，filename不是必填，如果填了那么下载文件名称=filename
+url 是网络请求的链接，filename 不是必填，如果填了那么下载文件名称=filename
 
 ## downloadFileFromBlob
 
@@ -38,15 +38,15 @@ url是网络请求的链接，filename不是必填，如果填了那么下载文
 function downloadFileFromBlob(blob: Blob | MediaSource, filename: string)
 ```
 
-blob是一个blob对象，一般从后端获取，filename不是必填，如果填了那么下载文件名称=filename
+blob 是一个 blob 对象，一般从后端获取，filename 不是必填，如果填了那么下载文件名称=filename
 
 # 地址
 
-npm地址：
+npm 地址：
 
 [@kzttools/file-downloader - npm](https://www.npmjs.com/package/@kzttools/file-downloader)
 
-github地址：
+github 地址：
 
 [GitHub - kzttools/file-downloader](https://github.com/kzttools/file-downloader)
 

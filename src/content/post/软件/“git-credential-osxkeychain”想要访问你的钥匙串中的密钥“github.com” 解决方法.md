@@ -21,11 +21,11 @@ toAstro: true
 
 # macos 一直弹出 “git-credential-osxkeychain”想要访问你的钥匙串中的密钥“github.com” 解决方法
 
-现在网络上关于这个问题的解决方案大部分都是打开钥匙串访问，然后删除github的密钥，但是这个方法其实并不奏效。具体的解决方法如下（二选一即可）
+现在网络上关于这个问题的解决方案大部分都是打开钥匙串访问，然后删除 github 的密钥，但是这个方法其实并不奏效。具体的解决方法如下（二选一即可）
 
-## 方法一 使用GitHub CLI
+## 方法一 使用 GitHub CLI
 
-首先，使用brew安装GitHub CLI：
+首先，使用 brew 安装 GitHub CLI：
 
 ```bash
 brew install gh
@@ -37,15 +37,15 @@ brew install gh
 gh auth login
 ```
 
-## 方法二 使用Git Credential Manager
+## 方法二 使用 Git Credential Manager
 
-如果没有git，使用brew安装git：
+如果没有 git，使用 brew 安装 git：
 
 ```bash
 brew install git
 ```
 
-然后，安装git-credential-manager
+然后，安装 git-credential-manager
 
 ```bash
 brew install --cask git-credential-manager

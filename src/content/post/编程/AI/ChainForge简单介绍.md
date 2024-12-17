@@ -30,7 +30,7 @@ rinId: 8
 toAstro: true
 ---
 
-# ChainForge简单介绍
+# ChainForge 简单介绍
 
 ![Pasted image 20240417222811](https://pictures.kazoottt.top/2024/05/20240522-c31876b89dcb822e411af1ef7992eb49.png)
 
@@ -38,7 +38,7 @@ toAstro: true
 
 [ChainForge: A visual programming environment for prompt engineering](https://chainforge.ai/)
 
-github地址：
+github 地址：
 
 [GitHub - ianarawjo/ChainForge: An open-source visual programming environment for battle-testing prompts to LLMs.](https://github.com/ianarawjo/ChainForge)
 
@@ -65,7 +65,7 @@ github地址：
 ## TODO
 
 1. 内部环境运行
-2. 内网环境proxy [Add Custom Providers - ChainForge Documentation](<https://chainforge.ai/docs/custom_providers/> 提供了自定义llm
+2. 内网环境 proxy [Add Custom Providers - ChainForge Documentation](<https://chainforge.ai/docs/custom_providers/> 提供了自定义 llm
 
 ## 参考
 
@@ -73,7 +73,7 @@ github地址：
 
 [X](https://twitter.com/9hills/status/1772467763165958602)
 
-自动化Prompts
+自动化 Prompts
 
 [\[2402.10949\] The Unreasonable Effectiveness of Eccentric Automatic Prompts](https://arxiv.org/abs/2402.10949)
 

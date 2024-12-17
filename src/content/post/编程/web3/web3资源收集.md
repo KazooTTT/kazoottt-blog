@@ -17,7 +17,7 @@ tags:
 toAstro: true
 ---
 
-# web3资源收集
+# web3 资源收集
 
 基础推荐材料  
 人文基础：
@@ -51,7 +51,7 @@ toAstro: true
 
 <https://zhuanlan.zhihu.com/p/38003169>（Part3）
 
-白皮书精讲系列是看懂白皮书很好的参考资料，可以更深入的了解白皮书中的细节。这是 ETH1.0 的架构，后面再看 ETH 2.0 的架构。也是搞得越清楚越好，后续的区块链整体上都没有脱离这个架构，既 Chain-VM-共识-Daap  
+白皮书精讲系列是看懂白皮书很好的参考资料，可以更深入的了解白皮书中的细节。这是 ETH1.0 的架构，后面再看 ETH 2.0 的架构。也是搞得越清楚越好，后续的区块链整体上都没有脱离这个架构，既 Chain-VM- 共识 -Daap  
 3**、一个以太坊交易的完整周期**  
 <https://www.notonlyowner.com/learn/what-happens-when-you-send-one-dai>  
 这篇文章对具体的每一个环节都有很详细的记录，跟 Daap 的开发结合非常紧密，最好能完整过一遍，然后自己尝试画一个详细的流程图。包括前端怎么跟钱包交互，钱包怎么跟 RPC 交互，节点之间怎么通信，EVM 怎么处理交易，Gas，最后存储等。
@@ -64,7 +64,7 @@ youtube 教程
 这个可以看看 Foundry 开发框架  
 [Foundry 开发框架 | Decert.me](https://decert.me/tutorial/solidity/tools/foundry/)
 
-[The Architecture of a Web 3.0 application](https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application)这篇是讲 web3 应用的架构
+[The Architecture of a Web 3.0 application](https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application) 这篇是讲 web3 应用的架构
 
 对了，有一个 uniswap v2 详细讲解材料，非常不错，我发出来  
 大家有需要可以好好看一下，讲得非常详细  

@@ -15,21 +15,21 @@ category: 编程-前端
 toAstro: true
 ---
 
-# 1 如何实现在markdown中渲染iframe
+# 1 如何实现在 markdown 中渲染 iframe
 
-demo展示地址：[Create Next App](https://markdown-preview-eosin.vercel.app/demo)
+demo 展示地址：[Create Next App](https://markdown-preview-eosin.vercel.app/demo)
 
 项目源代码：[https://github.com/KazooTTT/markdown-iframe-preview/](https://github.com/KazooTTT/markdown-iframe-preview/)
 
 [https://github.com/KazooTTT/markdown-iframe-preview/](https://github.com/KazooTTT/markdown-iframe-preview/)
 
-使用的markdown渲染器是：[GitHub - remarkjs/react-markdown: Markdown component for React](https://github.com/remarkjs/react-markdown)
+使用的 markdown 渲染器是：[GitHub - remarkjs/react-markdown: Markdown component for React](https://github.com/remarkjs/react-markdown)
 
 ![https://pictures.kazoottt.top/2024/04/20240401-99bfb1d8434e94e5b66182ed42bc09b7.png](https://pictures.kazoottt.top/2024/04/20240401-99bfb1d8434e94e5b66182ed42bc09b7.png)
 
-有两种方案，第一种是iframe以html的语法嵌入（1），第二种是重写a标签把它转化为iframe（3）。
+有两种方案，第一种是 iframe 以 html 的语法嵌入（1），第二种是重写 a 标签把它转化为 iframe（3）。
 
-## 1.1 Iframe直接嵌入markdown
+## 1.1 Iframe 直接嵌入 markdown
 
 ```markdown
 ### 1.1.1 Iframe
@@ -43,9 +43,9 @@ demo展示地址：[Create Next App](https://markdown-preview-eosin.vercel.app/d
 
 [GitHub - remarkjs/react-markdown: Markdown component for React](https://github.com/remarkjs/react-markdown?tab=readme-ov-file#appendix-a-html-in-markdown)
 
-也就是引入rehypeRaw这个rehypePlugin，实现在markdown中嵌入html。
+也就是引入 rehypeRaw 这个 rehypePlugin，实现在 markdown 中嵌入 html。
 
-（谨慎使用，需要保证html内容安全的情况下嵌入）
+（谨慎使用，需要保证 html 内容安全的情况下嵌入）
 
 ```tsx
 import Markdown from "react-markdown"
@@ -56,13 +56,13 @@ const DempPage = () => {
 }
 ```
 
-## 1.2 a标签转化为iframe
+## 1.2 a 标签转化为 iframe
 
-在某些情况下我们需要把a标签的对应的网页直接展示出来，这个时候就要把a标签转化为iframe了。实现的方法是重写a这个组件。
+在某些情况下我们需要把 a 标签的对应的网页直接展示出来，这个时候就要把 a 标签转化为 iframe 了。实现的方法是重写 a 这个组件。
 
-下面是我的写法，我需要把链接中有`/agent/special`的所有的链接都以iframe的形式展示出来。于是做了一个特殊判断来实现这个逻辑。对于其他的不满足要求的a标签，则直接渲染为a标签即可。
+下面是我的写法，我需要把链接中有 `/agent/special` 的所有的链接都以 iframe 的形式展示出来。于是做了一个特殊判断来实现这个逻辑。对于其他的不满足要求的 a 标签，则直接渲染为 a 标签即可。
 
-这里还可以做一些拓展的写法，比如检查到网易云的音乐链接，就在前面加一个网易云的logo，如果检测到外链那么点击的时候打开新的窗口等等。
+这里还可以做一些拓展的写法，比如检查到网易云的音乐链接，就在前面加一个网易云的 logo，如果检测到外链那么点击的时候打开新的窗口等等。
 
 ```ts
 import Markdown from "react-markdown";

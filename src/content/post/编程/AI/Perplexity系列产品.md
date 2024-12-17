@@ -20,15 +20,15 @@ link-notionnext: 'https://kazoottt.notion.site/01-Perplexity-ae2fba46af304bd5b6d
 toAstro: true
 ---
 
-# Perplexity系列产品
+# Perplexity 系列产品
 
-## 产品1 Perplexity搜索引擎
+## 产品 1 Perplexity 搜索引擎
 
 ![IMG-20240904094448497](https://pictures.kazoottt.top/2024/10/20241012-IMG-20240904094448497.png)
 
 <https://www.perplexity.ai/>
 
-### 普通和Pro的区别
+### 普通和 Pro 的区别
 
 ![IMG-20240904001354592](https://pictures.kazoottt.top/2024/09/20240904-82efc9478928cf3428241d5cdbe1f7e2.png)
 
@@ -48,7 +48,7 @@ toAstro: true
 
 ![IMG-20240904094534311](https://pictures.kazoottt.top/2024/10/20241012-IMG-20240904094534311.png)
 
-## 产品2 Perplexity Playground
+## 产品 2 Perplexity Playground
 
 体验最新大模型
 
@@ -66,13 +66,13 @@ toAstro: true
 
 ![IMG-20240904001354925](https://pictures.kazoottt.top/2024/09/20240904-6757a9b6e9c488d8faad8ae28a2e48e1.png)
 
-## 产品3 Perplexity播客
+## 产品 3 Perplexity 播客
 
 [资讯汇总 Discover](https://www.perplexity.ai/discover)
 
 ![IMG-20240904001354996](https://pictures.kazoottt.top/2024/09/20240904-c06edb7427f2885aa1d8b3bd69659719.png)
 
-Perplexity和eleventlab合作，把Discover的内容转成播客了。
+Perplexity 和 eleventlab 合作，把 Discover 的内容转成播客了。
 
 ![Pasted image 20240308104550 1](https://pictures.kazoottt.top/2024/09/20240904-c2dbdcea85e283af86a34fe244f1b8e4.png)
 
@@ -84,6 +84,6 @@ Perplexity和eleventlab合作，把Discover的内容转成播客了。
 
 [pca.st](https://pca.st/03qazv0d)
 
-支持rss
+支持 rss
 
 ![IMG-20240904001355142](https://pictures.kazoottt.top/2024/09/20240904-51cb08cfa94e457d09ca0cfbaec6d604.png)

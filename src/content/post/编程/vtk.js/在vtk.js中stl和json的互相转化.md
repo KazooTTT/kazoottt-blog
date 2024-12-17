@@ -25,7 +25,7 @@ publish_time: '2024/11/22 14:38:29'
 toAstro: true
 ---
 
-## stl如何转为json
+## stl 如何转为 json
 
 ``` ts
 import vtkSTLReader from '@kitware/vtk.js/IO/Geometry/STLReader';
@@ -46,7 +46,7 @@ const polyData = await getStlModelFromPath(stlPath);
 const jsonData = polyData.toJSON();
 ```
 
-## json如何转为stl
+## json 如何转为 stl
 
 ``` ts
 import modelJSON from './model.json';

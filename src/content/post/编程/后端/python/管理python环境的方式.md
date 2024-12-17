@@ -16,7 +16,7 @@ category: 编程-后端-python
 toAstro: true
 ---
 
-# 管理python环境的方式
+# 管理 python 环境的方式
 
 最近又有写 python 的需求了，上一次写还是几年前写圣纳百川爬虫的时候，因此很多事情记不太清楚了。
 
@@ -75,7 +75,7 @@ poetry new poetry-demo
 poetry init
 ```
 
-然后使用`poetry add 包名`安装依赖  
+然后使用 `poetry add 包名` 安装依赖  
 也可以指定版本，[Dependency specification | Documentation | Poetry - Python dependency management and packaging made easy](https://python-poetry.org/docs/dependency-specification/)
 
 如果要导出 requirements 方便别人安装可以运行  
@@ -105,6 +105,6 @@ conda 用来作为虚拟环境管理的话，不建议 pip 和 conda 混用，�
 
 如果都安装了某一个包，那么优先 import 的是 conda 安装的
 
-如果之前用 pip 装的，运行`conda convert`转一下。
+如果之前用 pip 装的，运行 `conda convert` 转一下。
 
 然后后面都用 conda 来安装，conda 找不到的包再用 pip 来装。

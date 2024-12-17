@@ -25,7 +25,7 @@ TODO
 
 ## 区别
 
-1. \_\_dirname 和 process.cwd()的区别
+1. \_\_dirname 和 process.cwd() 的区别
 
    [node.js - What's the difference between process.cwd() vs \_\_dirname? - Stack Overflow](https://stackoverflow.com/questions/9874382/whats-the-difference-between-process-cwd-vs-dirname)
 
@@ -40,9 +40,9 @@ TODO
 
    ![image-20221024195247050](https://pictures.kazoottt.top/2024/04/20240407-f029c7528e83b5f3cb61c09adc67d4d2.png)
 
-   而目录结构为上图，express-对应 server 打包在 server_bulid,需要加载的 client scripts 在 client_buiild，为同级目录，所以第一张图右边的写法才能正确配置静态资源路径。
+   而目录结构为上图，express- 对应 server 打包在 server_bulid,需要加载的 client scripts 在 client_buiild，为同级目录，所以第一张图右边的写法才能正确配置静态资源路径。
 
-2. path.join()和 path.resolve()的区别
+2. path.join() 和 path.resolve() 的区别
 
    连接路径
 

@@ -15,7 +15,7 @@ description: download属性是如何定义的以及注意事项。 不能设置�
 toAstro: true
 ---
 
-## 对于a标签的download属性
+## 对于 a 标签的 download 属性
 
 ![image.png](https://pictures.kazoottt.top/2024/10/20241012-b044604cec83cd5e0b281b9e63562f11.png)
 
@@ -40,10 +40,10 @@ console.log(temp1.download); // 输出 undefined
 
 ```
 
-但是如果先设置了download = '', 再设置 download = null, 就会被转化为'null'
+但是如果先设置了 download = '', 再设置 download = null, 就会被转化为 'null'
 
 ![image.png](https://pictures.kazoottt.top/2024/10/20241012-1e0e4270de68707c51966174e2f2a063.png)
 
-所以要么直接设置 download = null，要么直接设置download = ''
+所以要么直接设置 download = null，要么直接设置 download = ''
 
-不要设置了download = ''之后去设置download = null
+不要设置了 download = '' 之后去设置 download = null

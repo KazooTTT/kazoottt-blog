@@ -21,29 +21,29 @@ category: 软件
 toAstro: true
 ---
 
-# Focusee录制系统声音被强制切换为扬声器播放的可能原因和解决方法
+# Focusee 录制系统声音被强制切换为扬声器播放的可能原因和解决方法
 
-在macOS上，我想要使用focusee录制系统声音的时候我按照它的引导安装了Gemoo Speaker
+在 macOS 上，我想要使用 focusee 录制系统声音的时候我按照它的引导安装了 Gemoo Speaker
 
-虽然输出设备切换到Gemoo Speaker输出，这样确实可以录制到系统的声音了，但是是直接用扬声器外放的声音。
+虽然输出设备切换到 Gemoo Speaker 输出，这样确实可以录制到系统的声音了，但是是直接用扬声器外放的声音。
 
-后来我发现是我安装了BlackHole2ch的原因，卸载掉这个虚拟声卡之后，focusee就通过Gemoo Speaker可以正常地录制到耳机里的声音了。
+后来我发现是我安装了 BlackHole2ch 的原因，卸载掉这个虚拟声卡之后，focusee 就通过 Gemoo Speaker 可以正常地录制到耳机里的声音了。
 
 卸载方法：
 
 `/Library/Audio/Plug-Ins/HAL`
 
-在这个文件夹中删除BlackHole2ch 对应的文件夹即可
+在这个文件夹中删除 BlackHole2ch 对应的文件夹即可
 
 ![image.png](https://pictures.kazoottt.top/2024/05/20240525-26e60249b527dc5dc46c78eb123769bf.png)
 
 ---
 
-顺带一提，当时安装BlackHole2ch的原因是想要在录屏或者直播的时候录制到系统的声音，今天我突然发现obs已经支持了直接录制系统声音的功能。
+顺带一提，当时安装 BlackHole2ch 的原因是想要在录屏或者直播的时候录制到系统的声音，今天我突然发现 obs 已经支持了直接录制系统声音的功能。
 
 具体的操作是：
 
-1. 点击来源下方的添加按钮，选择macOS音频采集
+1. 点击来源下方的添加按钮，选择 macOS 音频采集
 ![SCR-20240525-qcob-2.png](https://pictures.kazoottt.top/2024/05/20240525-862b985a72997075bf72d8dd84efa46c.png)
 
 2. 根据你的需求选择是采集桌面音频还是应用音频。

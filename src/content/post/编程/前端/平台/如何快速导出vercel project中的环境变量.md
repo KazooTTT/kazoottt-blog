@@ -14,9 +14,9 @@ category: 编程-前端-平台
 toAstro: true
 ---
 
-# 如何快速导出vercel Project中的环境变量
+# 如何快速导出 vercel Project 中的环境变量
 
-![Pasted image 20240223222337](https://pictures.kazoottt.top/2024/02/20240223-45a401aedb0bd0b7e4a1bc708cc368a9.png)我在vercel中集成了某些插件或者链接了数据库，要如何快速的导出这些环境变量呢？
+![Pasted image 20240223222337](https://pictures.kazoottt.top/2024/02/20240223-45a401aedb0bd0b7e4a1bc708cc368a9.png)我在 vercel 中集成了某些插件或者链接了数据库，要如何快速的导出这些环境变量呢？
 
 具体方法如下：
 
@@ -28,7 +28,7 @@ vercel link
 vercel env pull .env.local
 ```
 
-1. 首先是安装vercel
-2. 然后登录vercel ![Pasted image 20240223222531](https://pictures.kazoottt.top/2024/02/20240223-d958cd13a2bb101e2c056074826d1f37.png)
+1. 首先是安装 vercel
+2. 然后登录 vercel ![Pasted image 20240223222531](https://pictures.kazoottt.top/2024/02/20240223-d958cd13a2bb101e2c056074826d1f37.png)
 3. 最后拉取环境变量到.env.local
    ![Pasted image 20240223222605](https://pictures.kazoottt.top/2024/02/20240223-da07828b4f8288c2015ae659271c8b06.png)

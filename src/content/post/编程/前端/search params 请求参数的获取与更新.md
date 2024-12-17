@@ -16,13 +16,9 @@ slug: search-params
 description: >-
   React Router 的 `useSearchParams` Hook 提供了一个内建的 API，允许直接获取查询参数的值，比如 `.get()`,
   `.set()`, `.append()` 等。该 hook 可以帮助开发者轻松地处理 URL 中的 query parameters。
-
-
   使用 `qs` 库和 `window.location.search` 的方法也是可以实现解析 query parameters
   的效果。但需要注意的是，`qs.parse(window.location.search)`
   会将带有问号的字符串直接返回，而不对其进行处理。在正确的情况下，将需要手动去掉问号，以得到期望的结果。
-
-
   React Router 的 `useSearchParams` Hook 和 `qs` 库结合使用，可以帮助开发者更容易地管理 URL 中的 query
   parameters。
 NotionID-notionnext: 13d55568-fd75-81f5-be1b-e0a4f8137355
@@ -69,9 +65,9 @@ interface URLSearchParams {
 
 ![image.png](https://pictures.kazoottt.top/2024/11/20241113-9c3c37d82dd684dc8ca2b75cfb16784e.png)
 
-使用window.location.search获取到请求参数对应的字符串（需要注意的是：字符串是带有?的）
+使用 window.location.search 获取到请求参数对应的字符串（需要注意的是：字符串是带有?的）
 
-然后使用qs.parse方法来解析查询字符串
+然后使用 qs.parse 方法来解析查询字符串
 
 案例：localhost?medicalRecordID=1
 
