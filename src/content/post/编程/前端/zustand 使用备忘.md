@@ -89,9 +89,9 @@ export interface CameraData {
 }
 
 const CurrentCamera: React.FC = () => {
-  const cameraId = useGlobalStore(state => state.cameraData.cameraId);
+  const cameraData = useGlobalStore(state => state.cameraData);
 
-  return <CurrentCameraId cameraId={cameraId} />;
+  return <CurrentCameraId cameraId={cameraData.cameraId} />;
 };
 ```
 
