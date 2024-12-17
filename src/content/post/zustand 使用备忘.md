@@ -18,6 +18,8 @@ description: zustand 是一个状态管理库，简单易用。它可以通过�
 toAstro: true
 ---
 
+![cover.png](https://pictures.kazoottt.top/2024/12/20241217-533c0d7e7e526deaf3109fe13e49969f.png)
+
 ## 什么是 zustand？
 
 [zustand](https://github.com/pmndrs/zustand) 是一个状态管理库，简单易用。
