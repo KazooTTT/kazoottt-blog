@@ -19,7 +19,7 @@ toAstro: true
 
 ## UnityURPToonLitShader
 
-🔗 github.com/ColinLeung-NiloCat/UnityURPToonLitShaderExample  
+🔗 [GitHub - ColinLeung-NiloCat/UnityURPToonLitShaderExample: A very simple toon lit shader example, for you to learn writing custom lit shader in Unity URP](https://github.com/ColinLeung-NiloCat/UnityURPToonLitShaderExample)
 
   ![image.png](https://pictures.kazoottt.top/2024/12/20241218-5fb6f76d90389b1cd817ec84f39cb7ce.png)
 
@@ -27,7 +27,7 @@ toAstro: true
 
 ## Jason Ma Toon Render Pipeline
 
-🔗 github.com/JasonMa0012/JTRP  
+🔗 [GitHub - JasonMa0012/JTRP: JTRP : Unity HDRP ToonShading Render Pipeline (Preview)](https://github.com/JasonMa0012/JTRP)
 
 ![image.png](https://pictures.kazoottt.top/2024/12/20241218-f9724a9eeca411d57a48d305c42d84f6.png)
 
