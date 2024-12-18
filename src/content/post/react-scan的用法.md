@@ -73,3 +73,7 @@ const isBadRender =
 并且 react-scan 自带面板，不需要像 devtool 一样首先需要打开 devtool 再勾选上 re-render 的画面闪烁监听。
 
 ![image.png](https://pictures.kazoottt.top/2024/12/20241217-1db17bd2dcccf168976cdc833df6f6a3.png)
+
+## 参考
+
+[还有这种前端技巧？REACT-SCAN 代码鉴赏｜精简版\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1JrzvYgERi/)

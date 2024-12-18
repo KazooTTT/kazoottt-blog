@@ -130,7 +130,7 @@ const CurrentCamera: React.FC = () => {
 > 
 > If you have a large application, Zustand supports splitting the store into slices.
 > 
-> 如果你有一个大型应用程序，Zustand 支持将存储拆分为切片。  
+> 如果你有一个大型应用程序，Zustand 支持将存储拆分为切片。
 
 ## 错误用法 4 与 UI 无关的 state 通过 selector 获取
 
