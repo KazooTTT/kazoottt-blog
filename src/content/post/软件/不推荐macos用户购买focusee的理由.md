@@ -16,7 +16,7 @@ category: 软件
 slug: focusee-macos-review
 description: 分析了Focusee在macOS上的缺陷，包括色差严重、导出速度慢以及声卡配置冲突等问题，并分享了作者的退款经历。
 NotionID-notionnext: c6b6e2f5-9da1-43f9-b531-b07d974815ed
-link-notionnext: 'https://kazoottt.notion.site/macos-focusee-c6b6e2f59da143f9b531b07d974815ed'
+link-notionnext: https://kazoottt.notion.site/macos-focusee-c6b6e2f59da143f9b531b07d974815ed
 rinId: 42
 toAstro: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: zustand 使用备忘
+title: 分享一下我的zustand错误使用案例
 date: 2024-12-17T00:00:00.000Z
 author: KazooTTT
 type: Post

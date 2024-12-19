@@ -12,7 +12,7 @@ tags:
   - performance优化
 finished: true
 published: true
-category: null
+category: 编程-前端
 slug: react-scan
 description: >-
   react-scan 是一个用于查看 React 代码中的 re-render
