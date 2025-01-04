@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content'
 /** Note: this function filters out draft posts based on the environment */
 export async function getAllPosts(): Promise<CollectionEntry<'post'>[]> {
 	return await getCollection('post', ({ data }: { data: CollectionEntry<'post'> }) => {
-		return !data.draft && !data.category?.startsWith('日记-20')
+		return !data.draft && !data.category?.startsWith('日记')
 	})
 }
 
@@ -15,14 +15,13 @@ export async function getAllSortedPosts(): Promise<CollectionEntry<'post'>[]> {
 
 export const getAllDiaries = async (): Promise<CollectionEntry<'post'>[]> => {
 	return await getCollection('post', ({ data }: { data: CollectionEntry<'post'> }) => {
-		return !data.draft && data.category?.startsWith('日记-20')
+		return !data.draft && data.category?.startsWith('日记')
 	})
 }
 
 export const getAllDiariesSorted = async (): Promise<CollectionEntry<'post'>[]> => {
 	return sortMDByDate(await getAllDiaries())
 }
-
 
 export const getSortedAllPostsAndDiaries = async (): Promise<CollectionEntry<'post'>[]> => {
 	const posts = await getCollection('post', ({ data }: { data: CollectionEntry<'post'> }) => {
@@ -83,7 +82,9 @@ export function getUniqueCategoriesWithCount(
 	].sort((a, b) => b[1] - a[1])
 }
 
-export function getCategoriesGroupByName(posts: Array<CollectionEntry<'post'>>): CategoryHierarchy[] {
+export function getCategoriesGroupByName(
+	posts: Array<CollectionEntry<'post'>>
+): CategoryHierarchy[] {
 	const categories = getUniqueCategoriesWithCount(posts)
 	const hierarchicalCategories: CategoryHierarchy[] = []
 
@@ -95,7 +96,7 @@ export function getCategoriesGroupByName(posts: Array<CollectionEntry<'post'>>):
 			// If it's the last part, add count
 			if (index === parts.length - 1) {
 				// Check if category already exists
-				let categoryObj = current.find(cat => cat.category === parts[0])
+				let categoryObj = current.find((cat) => cat.category === parts[0])
 
 				if (!categoryObj) {
 					categoryObj = {
@@ -125,7 +126,7 @@ export function getCategoriesGroupByName(posts: Array<CollectionEntry<'post'>>):
 				}
 			} else {
 				// Ensure top-level category exists
-				let categoryObj = current.find(cat => cat.fullCategory === part)
+				let categoryObj = current.find((cat) => cat.fullCategory === part)
 				if (!categoryObj) {
 					categoryObj = {
 						category: part,
@@ -140,21 +141,22 @@ export function getCategoriesGroupByName(posts: Array<CollectionEntry<'post'>>):
 	})
 
 	// Calculate total count for each category by summing subcategories
-	hierarchicalCategories.forEach(category => {
+	hierarchicalCategories.forEach((category) => {
 		if (Object.keys(category.children).length > 0) {
-			category.count = Object.values(category.children)
-				.reduce((sum, child) => sum + (child.count || 0), 0)
+			category.count = Object.values(category.children).reduce(
+				(sum, child) => sum + (child.count || 0),
+				0
+			)
 		}
 	})
 
 	// Filter out categories with zero count and sort by count
 	return hierarchicalCategories
-		.filter(category => category.count > 0)
-		.map(category => ({
+		.filter((category) => category.count > 0)
+		.map((category) => ({
 			...category,
 			children: Object.fromEntries(
-				Object.entries(category.children)
-					.filter(([_, child]) => child.count > 0)
+				Object.entries(category.children).filter(([_, child]) => child.count > 0)
 			)
 		}))
 		.sort((a, b) => b.count - a.count)

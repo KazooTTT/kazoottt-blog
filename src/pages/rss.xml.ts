@@ -1,11 +1,11 @@
 import { siteConfig } from '@/site-config'
 import rss from '@astrojs/rss'
 import type { APIContext } from 'astro'
+import MarkdownIt from 'markdown-it'
 import sanitizeHtml from 'sanitize-html'
-import MarkdownIt from 'markdown-it';
-import { getSortedAllPostsAndDiaries } from 'src/utils/post';
+import { getSortedAllPostsAndDiaries } from 'src/utils/post'
 
-const parser = new MarkdownIt();
+const parser = new MarkdownIt()
 export async function GET(context: APIContext) {
 	const blog = await getSortedAllPostsAndDiaries()
 	return rss({
@@ -17,7 +17,7 @@ export async function GET(context: APIContext) {
     <userId>62156866798228480</userId>
 </follow_challenge>`,
 		items: blog.map((post) => {
-			const prefix = post?.data.category?.startsWith('日记-20') ? '/diary/' : '/blog/'
+			const prefix = post?.data.category?.startsWith('日记') ? '/diary/' : '/blog/'
 			return {
 				title: post.data.title,
 				pubDate: new Date(post.data.date),
