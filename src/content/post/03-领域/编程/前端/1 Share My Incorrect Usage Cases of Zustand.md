@@ -12,7 +12,7 @@ tags:
   - 最小粒度原则
 finished: true
 published: true
-category: 前端
+category: 
 slug: share-my-incorrect-usage-case-of-zustand
 description: Zustand is a state management library that is simple and easy to use. It allows you to access the state via a single selector or shallow comparison to prevent unnecessary re-renders of all components. When the state is updated, you can use `useShallow` to retrieve only the required data. Additionally, you should follow the principle of minimal granularity, only fetching the necessary data instead of using multiple stores to manage different states. Moreover, state that is unrelated to the UI does not need to be accessed via a selector. The correct approach is to directly access the store within the `handleSave` method.
 toAstro: true

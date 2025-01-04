@@ -13,7 +13,6 @@ description: |-
   然后，按下Command+K输入“git commit message”即可成功提交。
 slug: cursorgit-commit-msg
 toAstro: true
-category: git
 ---
 
 原文参考：

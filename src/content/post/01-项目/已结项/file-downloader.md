@@ -16,7 +16,7 @@ description: >-
   函数则用于从Blob对象下载文件，同样支持自定义文件名。这两个函数均来自 `@kzttools/file-downloader`
   包，该包的NPM地址和GitHub地址均已提供。项目遵循MIT许可证，作者为kazoottt。
 rinId: 63
-category: 已结项
+category: 项目
 toAstro: true
 ---
 

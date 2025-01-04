@@ -12,7 +12,7 @@ notionID: b2561889-02f7-4be0-9e4e-e74f8247da84
 description: >-
   本文讨论了在npm发包过程中可能遇到的失败原因，包括账号权限不足、包名不规范、包名包含屏蔽词等。特别提到了“download”是一个屏蔽词，作者通过将其替换为“downloader”后成功发布。同时，文章也提到了npm的命令行工具在错误信息提供上的不足，使得问题定位变得困难。参考了GitHub上的相关讨论，以帮助理解这一问题。
 rinId: 73
-category: node
+category: 前端
 toAstro: true
 ---
 

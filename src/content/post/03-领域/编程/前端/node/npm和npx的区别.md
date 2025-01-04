@@ -8,7 +8,7 @@ slug: difference-between-npm-and-npx
 description: >-
   本文详细介绍了npm和npx的区别，包括它们的定义、使用场景和具体用法。npm是Node.js的默认包管理器，用于安装、卸载和升级包，而npx是一个命令行工具，允许用户直接运行项目中的二进制文件，无需全局安装。文章通过实例说明了两者在实际开发中的应用，如使用npm安装ant
   design，以及使用npx创建nextjs项目。
-category: node
+category: 前端
 tags:
   - npm
   - npx

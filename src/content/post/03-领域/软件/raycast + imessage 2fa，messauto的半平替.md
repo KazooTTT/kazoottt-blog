@@ -11,7 +11,7 @@ tags:
   - messauto
 finished: true
 published: true
-category: 软件
+category: null
 slug: raycast-imessage-2fa
 description: >-
   我做过一个messAuto的安利，使用raycast + iMessage

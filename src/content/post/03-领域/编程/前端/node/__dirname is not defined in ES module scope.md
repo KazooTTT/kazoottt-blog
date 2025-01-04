@@ -11,7 +11,7 @@ tags:
   - module
 finished: true
 published: true
-category: node
+category: 前端
 slug: dirname-is-not-defined-in-es-module-scope
 NotionID-notionnext: 543bfc66-a416-4704-92be-9a93fed191a8
 link-notionnext: >-

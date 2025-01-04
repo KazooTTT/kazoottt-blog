@@ -10,7 +10,7 @@ slug: how-to-quickly-export-environment-variables-in-vercel-project
 description: >-
   本文介绍了如何在Vercel中集成插件或链接数据库后，快速导出环境变量的方法。首先，需要全局安装Vercel，然后通过命令链接Vercel账户，并拉取环境变量到本地的.env.local文件中。这一过程简化了环境变量的管理，提高了开发效率。
 rinId: 3
-category: 平台
+category: 前端
 toAstro: true
 ---
 

@@ -11,7 +11,7 @@ tags:
   - OBSidian模板
 finished: true
 published: true
-category: 前端
+category: null
 description: >-
   这个 GitHub Action 通过 Node.js 脚本在每次推送到 content 目录和 build_docs.cjs
   脚本时更新博客内容，并将其复制到另一个目标仓库。它支持多个环境，包括本地和服务器。该过程依赖于 Obsidian 模板和 Gray Matter 脚本。

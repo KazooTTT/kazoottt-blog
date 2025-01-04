@@ -12,7 +12,7 @@ tags:
   - 最小粒度原则
 finished: true
 published: true
-category: 前端
+category: 
 slug: zustand-use-record
 description: zustand 是一个状态管理库，简单易用。它可以通过使用 single selector 或 shallow 来获取 state，避免所有组件都重新渲染。当 state 更新时，可以通过 useShallow 来只获取需要的数据。同时，应该遵循最小粒度原则，只获取需要的数据，而不是使用多个 store 去存储不同的 state。另外，与 UI 无关的 state 不需要通过 selector 获取，正确的做法是直接在 handleSave 方法内部访问 store。
 toAstro: true

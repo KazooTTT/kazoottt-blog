@@ -12,7 +12,7 @@ tags:
   - Refund
 finished: true
 published: true
-category: englishWriting
+category: 软件
 slug: focusee-macos-review-en
 description: >-
   An analysis of Focusee's shortcomings on macOS, including severe color

@@ -12,7 +12,7 @@ tags:
   - 数据转换
 finished: true
 published: true
-category: vtk.js
+category: 前端
 slug: in-vtkjs-stl-and-json-are-converted-to-each-other
 description: >-
   STL模型可以通过 JavaScript 的 `vtk.js` 库以 JSON 格式进行读写。将 STL 模型读入 JSON 格式的方法是使用
