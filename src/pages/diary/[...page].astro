@@ -5,7 +5,7 @@ import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 
 import Button from '@/components/Button.astro'
-import Pagination from '@/components/Paginator.astro'
+import Calendar from '@/components/blog/Calendar.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getallDiaries, getUniqueCategories, getUniqueTags, sortMDByDate } from '@/utils'
@@ -15,36 +15,41 @@ export const getStaticPaths = (async ({ paginate }) => {
 	const allPostsByDate = sortMDByDate(allPosts)
 	const uniqueTags = getUniqueTags(allPosts)
 	const uniqueCategories = getUniqueCategories(allPosts)
-	return paginate(allPostsByDate, { pageSize: 50, props: { uniqueTags, uniqueCategories } })
+
+	// 找到最新的有日记的月份
+	const latestPost = allPostsByDate[0]
+	const latestDate = latestPost ? new Date(latestPost.data.date) : new Date()
+
+	return paginate(allPostsByDate, {
+		pageSize: 50,
+		props: { uniqueTags, uniqueCategories, allPosts: allPostsByDate, latestDate }
+	})
 }) satisfies GetStaticPaths
 
 interface Props {
 	page: Page<CollectionEntry<'post'>>
 	uniqueTags: string[]
 	uniqueCategories: string[]
+	allPosts: CollectionEntry<'post'>[]
+	latestDate: Date
 }
 
-const { page, uniqueTags, uniqueCategories } = Astro.props
+const { page, allPosts, latestDate } = Astro.props
+const currentDate = latestDate
 
 const meta = {
 	description: 'Posts',
 	title: 'Diary'
 }
 
-const paginationProps = {
-	...(page.url.prev && {
-		prevUrl: {
-			text: `← Previous Posts`,
-			url: page.url.prev
-		}
-	}),
-	...(page.url.next && {
-		nextUrl: {
-			text: `Next Posts →`,
-			url: page.url.next
-		}
-	})
-}
+// 序列化文章数据供客户端使用
+const serializedPosts = allPosts.map((post) => ({
+	slug: post.slug,
+	data: {
+		title: post.data.title,
+		date: post.data.date
+	}
+}))
 ---
 
 <PageLayout meta={meta}>
@@ -70,15 +75,24 @@ const paginationProps = {
 
 		{
 			page.data.length > 0 && (
-				<div class='grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8'>
-					<section aria-label='Diary posts list'>
+				<div class='space-y-12'>
+					<script
+						id='posts-data'
+						type='application/json'
+						set:html={JSON.stringify(serializedPosts)}
+					/>
+					<div data-current-date={currentDate.toISOString()}>
+						<Calendar posts={allPosts} currentDate={currentDate} />
+					</div>
+
+					<div class='mt-8'>
+						<h2 class='mb-4 text-xl font-semibold'>所有日记</h2>
 						<ul class='flex flex-col gap-y-4 text-start'>
 							{page.data.map((p) => (
 								<PostPreview post={p} prefix='/diary/' withDesc />
 							))}
 						</ul>
-						<Pagination {...paginationProps} />
-					</section>
+					</div>
 				</div>
 			)
 		}
