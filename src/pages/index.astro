@@ -1,17 +1,17 @@
 ---
-import PageLayout from '../layouts/BaseLayout.astro'
-import Section from '../components/Section.astro'
-import Card from '../components/Card.astro'
-import ProjectCard from '../components/ProjectCard.astro'
-import Label from '../components/Label.astro'
-import SkillLayout from '../components/SkillLayout.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import { Image } from 'astro:assets'
 import kazootttAvatar from '../assets/kazoottt-avatar.jpeg'
+import Card from '../components/Card.astro'
+import Label from '../components/Label.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import Section from '../components/Section.astro'
+import SkillLayout from '../components/SkillLayout.astro'
+import PageLayout from '../layouts/BaseLayout.astro'
 
+import GiscusComment from '@/components/GiscusComment'
 import { getAllPosts, sortMDByDate } from '@/utils'
 import { Icon } from 'astro-icon/components'
-import GiscusComment from '@/components/GiscusComment'
 
 const frontend = ['react(熟悉)', 'vue2(了解)', 'vtk.js(了解)', 'next.js', 'tailwindcss']
 const backend = ['nodejs(熟悉)', 'python(了解)', 'elysiajs', 'nextjs', 'cloudflare d1', 'prisma']
@@ -36,7 +36,7 @@ const directProjects = [
 
 // Get projects from markdown
 const mdProjects = allPosts
-	.filter((post) => post.data.category === '项目-已结项')
+	.filter((post) => post.data.category === '项目')
 	.sort((a, b) => {
 		if (a.data.pinned && !b.data.pinned) return -1
 		if (!a.data.pinned && b.data.pinned) return 1

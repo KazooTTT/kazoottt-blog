@@ -7,6 +7,7 @@ const contentDir = path.join(__dirname, '../src/content/post')
 // full path, root path, parent path
 
 const getCategoryMode = 'parent'
+const isGetCategoryFromPath = false
 
 function toCamelCase(str) {
 	return str
@@ -56,6 +57,11 @@ function getCategoryFromPath(filePath) {
 
 function processFile(filePath) {
 	const fileContent = fs.readFileSync(filePath, 'utf8')
+
+	if (!isGetCategoryFromPath) {
+		return
+	}
+
 	const category = getCategoryFromPath(filePath)
 
 	if (!category) {
