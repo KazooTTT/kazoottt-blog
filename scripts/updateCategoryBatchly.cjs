@@ -4,7 +4,9 @@ const fs = require('fs')
 const path = require('path')
 
 const contentDir = path.join(__dirname, '../src/content/post')
-const USE_FULL_PATH = true
+// full path, root path, parent path
+
+const getCategoryMode = 'parent'
 
 function toCamelCase(str) {
 	return str
@@ -34,13 +36,17 @@ function getCategoryFromPath(filePath) {
 	const pathParts = relativePath.split(path.sep)
 
 	if (pathParts.length > 1) {
-		if (USE_FULL_PATH) {
+		if (getCategoryMode === 'full') {
 			// Join all directory parts except the filename and convert to camelCase if contains spaces
 			const category = pathParts.slice(0, -1).join('-')
 			return category.includes(' ') ? toCamelCase(category) : category
-		} else {
+		} else if (getCategoryMode === 'root') {
 			// Just use the first directory after "post" and convert to camelCase if contains spaces
 			const category = pathParts[0]
+			return category.includes(' ') ? toCamelCase(category) : category
+		} else if (getCategoryMode === 'parent') {
+			// Just use the last directory before the filename
+			const category = pathParts[pathParts.length - 2]
 			return category.includes(' ') ? toCamelCase(category) : category
 		}
 	}
