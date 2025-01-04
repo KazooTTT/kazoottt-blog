@@ -7,7 +7,7 @@ status: Published
 tags: 
 finished: true
 published: true
-category: 
+category: 项目
 slug: merge-pdfs
 description: 
 toAstro: true
