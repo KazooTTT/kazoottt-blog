@@ -4,7 +4,11 @@ date: 2025-01-05
 author: KazooTTT
 type: Post
 status: Published
-tags: whisper-ui,huggingface,镜像,大模型
+tags:
+  - whisper-ui
+  - huggingface
+  - 镜像
+  - 大模型
 finished: true
 published: true
 category: 大模型
