@@ -36,4 +36,4 @@ toAstro: true
 
 开发本身没有花太多时间，更多的时间是花在了把相关的信息整理为结构化的数据上面（应该有更系统的方法，实现更系统的方法会花费更多时间，虽然以后会受益，但这次想着快速开发就直接人工 + 部分 llm 辅助整理了）
 
-[![wakatime](https://wakatime.com/badge/user/d3dc2570-e4bf-4469-b0c2-127b495e8b91/project/ac2f17b6-d280-4e7d-957a-485d72bd3668.svg)](https://wakatime.com/badge/user/d3dc2570-e4bf-4469-b0c2-127b495e8b91/project/ac2f17b6-d280-4e7d-957a-485d72bd3668)
+![ac2f17b6-d280-4e7d-957a-485d72bd3668.svg](https://wakatime.com/badge/user/d3dc2570-e4bf-4469-b0c2-127b495e8b91/project/ac2f17b6-d280-4e7d-957a-485d72bd3668.svg)
