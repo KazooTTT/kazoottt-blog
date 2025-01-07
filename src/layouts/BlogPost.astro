@@ -56,7 +56,22 @@ const { headings } = await post.render()
 				</div>
 				<div
 					id='blog-gallery'
-					class='prose-base prose-zinc mt-12 w-full text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none prose-img:shadow'
+					class='prose prose-base prose-zinc mt-12 w-full text-muted-foreground dark:prose-invert
+					prose-headings:scroll-mt-20 prose-headings:font-bold
+					prose-headings:text-foreground prose-headings:underline prose-headings:decoration-foreground
+						prose-headings:underline-offset-4 prose-headings:before:absolute prose-headings:before:-ms-4
+					prose-p:leading-relaxed prose-p:text-muted-foreground
+					prose-a:text-primary prose-a:decoration-green-400/50 prose-a:decoration-wavy prose-a:underline-offset-4
+					prose-a:transition-all hover:prose-a:text-primary hover:prose-a:decoration-green-400
+					prose-blockquote:border-primary prose-blockquote:bg-muted/50
+					prose-blockquote:px-4 prose-blockquote:py-1 prose-li:leading-relaxed
+					prose-li:text-muted-foreground
+					prose-th:before:content-none prose-img:my-8 prose-img:rounded-lg
+					prose-img:shadow-md prose-hr:border-border
+					[&>:not(pre)>code]:rounded-md [&>:not(pre)>code]:bg-green-100/50 [&>:not(pre)>code]:px-1.5
+					[&>:not(pre)>code]:py-0.5 [&>:not(pre)>code]:font-bold [&>:not(pre)>code]:text-green-900
+					[&>:not(pre)>code]:before:content-none [&>:not(pre)>code]:after:content-none
+					dark:[&>:not(pre)>code]:bg-green-950 dark:[&>:not(pre)>code]:text-green-400'
 				>
 					<slot />
 				</div>
