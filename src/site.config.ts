@@ -1,5 +1,5 @@
-import type { SiteConfig } from '@/types';
-import type { AstroExpressiveCodeOptions } from 'astro-expressive-code';
+import type { SiteConfig } from '@/types'
+import type { AstroExpressiveCodeOptions } from 'astro-expressive-code'
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
 			year: 'numeric'
 		}
 	},
-	site: 'https://blog.kazoottt.top',
+	site: 'https://blog.kazoottt.top'
 }
 
 export const menuLinks: Array<{ title: string; path: string }> = [

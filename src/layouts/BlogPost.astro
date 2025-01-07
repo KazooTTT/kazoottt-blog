@@ -23,7 +23,14 @@ const articleDate = date?.toISOString()
 const { headings } = await post.render()
 ---
 
-<PageLayout meta={{ articleDate, description: description ?? '', ogImage: socialImage, title }}>
+<PageLayout
+	meta={{
+		articleDate,
+		description: description ?? '',
+		ogImage: socialImage,
+		title
+	}}
+>
 	<div class='w-full'>
 		<Button title='Back' href={backHref} style='button'>
 			<svg

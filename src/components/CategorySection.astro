@@ -2,38 +2,38 @@
 import ToolSection from './ToolSection.astro'
 
 interface Props {
-  title: string
-  categories: {
-    title: string
-    sections: {
-      [key: string]: {
-        title: string
-        tools: {
-          name: string
-          description: string
-          href?: string
-          iconPath?: string
-        }[]
-      }
-    }
-  }[]
+	title: string
+	categories: {
+		title: string
+		sections: {
+			[key: string]: {
+				title: string
+				tools: {
+					name: string
+					description: string
+					href?: string
+					iconPath?: string
+				}[]
+			}
+		}
+	}[]
 }
 
 const { title, categories } = Astro.props
 ---
 
 <div>
-  <h2 class='mb-6 text-xl font-bold'>{title}</h2>
-  {
-    categories.map((category) => (
-      <div class='mb-8'>
-        <h3 class='mb-4 text-lg font-semibold'>{category.title}</h3>
-        {Object.values(category.sections).map((section) => (
-          <div class='mb-6'>
-            <ToolSection title={section.title} tools={section.tools} />
-          </div>
-        ))}
-      </div>
-    ))
-  }
+	<h2 class='mb-6 text-xl font-bold'>{title}</h2>
+	{
+		categories.map((category) => (
+			<div class='mb-8'>
+				<h3 class='mb-4 text-lg font-semibold'>{category.title}</h3>
+				{Object.values(category.sections).map((section) => (
+					<div class='mb-6'>
+						<ToolSection title={section.title} tools={section.tools} />
+					</div>
+				))}
+			</div>
+		))
+	}
 </div>

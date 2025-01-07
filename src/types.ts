@@ -24,7 +24,6 @@ export type SiteMeta = {
 	articleDate?: string | undefined
 }
 
-
 export interface CategoryHierarchy {
 	category: string
 	fullCategory: string

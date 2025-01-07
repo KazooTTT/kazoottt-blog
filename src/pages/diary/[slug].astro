@@ -4,7 +4,6 @@ export const prerender = true
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 
 import PostLayout from '@/layouts/BlogPost.astro'
-import GiscusComment from '@/components/GiscusComment'
 import { getallDiaries } from 'src/utils'
 
 export const getStaticPaths = (async () => {
@@ -23,5 +22,4 @@ const { Content } = await entry.render()
 
 <PostLayout post={entry} simple={true} backHref='/diary'>
 	<Content />
-	<GiscusComment client:load />
 </PostLayout>

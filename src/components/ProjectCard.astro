@@ -33,17 +33,19 @@ if (imagePath) {
 	href={href}
 	target={target}
 >
-	{imageComponent && (
-		<Image
-			src={imageComponent()}
-			alt={altText}
-			class='h-32 w-full rounded-2xl rounded-bl-none rounded-br-none object-cover'
-			loading='eager'
-		/>
-	)}
-	<div class='flex flex-col gap-y-2 flex-1 px-5 py-4 text-center justify-center w-full'>
+	{
+		imageComponent && (
+			<Image
+				src={imageComponent()}
+				alt={altText}
+				class='h-32 w-full rounded-2xl rounded-bl-none rounded-br-none object-cover'
+				loading='eager'
+			/>
+		)
+	}
+	<div class='flex w-full flex-1 flex-col justify-center gap-y-2 px-5 py-4 text-center'>
 		<h1 class='text-lg font-medium'>{heading}</h1>
-		<h2 class='text-muted-foreground line-clamp-2 text-sm'>{subheading}</h2>
+		<h2 class='line-clamp-2 text-sm text-muted-foreground'>{subheading}</h2>
 	</div>
 
 	<slot />
