@@ -81,7 +81,7 @@ const serializedPosts = allPosts.map((post) => ({
 						type='application/json'
 						set:html={JSON.stringify(serializedPosts)}
 					/>
-					<div data-current-date={currentDate.toISOString()}>
+					<div id='calendar-container' data-current-date={currentDate.toISOString()}>
 						<Calendar posts={allPosts} currentDate={currentDate} />
 					</div>
 
@@ -98,3 +98,28 @@ const serializedPosts = allPosts.map((post) => ({
 		}
 	</div>
 </PageLayout>
+
+<script>
+	function initializeCalendar() {
+		const postsDataScript = document.getElementById('posts-data')
+		if (!postsDataScript) return
+
+		// 触发一个自定义事件，通知日历组件重新初始化
+		window.dispatchEvent(
+			new CustomEvent('calendar-init', {
+				detail: {
+					posts: JSON.parse(postsDataScript.textContent || '[]'),
+					currentDate: document.getElementById('calendar-container')?.dataset.currentDate
+				}
+			})
+		)
+	}
+
+	// 页面首次加载时初始化
+	initializeCalendar()
+
+	// 在视图转换后重新初始化
+	document.addEventListener('astro:after-swap', () => {
+		initializeCalendar()
+	})
+</script>

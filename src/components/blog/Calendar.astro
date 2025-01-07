@@ -72,183 +72,195 @@ const weekDays = ['一', '二', '三', '四', '五', '六', '日']
 		day?: 'numeric' | '2-digit'
 	}
 
-	const allPosts = JSON.parse(document.getElementById('posts-data')?.textContent || '[]') as Post[]
-	const currentMonthDisplay = document.getElementById('currentMonthDisplay')
-	const prevMonthBtn = document.getElementById('prevMonth')
-	const nextMonthBtn = document.getElementById('nextMonth')
-	const calendarGrid = document.getElementById('calendarGrid')
+	function initCalendar() {
+		const allPosts = JSON.parse(
+			document.getElementById('posts-data')?.textContent || '[]'
+		) as Post[]
+		const currentMonthDisplay = document.getElementById('currentMonthDisplay')
+		const prevMonthBtn = document.getElementById('prevMonth')
+		const nextMonthBtn = document.getElementById('nextMonth')
+		const calendarGrid = document.getElementById('calendarGrid')
 
-	// 使用传入的 currentDate 作为初始日期
-	let currentDate = new Date(
-		document.querySelector('[data-current-date]')?.getAttribute('data-current-date') || new Date()
-	)
+		// 使用传入的 currentDate 作为初始日期
+		let currentDate = new Date(
+			document.querySelector('[data-current-date]')?.getAttribute('data-current-date') || new Date()
+		)
 
-	// 获取所有有日记的月份
-	const months = allPosts.map((post) => {
-		const date = new Date(post.data.date)
-		return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
-	})
-	const uniqueMonths = Array.from(new Set(months)).sort()
+		// 获取所有有日记的月份
+		const months = allPosts.map((post) => {
+			const date = new Date(post.data.date)
+			return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+		})
+		const uniqueMonths = Array.from(new Set(months)).sort()
 
-	function getFormattedDate(date: Date, options: DateTimeFormatOptions): string {
-		return new Intl.DateTimeFormat('zh-CN', options).format(date)
-	}
-
-	function getCurrentMonthStr(): string {
-		return `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`
-	}
-
-	function canNavigateToMonth(direction: 'prev' | 'next'): boolean {
-		const currentMonthStr = getCurrentMonthStr()
-		if (direction === 'prev') {
-			return uniqueMonths.some((m) => m < currentMonthStr)
-		} else {
-			const now = new Date()
-			const currentMonth = new Date(currentDate.getFullYear(), currentDate.getMonth())
-			const thisMonth = new Date(now.getFullYear(), now.getMonth())
-			return currentMonth < thisMonth
-		}
-	}
-
-	function updateNavigationButtons() {
-		if (prevMonthBtn && nextMonthBtn) {
-			const canGoPrev = canNavigateToMonth('prev')
-			const canGoNext = canNavigateToMonth('next')
-
-			prevMonthBtn.classList.toggle('cursor-not-allowed', !canGoPrev)
-			prevMonthBtn.classList.toggle('opacity-50', !canGoPrev)
-			;(prevMonthBtn as HTMLButtonElement).disabled = !canGoPrev
-
-			nextMonthBtn.classList.toggle('cursor-not-allowed', !canGoNext)
-			nextMonthBtn.classList.toggle('opacity-50', !canGoNext)
-			;(nextMonthBtn as HTMLButtonElement).disabled = !canGoNext
-		}
-	}
-
-	function renderCalendar() {
-		// 获取当月的第一天和最后一天
-		const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1)
-		const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0)
-
-		// 获取当月第一天是星期几（0是周日，1是周一，以此类推）
-		const firstDayWeekday = firstDayOfMonth.getDay()
-		const adjustedFirstDayWeekday = firstDayWeekday === 0 ? 7 : firstDayWeekday
-
-		// 计算日历表格需要显示的天数
-		const daysInPrevMonth = adjustedFirstDayWeekday - 1
-		const daysInCurrentMonth = lastDayOfMonth.getDate()
-		const totalDays = Math.ceil((daysInPrevMonth + daysInCurrentMonth) / 7) * 7
-
-		// 获取上个月的最后几天
-		const lastDayOfPrevMonth = new Date(
-			currentDate.getFullYear(),
-			currentDate.getMonth(),
-			0
-		).getDate()
-
-		// 更新月份显示
-		if (currentMonthDisplay) {
-			currentMonthDisplay.textContent = `${currentDate.getFullYear()}年${currentDate.getMonth() + 1}月`
+		function getFormattedDate(date: Date, options: DateTimeFormatOptions): string {
+			return new Intl.DateTimeFormat('zh-CN', options).format(date)
 		}
 
-		// 更新导航按钮状态
-		updateNavigationButtons()
+		function getCurrentMonthStr(): string {
+			return `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`
+		}
 
-		// 清除现有的日历内容（保留星期标题）
-		const existingDays = calendarGrid?.querySelectorAll('.calendar-day')
-		existingDays?.forEach((day) => day.remove())
+		function canNavigateToMonth(direction: 'prev' | 'next'): boolean {
+			const currentMonthStr = getCurrentMonthStr()
+			if (direction === 'prev') {
+				return uniqueMonths.some((m) => m < currentMonthStr)
+			} else {
+				const now = new Date()
+				const currentMonth = new Date(currentDate.getFullYear(), currentDate.getMonth())
+				const thisMonth = new Date(now.getFullYear(), now.getMonth())
+				return currentMonth < thisMonth
+			}
+		}
 
-		// 生成日历内容
-		for (let i = 0; i < totalDays; i++) {
-			const dayNumber = i - daysInPrevMonth + 1
-			const isCurrentMonth = dayNumber > 0 && dayNumber <= daysInCurrentMonth
-			const displayDay = isCurrentMonth
-				? dayNumber
-				: dayNumber <= 0
-					? lastDayOfPrevMonth + dayNumber
-					: dayNumber - daysInCurrentMonth
+		function updateNavigationButtons() {
+			if (prevMonthBtn && nextMonthBtn) {
+				const canGoPrev = canNavigateToMonth('prev')
+				const canGoNext = canNavigateToMonth('next')
 
-			const date = new Date(
+				prevMonthBtn.classList.toggle('cursor-not-allowed', !canGoPrev)
+				prevMonthBtn.classList.toggle('opacity-50', !canGoPrev)
+				;(prevMonthBtn as HTMLButtonElement).disabled = !canGoPrev
+
+				nextMonthBtn.classList.toggle('cursor-not-allowed', !canGoNext)
+				nextMonthBtn.classList.toggle('opacity-50', !canGoNext)
+				;(nextMonthBtn as HTMLButtonElement).disabled = !canGoNext
+			}
+		}
+
+		function renderCalendar() {
+			// 获取当月的第一天和最后一天
+			const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1)
+			const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0)
+
+			// 获取当月第一天是星期几（0是周日，1是周一，以此类推）
+			const firstDayWeekday = firstDayOfMonth.getDay()
+			const adjustedFirstDayWeekday = firstDayWeekday === 0 ? 7 : firstDayWeekday
+
+			// 计算日历表格需要显示的天数
+			const daysInPrevMonth = adjustedFirstDayWeekday - 1
+			const daysInCurrentMonth = lastDayOfMonth.getDate()
+			const totalDays = Math.ceil((daysInPrevMonth + daysInCurrentMonth) / 7) * 7
+
+			// 获取上个月的最后几天
+			const lastDayOfPrevMonth = new Date(
 				currentDate.getFullYear(),
-				isCurrentMonth
-					? currentDate.getMonth()
-					: dayNumber <= 0
-						? currentDate.getMonth() - 1
-						: currentDate.getMonth() + 1,
-				displayDay
-			)
+				currentDate.getMonth(),
+				0
+			).getDate()
 
-			const formattedDate = getFormattedDate(date, {
-				year: 'numeric',
-				month: '2-digit',
-				day: '2-digit'
-			})
-
-			// 查找当天的文章
-			const postsForDay = allPosts.filter((post) => {
-				const postDate = new Date(post.data.date)
-				return (
-					getFormattedDate(postDate, {
-						year: 'numeric',
-						month: '2-digit',
-						day: '2-digit'
-					}) === formattedDate
-				)
-			})
-
-			const hasPost = postsForDay.length > 0
-
-			// 创建日历单元格
-			const dayElement = document.createElement('div')
-			dayElement.className = `calendar-day min-h-[100px] rounded-lg border p-2 ${
-				isCurrentMonth ? 'bg-primary-foreground' : 'bg-muted/50'
-			} ${hasPost ? 'border-green-400/50' : 'border-border'}`
-
-			// 添加日期显示
-			const dateDisplay = document.createElement('div')
-			dateDisplay.className = 'mb-1 text-right'
-			const dateSpan = document.createElement('span')
-			dateSpan.className = `inline-block h-7 w-7 rounded-full text-center leading-7 ${
-				!isCurrentMonth ? 'text-muted-foreground' : ''
-			} ${hasPost ? 'bg-green-400/20' : ''}`
-			dateSpan.textContent = displayDay.toString()
-			dateDisplay.appendChild(dateSpan)
-			dayElement.appendChild(dateDisplay)
-
-			// 如果有文章，添加文章链接
-			if (hasPost) {
-				const postsContainer = document.createElement('div')
-				postsContainer.className = 'space-y-1 text-xs'
-				postsForDay.forEach((post) => {
-					const link = document.createElement('a')
-					link.href = `/diary/${post.slug}/`
-					link.className = 'block line-clamp-2  transition-colors hover:text-green-400'
-					link.title = post.data.title
-					link.textContent = post.data.title
-					postsContainer.appendChild(link)
-				})
-				dayElement.appendChild(postsContainer)
+			// 更新月份显示
+			if (currentMonthDisplay) {
+				currentMonthDisplay.textContent = `${currentDate.getFullYear()}年${currentDate.getMonth() + 1}月`
 			}
 
-			calendarGrid?.appendChild(dayElement)
+			// 更新导航按钮状态
+			updateNavigationButtons()
+
+			// 清除现有的日历内容（保留星期标题）
+			const existingDays = calendarGrid?.querySelectorAll('.calendar-day')
+			existingDays?.forEach((day) => day.remove())
+
+			// 生成日历内容
+			for (let i = 0; i < totalDays; i++) {
+				const dayNumber = i - daysInPrevMonth + 1
+				const isCurrentMonth = dayNumber > 0 && dayNumber <= daysInCurrentMonth
+				const displayDay = isCurrentMonth
+					? dayNumber
+					: dayNumber <= 0
+						? lastDayOfPrevMonth + dayNumber
+						: dayNumber - daysInCurrentMonth
+
+				const date = new Date(
+					currentDate.getFullYear(),
+					isCurrentMonth
+						? currentDate.getMonth()
+						: dayNumber <= 0
+							? currentDate.getMonth() - 1
+							: currentDate.getMonth() + 1,
+					displayDay
+				)
+
+				const formattedDate = getFormattedDate(date, {
+					year: 'numeric',
+					month: '2-digit',
+					day: '2-digit'
+				})
+
+				// 查找当天的文章
+				const postsForDay = allPosts.filter((post) => {
+					const postDate = new Date(post.data.date)
+					return (
+						getFormattedDate(postDate, {
+							year: 'numeric',
+							month: '2-digit',
+							day: '2-digit'
+						}) === formattedDate
+					)
+				})
+
+				const hasPost = postsForDay.length > 0
+
+				// 创建日历单元格
+				const dayElement = document.createElement('div')
+				dayElement.className = `calendar-day min-h-[100px] rounded-lg border p-2 ${
+					isCurrentMonth ? 'bg-primary-foreground' : 'bg-muted/50'
+				} ${hasPost ? 'border-green-400/50' : 'border-border'}`
+
+				// 添加日期显示
+				const dateDisplay = document.createElement('div')
+				dateDisplay.className = 'mb-1 text-right'
+				const dateSpan = document.createElement('span')
+				dateSpan.className = `inline-block h-7 w-7 rounded-full text-center leading-7 ${
+					!isCurrentMonth ? 'text-muted-foreground' : ''
+				} ${hasPost ? 'bg-green-400/20' : ''}`
+				dateSpan.textContent = displayDay.toString()
+				dateDisplay.appendChild(dateSpan)
+				dayElement.appendChild(dateDisplay)
+
+				// 如果有文章，添加文章链接
+				if (hasPost) {
+					const postsContainer = document.createElement('div')
+					postsContainer.className = 'space-y-1 text-xs'
+					postsForDay.forEach((post) => {
+						const link = document.createElement('a')
+						link.href = `/diary/${post.slug}/`
+						link.className = 'block line-clamp-2  transition-colors hover:text-green-400'
+						link.title = post.data.title
+						link.textContent = post.data.title
+						postsContainer.appendChild(link)
+					})
+					dayElement.appendChild(postsContainer)
+				}
+
+				calendarGrid?.appendChild(dayElement)
+			}
 		}
+
+		// 初始渲染
+		renderCalendar()
+
+		// 添加事件监听器
+		prevMonthBtn?.addEventListener('click', () => {
+			if (canNavigateToMonth('prev')) {
+				currentDate.setMonth(currentDate.getMonth() - 1)
+				renderCalendar()
+			}
+		})
+
+		nextMonthBtn?.addEventListener('click', () => {
+			if (canNavigateToMonth('next')) {
+				currentDate.setMonth(currentDate.getMonth() + 1)
+				renderCalendar()
+			}
+		})
 	}
 
-	// 初始渲染
-	renderCalendar()
+	// 页面加载时初始化
+	initCalendar()
 
-	// 添加事件监听器
-	prevMonthBtn?.addEventListener('click', () => {
-		if (canNavigateToMonth('prev')) {
-			currentDate.setMonth(currentDate.getMonth() - 1)
-			renderCalendar()
-		}
-	})
-
-	nextMonthBtn?.addEventListener('click', () => {
-		if (canNavigateToMonth('next')) {
-			currentDate.setMonth(currentDate.getMonth() + 1)
-			renderCalendar()
-		}
+	// 在视图转换后重新初始化
+	document.addEventListener('astro:after-swap', () => {
+		initCalendar()
 	})
 </script>

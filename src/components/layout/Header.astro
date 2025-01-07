@@ -5,23 +5,23 @@ import { Image } from 'astro:assets'
 
 <header class='fixed left-0 right-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-800'>
 	<nav
-		class='mx-auto flex w-full items-center justify-between px-4 py-3 sm:flex sm:w-3/5 sm:items-center lg:w-4/5'
+		class='mx-auto flex w-full items-center justify-between px-4 py-3 lg:flex lg:w-3/5 lg:w-4/5 lg:items-center'
 		aria-label='global'
 	>
 		<a class='flex items-center' href='/'>
 			<Image
 				src={kazootttAvatar}
 				alt='profile photo'
-				class='mr-2 h-8 w-auto rounded-full sm:hidden'
+				class='mr-2 h-8 w-auto rounded-full lg:hidden'
 				loading='eager'
 			/>
-			<div class='hidden flex-none text-xl font-semibold sm:block' aria-label='Brand'>声控烤箱</div>
+			<div class='hidden flex-none text-xl font-semibold lg:block' aria-label='Brand'>声控烤箱</div>
 		</a>
 
 		<!-- Mobile menu button -->
 		<button
 			id='mobileMenuButton'
-			class='rounded-md p-2 hover:bg-border sm:hidden'
+			class='rounded-md p-2 hover:bg-border lg:hidden'
 			aria-label='Toggle mobile menu'
 		>
 			<svg
@@ -36,7 +36,7 @@ import { Image } from 'astro:assets'
 		</button>
 
 		<!-- Desktop Navigation -->
-		<div class='hidden flex-row items-center justify-center gap-x-7 sm:flex'>
+		<div class='hidden flex-row items-center justify-center gap-x-7 lg:flex'>
 			<div class='relative'>
 				<a
 					href='/blog'
@@ -145,7 +145,7 @@ import { Image } from 'astro:assets'
 		<!-- Mobile Navigation -->
 		<div
 			id='mobileMenu'
-			class='fixed inset-x-0 top-[72px] z-50 hidden max-h-[calc(100vh-72px)] overflow-y-auto rounded-b-lg bg-white shadow-lg dark:bg-gray-800 sm:hidden'
+			class='fixed inset-x-0 top-[72px] z-50 hidden max-h-[calc(100vh-72px)] overflow-y-auto rounded-b-lg bg-white shadow-lg dark:bg-gray-800 lg:hidden'
 		>
 			<div class='space-y-2 px-4 py-2'>
 				<a
