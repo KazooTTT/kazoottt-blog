@@ -1,18 +1,31 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 
-import { getFormattedDate } from '@/utils'
-
-type Props = HTMLAttributes<'time'> & {
+interface Props extends HTMLAttributes<'time'> {
 	date: Date
-	dateTimeOptions?: Intl.DateTimeFormatOptions
+	coverImage: string
 }
 
-const { date, dateTimeOptions, ...attrs } = Astro.props
+const { date, coverImage: coverImage, ...attrs } = Astro.props
+console.log('coverImage', coverImage)
 
-const postDate = getFormattedDate(date, dateTimeOptions)
+const formattedDate = date.toISOString().slice(0, 10).replace(/-/g, '')
 ---
 
-<time datetime={date.toISOString()} {...attrs}>
-	{postDate}
-</time>
+{
+	coverImage ? (
+		<div class='relative'>
+			<time datetime={date.toISOString()} {...attrs}>
+				{formattedDate}
+			</time>
+			<img
+				src={coverImage}
+				class='absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-10'
+			/>
+		</div>
+	) : (
+		<time datetime={date.toISOString()} {...attrs}>
+			{formattedDate}
+		</time>
+	)
+}

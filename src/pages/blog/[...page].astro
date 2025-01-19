@@ -53,6 +53,14 @@ const paginationProps = {
 		}
 	})
 }
+
+// Group posts by year and mark first post of each year
+const postsWithYearMarkers = page.data.map((post, index) => {
+	const currentYear = post.data.date.getFullYear()
+	const prevYear = index > 0 ? page.data[index - 1].data.date.getFullYear() : null
+	const showYear = currentYear !== prevYear
+	return { post, showYear }
+})
 ---
 
 <PageLayout meta={meta}>
@@ -81,8 +89,8 @@ const paginationProps = {
 				<div class='grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8'>
 					<section aria-label='Blog posts list'>
 						<ul class='flex flex-col gap-y-4 text-start'>
-							{page.data.map((p) => (
-								<PostPreview post={p} />
+							{postsWithYearMarkers.map(({ post, showYear }) => (
+								<PostPreview post={post} showYear={showYear} withDesc={true} />
 							))}
 						</ul>
 						<Pagination {...paginationProps} />
