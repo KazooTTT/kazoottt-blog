@@ -32,6 +32,7 @@
 		"astro": "^4.4.15",
 		"astro-expressive-code": "^0.33.5",
 		"astro-icon": "^1.1.0",
+		"astro-link-preview": "^0.3.4",
 		"axios": "^1.7.7",
 		"clsx": "^2.1.0",
 		"fast-xml-parser": "^4.5.0",
