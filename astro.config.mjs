@@ -10,7 +10,6 @@ import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
 import react from '@astrojs/react'
 import cloudflare from '@astrojs/cloudflare'
-import linkPreview from 'astro-link-preview'
 
 // https://astro.build/config
 export default defineConfig({
@@ -61,8 +60,7 @@ export default defineConfig({
 				local: './src/icons/*.svg'
 			}
 		}),
-		react(),
-		linkPreview()
+		react()
 	],
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
