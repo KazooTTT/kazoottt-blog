@@ -141,7 +141,7 @@ async function pushToGoogle(urls, credentials) {
 async function main() {
 	// Get command line arguments
 	const args = process.argv.slice(2)
-	const url = 'https://blog.kazoottt.top'
+	const url = 'https://kazoottt.top'
 	const baiduToken = process.env.BAIDU_TOKEN
 	const bingApiKey = process.env.BING_API_KEY
 	const googleCredentials = process.env.GOOGLE_CREDENTIALS
@@ -167,7 +167,7 @@ async function main() {
 	// Push to Bing
 	if (bingApiKey) {
 		console.log('Pushing to Baidu, please wait...')
-		await pushToBaidu(url, selectedUrls.slice(0, BAIDU_LIMIT), baiduToken)
+		await pushToBing(url, selectedUrls, bingApiKey)
 	}
 
 	// Push to Baidu
