@@ -21,6 +21,8 @@ link-notionnext: >-
   https://kazoottt.notion.site/History-scrollRestoration-b5838d05d2234a6db92ce284c5e5a2ce
 rinId: 18
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # 再次学习 History.scrollRestoration

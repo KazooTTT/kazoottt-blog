@@ -23,6 +23,8 @@ description: >-
   信息决定是否需要将其复制到目标仓库中。它还支持从特定目录忽略某些文件或文件夹。
   该 Action 的主要功能是自动化 blog 内容的更新和复制，确保 content ALWAYS 是最新的。
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 ## github action

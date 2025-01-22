@@ -12,6 +12,8 @@ description: >-
   pnpm）的源地址，以及如何使用yrm工具快速切换不同的npm源。通过执行特定的命令，用户可以轻松地管理这些工具的源设置，从而优化包的下载速度和开发效率。
 category: 前端
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # 查看源

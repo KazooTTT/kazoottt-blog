@@ -14,6 +14,8 @@ description: shot.so是一个图片美化工具，主要用于快速美化截图
 rinId: 62
 category: 软件
 toAstro: true
+date_created: 2024-12-02T11:03:24+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # shot.so - 图片美化工具

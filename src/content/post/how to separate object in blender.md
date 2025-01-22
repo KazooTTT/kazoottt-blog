@@ -12,6 +12,8 @@ category: blender
 slug: how-to-separate-object-in-blender
 description: 
 toAstro: true
+date_created: 2025-01-20T09:56:29+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 how to separate object in blender

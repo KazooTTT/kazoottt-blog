@@ -13,6 +13,8 @@ category: 前端
 slug: the-download-attribute-for-the-a-tag
 description: download属性是如何定义的以及注意事项。 不能设置为null，可以直接设置成空串或者null。
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 ## 对于 a 标签的 download 属性

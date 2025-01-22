@@ -19,6 +19,8 @@ link-notionnext: 'https://kazoottt.notion.site/focusee-8ac966eb66b44f39b2fa3fd4e
 rinId: 41
 category: 软件
 toAstro: true
+date_created: 2024-12-17T13:34:45+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # Focusee 录制系统声音被强制切换为扬声器播放的可能原因和解决方法

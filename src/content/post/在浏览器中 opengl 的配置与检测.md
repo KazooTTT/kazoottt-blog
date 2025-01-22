@@ -17,6 +17,8 @@ category: 前端
 slug: how-to-check-opengl-configuration-and-detection-in-browser
 description: 本文介绍了如何在浏览器中配置和检测 OpenGL，包括硬件加速的设置和检测方法，帮助用户优化浏览器性能。
 toAstro: true
+date_created: 2025-01-07T11:03:25+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # 在 google 浏览器中硬件加速、OpenGL 的配置与检测

@@ -12,6 +12,8 @@ description: >-
 rinId: 3
 category: 前端
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # 如何快速导出 vercel Project 中的环境变量

@@ -19,6 +19,8 @@ description: >-
   信息的工具。安装方式可以分为开发环境安装和使用浏览器插件两种，后者允许自定义配置。使用 react-scan 的时候，可以看到当前元素的
   props、context 和 state，以及是否发生了 re-render，并且会标记出可能存在性能优化问题的 bad render。
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 在本地运行 follow 的源代码的时候是我第一次接触到 react-scan, 后来又在 x 的首页山上面刷到了原作者以及其他人对于 [react-scan](https://react-scan.com/) 的推荐。

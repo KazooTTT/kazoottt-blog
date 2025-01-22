@@ -19,6 +19,8 @@ NotionID-notionnext: c6b6e2f5-9da1-43f9-b531-b07d974815ed
 link-notionnext: https://kazoottt.notion.site/macos-focusee-c6b6e2f59da143f9b531b07d974815ed
 rinId: 42
 toAstro: true
+date_created: 2024-12-17T13:34:45+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # 不推荐 macos 用户购买 focusee 的理由

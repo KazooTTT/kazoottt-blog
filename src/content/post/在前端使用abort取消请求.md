@@ -19,7 +19,7 @@ link-notionnext: https://kazoottt.notion.site/abort-801e2fa1dfa94b4fb579ef7f6658
 rinId: 53
 toAstro: true
 date_created: 2025-01-04T11:34:08+08:00
-date_modified: 2025-01-22T13:27:26+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # 在前端使用 abort 取消请求

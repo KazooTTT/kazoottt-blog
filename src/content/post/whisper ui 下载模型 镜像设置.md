@@ -15,6 +15,8 @@ category: 大模型
 slug: whisper-ui-download-model-mirror-setting
 description: 在使用 whisper ui 的时候，需要下载模型，如果不做配置默认是从 huggingface 下载的，但是 huggingface 在国内访问速度很慢，所以需要配置镜像。
 toAstro: true
+date_created: 2025-01-05T14:44:38+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 在使用 [whisper ui](https://github.com/jhj0517/Whisper-WebUI) 的时候，需要下载模型，如果不做配置默认是从 huggingface 下载的，但是 huggingface 在国内访问速度很慢，所以需要配置镜像。

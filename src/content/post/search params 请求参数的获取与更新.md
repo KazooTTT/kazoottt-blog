@@ -24,6 +24,8 @@ description: >-
 NotionID-notionnext: 13d55568-fd75-81f5-be1b-e0a4f8137355
 link-notionnext: 'https://kazoottt.notion.site/search-params-13d55568fd7581f5be1be0a4f8137355'
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 ## react router `useSearchParams`

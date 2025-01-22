@@ -13,6 +13,8 @@ description: >-
   本文介绍了Node.js中path模块的常用操作，包括__dirname与process.cwd()的区别，以及path.join()和path.resolve()的差异。特别指出，__dirname和process.cwd()在使用时需注意其返回的路径差异，以免导致静态资源加载失败。同时，path.join()用于连接路径，而path.resolve()则解析为绝对路径。这些知识点对于正确配置和处理文件路径至关重要。
 category: 前端
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # Path 相关操作

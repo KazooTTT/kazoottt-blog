@@ -23,6 +23,8 @@ link-notionnext: >-
   https://kazoottt.notion.site/Reasons-Not-to-Recommend-Purchasing-Focusee-for-macOS-Users-c692f30cbcbc48fd973919e23a3e1e40
 rinId: 40
 toAstro: true
+date_created: 2024-12-02T11:03:21+08:00
+date_modified: 2025-01-22T13:39:21+08:00
 ---
 
 # Reasons Not to Recommend Purchasing Focusee for macOS Users

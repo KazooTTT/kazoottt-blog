@@ -15,6 +15,8 @@ description: >-
 rinId: 20
 category: 前端
 toAstro: true
+date_created: 2024-12-17T13:34:45+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # 快速获取 telegram chatId 然后实现消息通知的方法

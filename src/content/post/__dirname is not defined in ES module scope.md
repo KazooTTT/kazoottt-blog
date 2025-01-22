@@ -35,6 +35,8 @@ description: >-
   ```
   这种方法推荐使用，避免了相对路径的问题。
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # __dirname Is not Defined in ES Module Scope

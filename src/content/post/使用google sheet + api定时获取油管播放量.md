@@ -19,6 +19,8 @@ category:
 slug: use-google-sheet-api-to-get-youtube-playbacks-on-a-regular-basis
 description: "在 MilkLove 的二搭剧 Whale Store xoxo 的 YouTube 预告片中，使用 Google Sheets 脚本可以定时获取视频播放量并存入表格。脚本主要包括以下步骤： 1.  **检查是否有 access token**: 脚本首先检查是否存在 access token。如果不存在，则会返回一个错误信息。 2.  **获取 video 的统计数据**: 脚本使用 YouTube API 来获取视频的统计数据，包括播放量等。若统计数据成功则将播放量返回给脚本。 3.  **记录播放量和时间到表格中**：如果在获取播放量后没有发生错误，则会向表格中插入一行，其中包含当前时间和播放量。 因此，通过这个脚本，可以定时地获取 YouTube 视频的播放量并存入 Google Sheets 表格。"
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 起因是想要记录一下 milklove 的二搭剧 Whale Store xoxo 在油管上的预告片的播放量的 [คุณวาฬร้านชำ (Whale Store xoxo) \| GMMTV 2025 - YouTube](https://www.youtube.com/watch?v=Eia_Sh_ZTyQ)

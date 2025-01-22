@@ -17,6 +17,8 @@ NotionID-notionnext: 462377ea-6b4a-472c-9f55-ca4965dfe5c4
 link-notionnext: >-
   https://kazoottt.notion.site/git-credential-osxkeychain-github-com-462377ea6b4a472c9f55ca4965dfe5c4
 toAstro: true
+date_created: 2024-12-17T13:34:45+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 # macos 一直弹出 “git-credential-osxkeychain”想要访问你的钥匙串中的密钥“github.com” 解决方法

@@ -14,6 +14,8 @@ type: Post
 status: Published
 category: 
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:40:14+08:00
 ---
 
 # 配置 nginx 以成功代理 websocket

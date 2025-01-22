@@ -4,13 +4,15 @@ date: 2024-12-19
 author: KazooTTT
 type: Post
 status: Published
-tags: 
+tags: []
 finished: true
 published: true
 category: 
 slug: deploy-remix-app-by-cloudflare
 description: 
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 如果使用 remix，然后用 cloudflare 进行部署。

@@ -13,6 +13,8 @@ description: |-
   然后，按下Command+K输入“git commit message”即可成功提交。
 slug: cursorgit-commit-msg
 toAstro: true
+date_created: 2025-01-04T11:44:53+08:00
+date_modified: 2025-01-22T13:39:19+08:00
 ---
 
 原文参考：
