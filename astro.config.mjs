@@ -1,15 +1,15 @@
-import { defineConfig } from 'astro/config'
-import mdx from '@astrojs/mdx'
-import tailwind from '@astrojs/tailwind'
-import sitemap from '@astrojs/sitemap'
-import { remarkReadingTime } from './src/utils/remarkReadingTime.ts'
-import remarkUnwrapImages from 'remark-unwrap-images'
-import rehypeExternalLinks from 'rehype-external-links'
-import expressiveCode from 'astro-expressive-code'
-import { expressiveCodeOptions } from './src/site.config'
-import icon from 'astro-icon'
-import react from '@astrojs/react'
 import cloudflare from '@astrojs/cloudflare'
+import mdx from '@astrojs/mdx'
+import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
+import tailwind from '@astrojs/tailwind'
+import expressiveCode from 'astro-expressive-code'
+import icon from 'astro-icon'
+import { defineConfig } from 'astro/config'
+import rehypeExternalLinks from 'rehype-external-links'
+import remarkUnwrapImages from 'remark-unwrap-images'
+import { expressiveCodeOptions } from './src/site.config'
+import { remarkReadingTime } from './src/utils/remarkReadingTime.ts'
 
 // https://astro.build/config
 export default defineConfig({
@@ -79,5 +79,28 @@ export default defineConfig({
 			}
 		}
 	},
-	prefetch: true
+	prefetch: true,
+	vite: {
+		optimizeDeps: {
+			exclude: ['@resvg/resvg-js']
+		},
+		plugins: [tailwind(), rawFonts([".ttf", ".woff"])],
+	},
 })
+
+
+function rawFonts(ext) {
+	return {
+		name: "vite-plugin-raw-fonts",
+		// @ts-expect-error:next-line
+		transform(_, id) {
+			if (ext.some((e) => id.endsWith(e))) {
+				const buffer = fs.readFileSync(id);
+				return {
+					code: `export default ${JSON.stringify(buffer)}`,
+					map: null,
+				};
+			}
+		},
+	};
+}

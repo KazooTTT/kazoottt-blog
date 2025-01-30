@@ -8,25 +8,22 @@ import Label from '../Label.astro'
 interface Props {
 	content: CollectionEntry<'post'>
 	simple?: boolean
+	socialImage?: string
 }
 
 const {
 	content: { data, render },
-	simple = false
+	simple = false,
+	socialImage
 } = Astro.props
-
 const { remarkPluginFrontmatter } = await render()
-
-const dateTimeOptions: Intl.DateTimeFormatOptions = {
-	month: 'long'
-}
 ---
 
 {
-	data.coverImage && (
-		<div class='aspect-h-9 aspect-w-16 mb-6'>
+	socialImage && (
+		<div class='mb-6'>
 			<img
-				src={data.coverImage}
+				src={socialImage}
 				class='rounded-2xl object-cover'
 				fetchpriority='high'
 				loading='eager'
@@ -34,11 +31,12 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 		</div>
 	)
 }
+
 {data.draft ? <span class='text-red-500'>(Draft)</span> : null}
 
 <div class='flex flex-wrap items-center gap-x-3 gap-y-2'>
 	<p class='text-xs'>
-		<FormattedDate date={data.date} dateTimeOptions={dateTimeOptions} /> /{' '}
+		<FormattedDate date={data.date} /> /{' '}
 		{remarkPluginFrontmatter.minutesRead}
 	</p>
 	{
@@ -106,12 +104,3 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 		</Card>
 	)
 }
-
-<!-- {
-	data.date && (
-		<p class='mt-6 text-base'>
-			Last Updated:
-			<FormattedDate class='ms-1' date={data.date} dateTimeOptions={dateTimeOptions} />
-		</p>
-	)
-} -->

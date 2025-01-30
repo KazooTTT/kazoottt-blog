@@ -3,29 +3,13 @@ import type { HTMLAttributes } from 'astro/types'
 
 interface Props extends HTMLAttributes<'time'> {
 	date: Date
-	coverImage: string
 }
 
-const { date, coverImage: coverImage, ...attrs } = Astro.props
-console.log('coverImage', coverImage)
+const { date, ...attrs } = Astro.props
 
 const formattedDate = date.toISOString().slice(0, 10).replace(/-/g, '')
 ---
 
-{
-	coverImage ? (
-		<div class='relative'>
-			<time datetime={date.toISOString()} {...attrs}>
-				{formattedDate}
-			</time>
-			<img
-				src={coverImage}
-				class='absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-10'
-			/>
-		</div>
-	) : (
-		<time datetime={date.toISOString()} {...attrs}>
-			{formattedDate}
-		</time>
-	)
-}
+<time datetime={date.toISOString()} {...attrs}>
+	{formattedDate}
+</time>

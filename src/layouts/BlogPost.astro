@@ -15,10 +15,11 @@ interface Props {
 
 const { post, simple = false, backHref = '/blog' } = Astro.props
 const {
-	data: { description, ogImage, title, date }
+	data: { description, ogImage, title, date },
+	slug
 } = post
 
-const socialImage = ogImage
+const socialImage = ogImage ? ogImage : `/og-image/${slug}.png`
 const articleDate = date?.toISOString()
 const { headings } = await post.render()
 ---
@@ -51,7 +52,7 @@ const { headings } = await post.render()
 			{!!headings.length && <TOC headings={headings} />}
 			<article class='flex-1 flex-grow break-words' data-pagefind-body>
 				<div id='blog-hero'>
-					<BlogHero content={post} simple={simple} />
+					<BlogHero content={post} simple={simple} socialImage={socialImage} />
 				</div>
 				<div
 					id='blog-gallery'
