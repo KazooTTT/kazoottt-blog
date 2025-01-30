@@ -16,6 +16,8 @@ const {
 	simple = false
 } = Astro.props
 const { remarkPluginFrontmatter } = await render()
+
+console.log('data.date_modified', data.date_modified)
 ---
 
 <!-- {
@@ -36,9 +38,16 @@ const { remarkPluginFrontmatter } = await render()
 		<FormattedDate date={data.date} /> /{' '}
 		{remarkPluginFrontmatter.minutesRead}
 	</p>
+
 	{
 		!simple && (
 			<>
+				{data.date_modified ? (
+					<div class='flex flex-row items-center gap-x-2 text-xs'>
+						<p class='text-muted-foreground'>最新更新:</p>
+						<FormattedDate date={data.date_modified} />
+					</div>
+				) : null}
 				<Label
 					title={data.category ?? '未分类'}
 					as='a'
@@ -46,11 +55,6 @@ const { remarkPluginFrontmatter } = await render()
 				>
 					<Icon name='category' slot='icon' />
 				</Label>
-				{data.date_modified ? (
-					<Label title='最新更新' as='div'>
-						<FormattedDate date={data.date_modified} />
-					</Label>
-				) : null}
 			</>
 		)
 	}
