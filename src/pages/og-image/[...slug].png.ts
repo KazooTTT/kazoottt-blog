@@ -1,6 +1,6 @@
-import NotoSansSC from "@/assets/NotoSansHans-Regular-2.ttf";
 import RobotoMonoBold from "@/assets/roboto-mono-700.ttf";
 import RobotoMono from "@/assets/roboto-mono-regular.ttf";
+import Zcoolkuaile from "@/assets/ZCOOLKuaiLe-Regular.ttf";
 import { siteConfig } from "@/site-config";
 
 import { Resvg } from "@resvg/resvg-js";
@@ -25,8 +25,8 @@ const ogOptions: SatoriOptions = {
             weight: 700,
         },
         {
-            data: Buffer.from(NotoSansSC),
-            name: "Noto Sans SC",
+            data: Buffer.from(Zcoolkuaile),
+            name: "ZCOOL KuaiLe",
             style: "normal",
             weight: 400,
         },
@@ -36,7 +36,7 @@ const ogOptions: SatoriOptions = {
 };
 
 const markup = (title: string, pubDate: string) =>
-    html`<div tw="flex flex-col w-full h-full bg-[#1d1f21] text-[#c9cacc] font-['Noto Sans SC']">
+    html`<div tw="flex flex-col w-full h-full bg-[#1d1f21] text-[#c9cacc]">
 		<div tw="flex flex-col flex-1 w-full p-10 justify-center">
 			<p tw="text-2xl mb-6">${pubDate}</p>
 			<h1 tw="text-6xl font-bold leading-snug text-white">${title}</h1>
@@ -86,3 +86,5 @@ export async function getStaticPaths() {
             },
         }));
 }
+
+export const prerender = true;
