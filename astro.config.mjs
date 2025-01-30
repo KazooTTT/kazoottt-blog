@@ -19,14 +19,7 @@ export default defineConfig({
 		mode: 'directory',
 		runtime: {
 			mode: process.env.NODE_ENV === 'production' ? 'off' : 'local',
-			persistTo: process.env.NODE_ENV === 'production' ? undefined : '.wrangler/state/v3/d1',
-			bindings: {
-				DB: {
-					type: 'd1',
-					databaseName: 'blog-pageviews',
-					databaseId: 'ab9e5f7d-e254-4e7d-bd85-5d944a622682'
-				}
-			}
+			persistTo: process.env.NODE_ENV === 'production' ? undefined : '.wrangler/state/v3/d1'
 		}
 	}),
 	redirects: {

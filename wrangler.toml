@@ -10,3 +10,8 @@ format = "directory"
 [site]
 bucket = "./dist"
 pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "blog-pageviews"
+database_id = "${D1_DATABASE_ID}"
