@@ -13,8 +13,7 @@ interface Props {
 
 const {
 	content: { data, render },
-	simple = false,
-	socialImage
+	simple = false
 } = Astro.props
 const { remarkPluginFrontmatter } = await render()
 ---
@@ -30,10 +29,8 @@ const { remarkPluginFrontmatter } = await render()
 			/>
 		</div>
 	)
-} -->{
-	data.draft ? <span class='text-red-500'>(Draft)</span> : null
-}
-
+} 
+-->
 <div class='flex flex-wrap items-center gap-x-3 gap-y-2'>
 	<p class='text-xs'>
 		<FormattedDate date={data.date} /> /{' '}
@@ -49,6 +46,11 @@ const { remarkPluginFrontmatter } = await render()
 				>
 					<Icon name='category' slot='icon' />
 				</Label>
+				{data.date_modified ? (
+					<Label title='最新更新' as='div'>
+						<FormattedDate date={data.date_modified} />
+					</Label>
+				) : null}
 			</>
 		)
 	}

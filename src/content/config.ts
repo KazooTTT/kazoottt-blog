@@ -24,7 +24,9 @@ const post = defineCollection({
 			category: z.string().optional().nullable(),
 			finished: z.boolean().default(false),
 			pinned: z.boolean().default(false),
-			projectUrl: z.string().optional()
+			projectUrl: z.string().optional(),
+			date_created: z.date().optional(),
+			date_modified: z.date().optional()
 		})
 })
 
