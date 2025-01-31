@@ -19,7 +19,7 @@ const {
 	slug
 } = post
 
-const socialImage = ogImage ? ogImage : `/og-image/${slug}.png`
+const socialImage = ogImage ? ogImage : undefined
 const articleDate = date?.toISOString()
 const { headings } = await post.render()
 ---

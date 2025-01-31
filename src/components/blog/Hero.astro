@@ -13,26 +13,20 @@ interface Props {
 
 const {
 	content: { data, render },
-	simple = false
+	simple = false,
+	socialImage
 } = Astro.props
 const { remarkPluginFrontmatter } = await render()
-
-console.log('data.date_modified', data.date_modified)
 ---
 
-<!-- {
+{
 	socialImage && (
 		<div class='mb-6'>
-			<img
-				src={socialImage}
-				class='rounded-2xl object-cover'
-				fetchpriority='high'
-				loading='eager'
-			/>
+			<img src={socialImage} class='rounded-2xl object-cover' loading='eager' />
 		</div>
 	)
-} 
--->
+}
+
 <div class='flex flex-wrap items-center gap-x-3 gap-y-2'>
 	<p class='text-xs'>
 		<FormattedDate date={data.date} /> /{' '}
