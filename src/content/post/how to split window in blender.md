@@ -2,8 +2,7 @@
 date_created: 2025-01-31T20:24:09+08:00
 date_modified: 2025-01-31T21:28:28+08:00
 slug: split-window-in-blender
-tags:
-  - [Blender, Interface, Window Management, Workflow Optimization]
+tags: [Blender, Interface, Window Management, Workflow Optimization]
 description: Guide to splitting editor windows in Blender for improved workflow
 title: How to Split Editor Windows in Blender
 date: 2025-01-31
