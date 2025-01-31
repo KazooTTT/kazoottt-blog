@@ -11,7 +11,7 @@ type: Tutorial
 status: Published
 finished: true
 published: true
-category: Modeling Techniques
+category: blender
 toAstro: true
 ---
 
