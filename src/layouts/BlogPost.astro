@@ -19,7 +19,7 @@ const {
 	slug
 } = post
 
-const socialImage = banner ? ogImage : undefined
+const socialImage = banner ? banner : undefined
 const articleDate = date?.toISOString()
 const { headings } = await post.render()
 ---
