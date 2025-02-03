@@ -15,11 +15,11 @@ interface Props {
 
 const { post, simple = false, backHref = '/blog' } = Astro.props
 const {
-	data: { description, ogImage, title, date },
+	data: { description, banner, title, date },
 	slug
 } = post
 
-const socialImage = ogImage ? ogImage : undefined
+const socialImage = banner ? ogImage : undefined
 const articleDate = date?.toISOString()
 const { headings } = await post.render()
 ---

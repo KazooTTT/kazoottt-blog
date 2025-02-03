@@ -20,7 +20,7 @@ const post = defineCollection({
 				.union([z.array(z.string()), z.null()])
 				.default([])
 				.transform(removeDupsAndLowerCase),
-			ogImage: z.string().optional(),
+			banner: z.string().optional(),
 			category: z.string().optional().nullable(),
 			finished: z.boolean().default(false),
 			pinned: z.boolean().default(false),
