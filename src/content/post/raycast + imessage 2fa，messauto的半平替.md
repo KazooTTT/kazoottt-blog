@@ -19,7 +19,7 @@ description: >-
   2fa插件，然后可以看到当前接收到的验证码，敲回车复制验证码到粘贴板。但这种方法缺点是没有messAuto方便，多了额外的步骤。
 toAstro: true
 date_created: 2024-12-11T20:27:36+08:00
-date_modified: 2025-01-22T13:39:19+08:00
+date_modified: 2025-02-01T23:35:42+08:00
 ---
 
 很久之前做过一个 messauto 的安利
