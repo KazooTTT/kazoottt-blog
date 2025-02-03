@@ -18,7 +18,7 @@ description: zustand 是一个状态管理库，简单易用。它可以通过�
 toAstro: true
 date_created: 2025-01-04T11:44:53+08:00
 date_modified: 2025-02-01T21:49:54+08:00
-ogImage: https://pictures.kazoottt.top/2025/02/20250201-og-1738417688145.png
+banner: https://pictures.kazoottt.top/2025/02/20250201-og-1738417688145.png
 ---
 
 ## 什么是 zustand？
