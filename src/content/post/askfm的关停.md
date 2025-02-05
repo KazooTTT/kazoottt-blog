@@ -8,7 +8,7 @@ tags: []
 finished: false
 published: false
 category: 
-slug:
+slug: askfm-shutdown
 description: 
 toAstro: true
 date_created: 2025-02-05T00:48:47+08:00
